@@ -30,6 +30,7 @@ before_install:
 
 script:
   - make html-errors
+  - echo "$ACTUAL_TRAVIS_JOB_NUMBER"
   - if [[ "${ACTUAL_TRAVIS_JOB_NUMBER}" == "1" ]]; then
       doctr deploy --built-docs docs --gh-pages-docs docs --no-require-master;
     fi
