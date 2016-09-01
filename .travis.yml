@@ -31,10 +31,10 @@ before_install:
 script:
   - make html-errors
   - if [ "$ACTUAL_TRAVIS_JOB_NUMBER" == "1" ]; then
-      doctr deploy --built-docs docs --gh-pages-docs docs;
+      doctr deploy --built-docs docs --gh-pages-docs docs --no-require-master;
     fi
   - if [ "$ACTUAL_TRAVIS_JOB_NUMBER" == "2" ]; then
-      doctr deploy --built-docs web --gh-pages-docs .;
+      doctr deploy --built-docs web --gh-pages-docs . --no-require-master;
     fi
 notifications:
   flowdock: ef3821a08a791106512ccfc04c92eccb
