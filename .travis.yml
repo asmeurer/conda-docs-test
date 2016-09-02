@@ -4,7 +4,7 @@ env:
     - DOCS="true"
     - WEBSITE="true"
   global:
-    secure: "5ElZf1fy+lG3qaL0fsUziva0Z2GHRg3xVVh1vssBXSlWifvACz2XU0VA0CE3URuLeBnwQLUYs+z11T2YmXTg5BoJI2wYDBaETXqk4Sb5qK6ecv2KIquvREavHPFoVdmHYoeYhDcHZufYgQn/Dx1E79xep4A+R/T8SdtDk2OxPWw="
+    secure: "pVmEvYDBbfHtxKV53LDVt/BC1uav/dguOxA/pC+KCfzvuSlsLTvAysEctFIOzcSveKgKkoaTxfJJH/HMYFyGs+/Nak87DGf3B8S34CcWIpc735Dxtts5HffTyPoSbsZ+St+hARF0ZaKphjsXhua4Z05tfGmoqBrKENwsNfZBBgLWLnoSXHbgJUf2guae8DPPsaV7l8h0KMWPDaoZJiFvWIFaZ6De/oCo3arRRyWyzYVueCYc3/2toXAZPO2twkH6ERpuIRK/m8PR65ZBU+G4/oVpIns8ROYyMF6dEY6RtB6L8b/OMEbOM4D7Pt0kuz3exPnetIFWKMpoyOuXl4AycAp0BXltD6WZ/jhIssfZmGrNGrMFmEhjxROh1ORmxXLvKosPMGd50qn2jgaWkiLLFclvIQQsGPAcZWfDQrIEoVISmOlYF5Nv8IQ+yHWBHEvQzSvNICYbVbZc04HeW2B0XOpPjiD0bQ3UDoaFqqoC04xE0noyIitgoSxG1is6od9Un28GvflA1ToPhuLVaEUPUbc+GZkbaF3RGKX4lS8Vvk4zw8cI41QD/DQZ/7pxzsDn7zIoinHYwhkwZfjBMXDwpK6A7W0Bjf9XDMrjrc+Cd+exomxGmLtrHMaDlazJFoKQasXm7nCGfT8nl+tlkLEHM88wat5yhNBAc6G4Q5LTG48="
 
 before_install:
   - wget http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh;
