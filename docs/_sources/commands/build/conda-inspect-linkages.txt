@@ -1,0 +1,63 @@
+
+.. _inspect linkages_ref:
+
+conda inspect linkages
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda inspect linkages
+   
+   DESCRIPTION
+          usage: conda-inspect linkages [-h] [--untracked] [--show-files]
+   
+          [--groupby {package,dependency}] [--all]
+                 [-n ENVIRONMENT | -p PATH] [packages [packages ...]]
+   
+          Investigates  linkages of binary libraries in a package (works in Linux
+          and OS X). This is an advanced command to aid  building  packages  that
+          link  against  C libraries. Aggregates the output of ldd (on Linux) and
+          otool -L (on OS X) by dependent packages.  Useful  for  finding  broken
+          links,  or  links  against  system libraries that ought to be dependent
+          conda packages.
+   
+   OPTIONS
+      positional arguments:
+          packages
+                 Conda packages to inspect.
+   
+      optional arguments:
+          -h, --help
+                 Show this help message and exit.
+   
+          --untracked
+                 Inspect the untracked files in the environment. This  is  useful
+                 when used in conjunction with conda build --build-only.
+   
+          --show-files
+                 Show the files in the package that link to each library
+   
+          --groupby {package,dependency}
+                 Attribute  to  group  by (default: package). Useful when used in
+                 conjunction with --all.
+   
+          --all  Generate a report for all packages in the environment.
+   
+          -n ENVIRONMENT, --name ENVIRONMENT
+                 Name of environment (in envs dirs).
+   
+          -p PATH, --prefix PATH
+                 Full path to environment prefix (default: envs  dirs/build-envi‐
+                 ronment).
+   
+   
+   
+   Continuum Analytics             September 2016                        <B>CONDA(1)</B>
+   </PRE>

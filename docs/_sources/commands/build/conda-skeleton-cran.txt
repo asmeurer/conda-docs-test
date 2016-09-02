@@ -1,0 +1,74 @@
+
+.. _skeleton cran_ref:
+
+conda skeleton cran
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda skeleton cran
+   
+   DESCRIPTION
+          usage:  conda-skeleton  cran  [-h] [--output-dir OUTPUT_DIR] [--version
+          VERSION]
+   
+          [--git-tag GIT_TAG] [--all-urls]
+                 [--cran-url CRAN_URL] [--recursive]  [--no-recursive]  [--no-ar‐
+                 chive]  [--version-compare] [--update-outdated] [packages [pack‐
+                 ages ...]]
+   
+      positional arguments:
+          packages
+                 CRAN packages to create recipe skeletons for.
+   
+      optional arguments:
+          -h, --help
+                 Show this help message and exit.
+   
+          --output-dir OUTPUT_DIR
+                 Directory to write recipes to (default: .).
+   
+          --version VERSION
+                 Version to use. Applies to all packages.
+   
+          --git-tag GIT_TAG
+                 Git tag to use for GitHub recipes.
+   
+          --all-urls
+                 Look at all URLs, not just source URLs. Use  this  if  it  can't
+                 find the right URL.
+   
+          --cran-url CRAN_URL
+                 URL to use for CRAN (default: http://cran.r-project.org/).
+   
+          --recursive
+                 Create recipes for dependencies if they do not already exist.
+   
+          --no-recursive
+                 Don't  create  recipes  for  dependencies if they do not already
+                 exist.
+   
+          --no-archive
+                 Don't include an Archive download url.
+   
+          --version-compare
+                 Compare the package version of the recipe with the one available
+                 on  CRAN.  Exits  1 if a newer version is available and 0 other‐
+                 wise.
+   
+          --update-outdated
+                 Update outdated packages in the output directory (set by  --out‐
+                 put-dir).  If  packages  are given, they are updated; otherwise,
+                 all recipes in the output directory are updated.
+   
+   
+   
+   Continuum Analytics             September 2016                        <B>CONDA(1)</B>
+   </PRE>

@@ -1,0 +1,108 @@
+
+.. _remove_ref:
+
+conda remove
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda remove
+   
+   DESCRIPTION
+          usage: conda remove [-h] [-y] [--dry-run] [--json] [--all] [--features]
+   
+          [--force] [--no-pin] [-c CHANNEL] [--override-channels]
+                 [-n   ENVIRONMENT   |   -p   PATH]  [-q]  [--no-use-index-cache]
+                 [--use-index-cache]  [--use-local]   [--offline]   [package_name
+                 [package_name ...]]
+   
+          Remove a list of packages from a specified conda environment.
+   
+          This  command  will  also remove any package that depends on any of the
+          specified packages as well---unless a replacement can be found  without
+          that  dependency.  If  you  wish  to  skip this dependency checking and
+          remove just the requested packages, add the '--force' option. Note how‐
+          ever  that  this  may  result in a broken environment, so use this with
+          caution.
+   
+   OPTIONS
+      positional arguments:
+          package_name
+                 Package names to remove from the environment.
+   
+      optional arguments:
+          -h, --help
+                 Show this help message and exit.
+   
+          -y, --yes
+                 Do not ask for confirmation.
+   
+          --dry-run
+                 Only display what would have been done.
+   
+          --json Report all output as json. Suitable for using conda programmati‐
+                 cally.
+   
+          --all  Remove all packages, i.e., the entire environment.
+   
+          --features
+                 Remove features (instead of packages).
+   
+          --force
+                 Forces  removal  of  a  package  without  removing packages that
+                 depend on it. Using this option will usually leave your environ‐
+                 ment in a broken and inconsistent state.
+   
+          --no-pin
+                 Ignore pinned file.
+   
+          -c CHANNEL, --channel CHANNEL
+                 Additional  channel  to  search  for  packages.  These  are URLs
+                 searched in the order they  are  given  (including  file://  for
+                 local directories). Then, the defaults or channels from .condarc
+                 are searched (unless --override-channels is given). You can  use
+                 'defaults'  to  get the default packages for conda, and 'system'
+                 to get the system  packages,  which  also  takes  .condarc  into
+                 account.  You  can  also  use  any  name  and the .condarc chan‐
+                 nel_alias value will be prepended. The default channel_alias  is
+                 http://conda.anaconda.org/.
+   
+          --override-channels
+                 Do not search default or .condarc channels. Requires --channel.
+   
+          -n ENVIRONMENT, --name ENVIRONMENT
+                 Name of environment (in envs dirs).
+   
+          -p PATH, --prefix PATH
+                 Full  path to environment prefix (default: envs dirs/build-envi‐
+                 ronment).
+   
+          -q, --quiet
+                 Do not display progress bar.
+   
+          --no-use-index-cache
+                 Force fetching of channel index files.
+   
+          --use-index-cache
+                 Use cache of channel index files.
+   
+          --use-local
+                 Use locally built packages.
+   
+          --offline
+                 Offline mode, don't connect to the Internet.
+   
+   EXAMPLES
+                 conda remove -n myenv scipy
+   
+   
+   
+   Continuum Analytics             September 2016                        <B>CONDA(1)</B>
+   </PRE>

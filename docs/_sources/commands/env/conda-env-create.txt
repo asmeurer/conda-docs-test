@@ -1,0 +1,64 @@
+
+.. _env create_ref:
+
+conda env create
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda env create
+   
+   DESCRIPTION
+          usage: conda-env create [-h] [-f FILE] [-n ENVIRONMENT | -p PATH] [-q]
+   
+          [--force] [--json]
+                 [remote_definition]
+   
+          Create an environment based on an environment file
+   
+   OPTIONS
+      positional arguments:
+          remote_definition
+                 remote environment definition / IPython notebook
+   
+      optional arguments:
+          -h, --help
+                 Show this help message and exit.
+   
+          -f FILE, --file FILE
+                 environment definition file (default: environment.yml)
+   
+          -n ENVIRONMENT, --name ENVIRONMENT
+                 Name of environment (in envs dirs).
+   
+          -p PATH, --prefix PATH
+                 Full  path to environment prefix (default: envs dirs/build-envi‐
+                 ronment).
+   
+          -q, --quiet
+   
+          --force
+                 force creation of environment (removing  a  previously  existing
+                 environment of the same name).
+   
+          --json Report all output as json. Suitable for using conda programmati‐
+                 cally.
+   
+      examples:
+                 conda env create conda env  create  -n  name  conda  env  create
+                 vader/deathstar  conda  env  create  -f=/path/to/environment.yml
+                 conda env create -f=/path/to/requirements.txt -n deathstar conda
+                 env   create  -f=/path/to/requirements.txt  -p  /home/user/soft‐
+                 ware/deathstar
+   
+   
+   
+   Continuum Analytics             September 2016                        <B>CONDA(1)</B>
+   </PRE>

@@ -1,0 +1,279 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Pre/Post link/unlink scripts &mdash; Conda   documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Conda   documentation" href="../index.html"/>
+        <link rel="up" title="Building conda packages" href="bpp.html"/>
+        <link rel="next" title="Conda package specification" href="../spec.html"/>
+        <link rel="prev" title="Environment variables" href="environment-vars.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                 
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../get-started.html">Get started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using/index.html">Using conda</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="build.html">Building packages</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../build_tutorials.html">Build tutorials</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="bpp.html">Building conda packages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="recipe.html">Conda build recipes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pkg-name-conv.html">Package naming conventions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="meta-pkg.html">Metapackages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dirs.html">Directory structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="meta-yaml.html">The meta.yaml file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment-vars.html">Environment variables</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Pre/Post link/unlink scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../spec.html">Conda package specification</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="shared-libraries.html">Using shared libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../custom-channels.html">Custom channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../signed-packages.html">Signing conda packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bdist_conda.html">Bdist_conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sample-recipes.html">Sample recipes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../help/help.html">Help &amp; reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get-involved.html">Get involved</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Conda</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="build.html">Building packages</a> &raquo;</li>
+      
+          <li><a href="bpp.html">Building conda packages</a> &raquo;</li>
+      
+    <li>Pre/Post link/unlink scripts</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/conda/conda-docs/blob/master/docs/source/building/build-scripts.rst" class="fa fa-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pre-post-link-unlink-scripts">
+<h1>Pre/Post link/unlink scripts<a class="headerlink" href="#pre-post-link-unlink-scripts" title="Permalink to this headline">¶</a></h1>
+<p>You can add scripts <cite>pre-link.sh</cite>, <cite>post-link.sh</cite>, or <cite>pre-unlink.sh</cite> (or
+<cite>.bat</cite> for Windows) to the recipe, which will be run before the package is
+installed, after it is installed, and before it is removed, respectively. If
+these scripts exit nonzero the installation/removal will fail.</p>
+<p>We strongly recommend that post-link (and pre-unlink) scripts should:</p>
+<ol class="arabic simple">
+<li>be avoided whenever possible,</li>
+<li>not touch anything other than the files being installed,</li>
+<li>not write anything to stdout (or stderr), unless an error occurs,</li>
+<li>not depend on any installed (or to be installed) conda packages, and</li>
+<li>only depend on simple system tools such as <code class="docutils literal"><span class="pre">rm</span></code>, <code class="docutils literal"><span class="pre">cp</span></code>, <code class="docutils literal"><span class="pre">mv</span></code>, <code class="docutils literal"><span class="pre">ln</span></code>,
+and so on.</li>
+</ol>
+<p>The scripts should not write to stdout or stderr unless an error occurs, but
+they may write to <code class="docutils literal"><span class="pre">$PREFIX/.messages.txt</span></code>, which is shown after conda
+completes all actions.</p>
+<p>Environment variables are set in these scripts:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">PREFIX</span></code></td>
+<td>The install prefix.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">PKG_NAME</span></code></td>
+<td>The name of the package.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">PKG_VERSION</span></code></td>
+<td>The version of the package.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">PKG_BUILDNUM</span></code></td>
+<td>The build number of the package.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../spec.html" class="btn btn-neutral float-right" title="Conda package specification" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="environment-vars.html" class="btn btn-neutral" title="Environment variables" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Continuum Analytics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:' ',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

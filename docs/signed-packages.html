@@ -1,0 +1,310 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Signing conda packages &mdash; Conda   documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Conda   documentation" href="index.html"/>
+        <link rel="up" title="Building packages" href="building/build.html"/>
+        <link rel="next" title="Bdist_conda" href="bdist_conda.html"/>
+        <link rel="prev" title="Custom channels" href="custom-channels.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                 
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="get-started.html">Get started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using/index.html">Using conda</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="building/build.html">Building packages</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="build_tutorials.html">Build tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building/bpp.html">Building conda packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building/shared-libraries.html">Using shared libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom-channels.html">Custom channels</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Signing conda packages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#signing-packages-summary">Signing packages summary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-one-create-the-public-private-key-pair">Step one: Create the public/private key pair</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-two-sign-the-packages">Step two: Sign the packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-three-verify-that-the-signatures-are-valid">Step three: Verify that the signatures are valid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-four-index-the-repository">Step four: Index the repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-five-use-the-signed-package">Step five: Use the signed package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bdist_conda.html">Bdist_conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building/sample-recipes.html">Sample recipes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="help/help.html">Help &amp; reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-involved.html">Get involved</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Conda</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="building/build.html">Building packages</a> &raquo;</li>
+      
+    <li>Signing conda packages</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/conda/conda-docs/blob/master/docs/source/signed-packages.rst" class="fa fa-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="signing-conda-packages">
+<h1>Signing conda packages<a class="headerlink" href="#signing-conda-packages" title="Permalink to this headline">¶</a></h1>
+<p><strong>PREVIEW RELEASE</strong></p>
+<p>Conda has the ability to verify RSA signatures on conda packages, and conda-build can generate key pairs, sign conda packages, and add the required package metadata to the conda repository index. Any key size is supported, and the default is 2048 bits.</p>
+<p>Given any public/private key pair, you may sign any file using the private key, and the other person who receives the file must verify the signature against the public key in order to use the file. The person verifying the signature is assured that the signature was indeed created using the private key.</p>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Conda build installed</li>
+<li>PyCrypto installed into the root environment</li>
+<li>Experience with building conda packages</li>
+<li>Experience in setting up your own conda repository using the &#8220;conda index&#8221; command</li>
+<li>Familiarity with the basics of public/private key cryptography, and</li>
+<li>Understanding of the concept of digital signatures.</li>
+</ul>
+</div>
+<div class="section" id="signing-packages-summary">
+<h2>Signing packages summary<a class="headerlink" href="#signing-packages-summary" title="Permalink to this headline">¶</a></h2>
+<p>Building a signed conda package is done with the following steps:</p>
+<ol class="arabic simple">
+<li>Create the public/private key pair.</li>
+<li>Sign the packages using the &#8220;conda sign&#8221; command.</li>
+<li>Verify that the signatures are valid.</li>
+<li>Index the repository.</li>
+<li>Use the signed package.</li>
+</ol>
+</div>
+<div class="section" id="step-one-create-the-public-private-key-pair">
+<h2>Step one: Create the public/private key pair<a class="headerlink" href="#step-one-create-the-public-private-key-pair" title="Permalink to this headline">¶</a></h2>
+<p>First, create a public/private key pair.  Each public/private key pair is assigned a name, which is stored in the signature file, such that the client knows which public key to verify the signature against. In this example, the public key is named MyKey:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">sign</span> <span class="o">--</span><span class="n">keygen</span> <span class="n">MyKey</span>
+</pre></div>
+</div>
+<p>NOTE: Replace &#8220;MyKey&#8221; with the actual name you wish to give your key pair.</p>
+</div>
+<div class="section" id="step-two-sign-the-packages">
+<h2>Step two: Sign the packages<a class="headerlink" href="#step-two-sign-the-packages" title="Permalink to this headline">¶</a></h2>
+<p>Sign the packages by simply passing the conda packages that need to be signed to the &#8220;conda sign&#8221; command. Example, if you wish to sign all packages in the Linux-64 directory:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">repository</span><span class="o">&gt;/</span><span class="n">linux</span><span class="o">-</span><span class="mi">64</span>
+<span class="n">conda</span> <span class="n">sign</span> <span class="o">*.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
+</pre></div>
+</div>
+<p>You will notice <cite>.sig</cite> files next to all conda packages.</p>
+<p>NOTE: You are not required to sign all conda packages; you may choose which ones you wish to sign.</p>
+</div>
+<div class="section" id="step-three-verify-that-the-signatures-are-valid">
+<h2>Step three: Verify that the signatures are valid<a class="headerlink" href="#step-three-verify-that-the-signatures-are-valid" title="Permalink to this headline">¶</a></h2>
+<p>To verify that the signatures are valid, run the conda sign verify command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">sign</span> <span class="o">--</span><span class="n">verify</span> <span class="o">*.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-four-index-the-repository">
+<h2>Step four: Index the repository<a class="headerlink" href="#step-four-index-the-repository" title="Permalink to this headline">¶</a></h2>
+<p>Finally, run the <cite>conda index</cite> command to update (or create) the <cite>repodata.json</cite> file:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">index</span>
+</pre></div>
+</div>
+<p>This completes the signing of the conda repository.</p>
+</div>
+<div class="section" id="step-five-use-the-signed-package">
+<h2>Step five: Use the signed package<a class="headerlink" href="#step-five-use-the-signed-package" title="Permalink to this headline">¶</a></h2>
+<p>In order to use the signed package, the client must have access to the repository, and must add the public key file to their <cite>~/.conda/keys</cite> directory before installing the package. For example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">~/.</span><span class="n">conda</span><span class="o">/</span><span class="n">keys</span>
+<span class="n">cp</span> <span class="o">&lt;</span><span class="n">some</span> <span class="n">download</span> <span class="n">folder</span><span class="o">&gt;/</span><span class="n">foo</span><span class="o">.</span><span class="n">pub</span> <span class="o">~/.</span><span class="n">conda</span><span class="o">/</span><span class="n">keys</span>
+</pre></div>
+</div>
+<p>When the client tries to install the signed package using the <cite>conda</cite> command, conda will attempt to verify the signature.</p>
+<ul class="simple">
+<li>Conda will permit the installation if it finds the signature.</li>
+<li>Conda will exit if (i) the signature is invalid (ii) the signature is not found or, (iii) the public key is not installed.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bdist_conda.html" class="btn btn-neutral float-right" title="Bdist_conda" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="custom-channels.html" class="btn btn-neutral" title="Custom channels" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Continuum Analytics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:' ',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

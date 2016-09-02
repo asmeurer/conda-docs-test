@@ -1,0 +1,48 @@
+
+.. _skeleton cpan_ref:
+
+conda skeleton cpan
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda skeleton cpan
+   
+   DESCRIPTION
+          usage:  conda-skeleton  cpan  [-h] [--output-dir OUTPUT_DIR] [--version
+          VERSION]
+   
+          [--meta-cpan-url META_CPAN_URL] [--recursive]
+                 packages [packages ...]
+   
+      positional arguments:
+          packages
+                 CPAN packages to create recipe skeletons for.
+   
+      optional arguments:
+          -h, --help
+                 Show this help message and exit.
+   
+          --output-dir OUTPUT_DIR
+                 Directory to write recipes to (default: .).
+   
+          --version VERSION
+                 Version to use. Applies to all packages.
+   
+          --meta-cpan-url META_CPAN_URL
+                 URL to use for MetaCPAN API.
+   
+          --recursive
+                 Create recipes for dependencies if they do not already exist.
+   
+   
+   
+   Continuum Analytics             September 2016                        <B>CONDA(1)</B>
+   </PRE>

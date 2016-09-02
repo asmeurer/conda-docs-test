@@ -1,0 +1,333 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Managing Python &mdash; Conda   documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Conda   documentation" href="index.html"/>
+        <link rel="up" title="Using conda" href="using/index.html"/>
+        <link rel="next" title="Managing packages" href="using/pkgs.html"/>
+        <link rel="prev" title="Managing environments" href="using/envs.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                 
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="get-started.html">Get started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="using/index.html">Using conda</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="using/using.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using/envs.html">Managing environments</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Managing Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#check-python-versions">Check Python versions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-a-different-version-of-python">Install a different version of Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-a-different-version-of-python">Use a different version of Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-python-2-or-3-environments">Create Python 2 or 3 environments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#create-a-python-3-5-environment">Create a Python 3.5 environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-a-python-2-7-environment">Create a Python 2.7 environment</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#update-or-upgrade-python">Update or Upgrade Python</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="using/pkgs.html">Managing packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="r-with-conda.html">Using R with conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mro.html">Using Microsoft R Open</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="building/build.html">Building packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/help.html">Help &amp; reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-involved.html">Get involved</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Conda</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="using/index.html">Using conda</a> &raquo;</li>
+      
+    <li>Managing Python</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/conda/conda-docs/blob/master/docs/source/py2or3.rst" class="fa fa-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="managing-python">
+<h1><a class="toc-backref" href="#id1">Managing Python</a><a class="headerlink" href="#managing-python" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#managing-python" id="id1">Managing Python</a><ul>
+<li><a class="reference internal" href="#check-python-versions" id="id2">Check Python versions</a></li>
+<li><a class="reference internal" href="#install-a-different-version-of-python" id="id3">Install a different version of Python</a></li>
+<li><a class="reference internal" href="#use-a-different-version-of-python" id="id4">Use a different version of Python</a></li>
+<li><a class="reference internal" href="#create-python-2-or-3-environments" id="id5">Create Python 2 or 3 environments</a><ul>
+<li><a class="reference internal" href="#create-a-python-3-5-environment" id="id6">Create a Python 3.5 environment</a></li>
+<li><a class="reference internal" href="#create-a-python-2-7-environment" id="id7">Create a Python 2.7 environment</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#update-or-upgrade-python" id="id8">Update or Upgrade Python</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Conda treats Python the same as any other package, so it’s very easy to manage and update multiple installations.</p>
+<div class="section" id="check-python-versions">
+<h2><a class="toc-backref" href="#id2">Check Python versions</a><a class="headerlink" href="#check-python-versions" title="Permalink to this headline">¶</a></h2>
+<p>Check to see which versions of Python are available to install:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">search</span> <span class="n">python</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-a-different-version-of-python">
+<h2><a class="toc-backref" href="#id3">Install a different version of Python</a><a class="headerlink" href="#install-a-different-version-of-python" title="Permalink to this headline">¶</a></h2>
+<p>So now let’s say you need Python 3 to learn programming, but you don’t want to wipe out your Python 2.7 environment by updating Python. You can create and activate a new environment named snakes, and install the latest version of Python 3 as follows:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">snakes</span> <span class="n">python</span><span class="o">=</span><span class="mi">3</span>
+</pre></div>
+</div>
+<p><strong>Linux, OS X:</strong> <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snakes</span></code></p>
+<p><strong>Windows:</strong>  <code class="docutils literal"><span class="pre">activate</span> <span class="pre">snakes</span></code></p>
+<p>TIP: It would be wise to name this environment a descriptive name like “python3” but that is not as much fun.</p>
+<p>To verify that the snakes environment has now been added, type the command:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">info</span> <span class="o">--</span><span class="n">envs</span>
+</pre></div>
+</div>
+<p>Conda displays the list of all environments, with the current environment
+highlighted by a &#8216;*&#8217;.</p>
+<p>Verify that the snakes environment uses Python version 3:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="use-a-different-version-of-python">
+<h2><a class="toc-backref" href="#id4">Use a different version of Python</a><a class="headerlink" href="#use-a-different-version-of-python" title="Permalink to this headline">¶</a></h2>
+<p>To switch to the new environment with a different version of Python, you simply need to activate it. Let’s switch back to 2.7:</p>
+<p><strong>Linux, OS X:</strong> <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snowflakes</span></code></p>
+<p><strong>Windows:</strong>  <code class="docutils literal"><span class="pre">activate</span> <span class="pre">snowflakes</span></code></p>
+<p>Verify that the snowflakes environment uses Python version 2:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>After you are finished working in the snowflakes environment, to close it you can either deactivate it, or activate a new environment.</p>
+</div>
+<div class="section" id="create-python-2-or-3-environments">
+<h2><a class="toc-backref" href="#id5">Create Python 2 or 3 environments</a><a class="headerlink" href="#create-python-2-or-3-environments" title="Permalink to this headline">¶</a></h2>
+<p>Anaconda supports Python 2.7, 3.4, and 3.5.  The default is Python 2.7 or
+3.5, depending on which installer you used. If the installer you used is Anaconda
+or Miniconda, the default is 2.7. If the installer you used is Anaconda3 or Miniconda3,
+the default is 3.5.</p>
+<div class="section" id="create-a-python-3-5-environment">
+<h3><a class="toc-backref" href="#id6">Create a Python 3.5 environment</a><a class="headerlink" href="#create-a-python-3-5-environment" title="Permalink to this headline">¶</a></h3>
+<p>To create a new environment with a different version of Python, use the <code class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span></code> command. In this example, we&#8217;ll make the new environment for Python 3.5:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ conda create -n py35 <span class="nv">python</span><span class="o">=</span>3.5 anaconda
+</pre></div>
+</div>
+<p>Here, the &#8216;py35&#8217; is the name of the environment you want to create, and &#8216;anaconda&#8217; is the
+meta-package that includes all of the actual Python packages comprising
+the Anaconda distribution.  When creating a new environment and installing Anaconda,
+you can specify the exact package and Python versions, for example, <code class="docutils literal"><span class="pre">numpy=1.7</span></code> or <code class="docutils literal"><span class="pre">python=3.5</span></code>.</p>
+</div>
+<div class="section" id="create-a-python-2-7-environment">
+<h3><a class="toc-backref" href="#id7">Create a Python 2.7 environment</a><a class="headerlink" href="#create-a-python-2-7-environment" title="Permalink to this headline">¶</a></h3>
+<p>In this example, we&#8217;ll make a new environment for Python 2.7:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ conda create -n py27 <span class="nv">python</span><span class="o">=</span>2.7 anaconda
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="update-or-upgrade-python">
+<h2><a class="toc-backref" href="#id8">Update or Upgrade Python</a><a class="headerlink" href="#update-or-upgrade-python" title="Permalink to this headline">¶</a></h2>
+<p>If you are in an environment with Python version 3.4.2, this command will update Python to 3.4.3, which is the latest version in the 3.4 branch:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ conda update python
+</pre></div>
+</div>
+<p>And this command will upgrade Python to another branch such as 3.5 by installing that version of Python:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ conda install <span class="nv">python</span><span class="o">=</span>3.5
+</pre></div>
+</div>
+<p>Next, let&#8217;s take a look at <a class="reference internal" href="using/pkgs.html"><span class="doc">Managing packages</span></a>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="using/pkgs.html" class="btn btn-neutral float-right" title="Managing packages" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="using/envs.html" class="btn btn-neutral" title="Managing environments" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Continuum Analytics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:' ',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

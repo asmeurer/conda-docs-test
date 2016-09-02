@@ -1,0 +1,151 @@
+
+.. _build_ref:
+
+conda build
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda build
+   
+   DESCRIPTION
+          usage: conda-build [-h] [-V] [-n] [--output] [--python PYTHON_VER]
+   
+                 [--perl   PERL_VER]   [--numpy  NUMPY_VER]  [--R  R_VER]  [--lua
+                 LUA_VER] [--check] [--no-anaconda-upload]  [--no-include-recipe]
+                 [-s]    [-t]    [--no-test]    [-b]    [-p]    [--skip-existing]
+                 [--keep-old-work] [--dirty] [-q] [--token TOKEN]  [--user  USER]
+                 [--no-activate]  [--debug]  [-c  CHANNEL]  [--override-channels]
+                 RECIPE_PATH [RECIPE_PATH ...]
+   
+          Tool for building conda packages. A conda package is a  binary  tarball
+          containing system-level libraries, Python modules, executable programs,
+          or other components. conda keeps track of dependencies between packages
+          and platform specifics, making it simple to create working environments
+          from different sets of packages.
+   
+      positional arguments:
+          RECIPE_PATH
+                 Path to recipe directory.
+   
+      optional arguments:
+          -h, --help
+                 Show this help message and exit.
+   
+          -V, --version
+                 Show the conda-build version number and exit.
+   
+          -n, --no-source
+                 When templating can't be completed, do not obtain the source  to
+                 try fill in related template variables.
+   
+          --output
+                 Output the conda package filename which would have been created
+   
+          --python PYTHON_VER
+                 Set the Python version used by conda build. Can be passed multi‐
+                 ple times to build against multiple versions. Can  be  'all'  to
+                 build  against  all known versions (['2.6', '2.7', '3.3', '3.4',
+                 '3.5'])
+   
+          --perl PERL_VER
+                 Set the Perl version used by conda build. Can be passed multiple
+                 times to build against multiple versions.
+   
+          --numpy NUMPY_VER
+                 Set  the NumPy version used by conda build. Can be passed multi‐
+                 ple times to build against multiple versions. Can  be  'all'  to
+                 build  against  all known versions (['1.6', '1.7', '1.8', '1.9',
+                 '1.10', '1.11'])
+   
+          --R R_VER
+                 Set the R version used by conda build. Can  be  passed  multiple
+                 times to build against multiple versions.
+   
+          --lua LUA_VER
+                 Set  the  Lua version used by conda build. Can be passedmultiple
+                 times to build against multiple versions (['all', '2.0',  '5.1',
+                 '5.2', '5.3']).
+   
+          --check
+                 Only check (validate) the recipe.
+   
+          --no-anaconda-upload
+                 Do not ask to upload the package to anaconda.org.
+   
+          --no-include-recipe
+                 Don't include the recipe inside the built package.
+   
+          -s, --source
+                 Only obtain the source (but don't build).
+   
+          -t, --test
+                 Test  package  (assumes  package  is already built).  RECIPE_DIR
+                 argument can be either recipe directory, in  which  case  source
+                 download  may be necessary to resolve packageversion, or path to
+                 built package .tar.bz2 file, in which case no source  is  neces‐
+                 sary.
+   
+          --no-test
+                 Do not test the package.
+   
+          -b, --build-only
+                 Only  run  the  build,  without  any post processing or testing.
+                 Implies --no-test and --no-anaconda-upload.
+   
+          -p, --post
+                 Run  the  post-build  logic.  Implies  --no-test  and   --noana‐
+                 conda-upload.
+   
+          --skip-existing
+                 Skip  recipes  for  which there already exists an existing build
+                 (locally or in the channels).
+   
+          --keep-old-work
+                 Keep any existing,  old  work  directory.  Useful  if  debugging
+                 across callstacks involving multiple packages/recipes.
+   
+          --dirty
+                 Do  not remove work directory or _build environment, to speed up
+                 debugging. Does not apply patches or download source.
+   
+          -q, --quiet
+                 do not display progress bar
+   
+          --token TOKEN
+                 Token to pass through to anaconda upload
+   
+          --user USER
+                 User/organization to upload packages to on anaconda.org
+   
+          --no-activate
+                 do not display progress bar
+   
+          --debug
+                 show debugging output from conda and conda-build
+   
+          -c CHANNEL, --channel CHANNEL
+                 Additional channel  to  search  for  packages.  These  are  URLs
+                 searched  in  the  order  they  are given (including file:// for
+                 local directories). Then, the defaults or channels from .condarc
+                 are  searched (unless --override-channels is given). You can use
+                 'defaults' to get the default packages for conda,  and  'system'
+                 to  get  the  system  packages,  which  also takes .condarc into
+                 account. You can also  use  any  name  and  the  .condarc  chan‐
+                 nel_alias  value will be prepended. The default channel_alias is
+                 http://conda.anaconda.org/.
+   
+          --override-channels
+                 Do not search default or .condarc channels. Requires --channel.
+   
+   
+   
+   Continuum Analytics             September 2016                        <B>CONDA(1)</B>
+   </PRE>

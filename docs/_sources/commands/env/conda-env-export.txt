@@ -1,0 +1,51 @@
+
+.. _env export_ref:
+
+conda env export
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda env export
+   
+   DESCRIPTION
+          usage:  conda-env  export  [-h]  [-c CHANNEL] [--override-channels] [-n
+          NAME]
+   
+                 [-f FILE] [--no-builds]
+   
+          Export a given environment
+   
+   OPTIONS
+      optional arguments:
+          -h, --help
+                 Show this help message and exit.
+   
+          -c CHANNEL, --channel CHANNEL
+                 Additional channel to include in the export
+   
+          --override-channels
+                 Do not include .condarc channels
+   
+          -n NAME, --name NAME
+                 name of environment (in envs dirs)
+   
+          -f FILE, --file FILE
+   
+          --no-builds
+                 Remove build specification from dependencies
+   
+      examples:
+                 conda env export conda env export --file SOME_FILE
+   
+   
+   
+   Continuum Analytics             September 2016                        <B>CONDA(1)</B>
+   </PRE>

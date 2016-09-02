@@ -1,0 +1,56 @@
+
+.. _pipbuild_ref:
+
+conda pipbuild
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda pipbuild
+   
+   DESCRIPTION
+          usage: conda-pipbuild [-h] [--no-anaconda-upload] [--anaconda-upload]
+   
+          [--release RELEASE] [--pypi-url PYPI_URL]
+                 [--noarch-python] &lt;PYPI_NAME&gt;
+   
+          ***  This  command  is  no  longer  supported.  It will be removed in a
+          future release of conda-build. *** The recommended way to  build  conda
+          packages  from  packages on PyPI is using conda skeleton pypi and conda
+          build.  Tool for building conda packages using pip install.
+   
+   OPTIONS
+      positional arguments:
+          &lt;PYPI_NAME&gt;
+                 Name of package on PyPI.
+   
+      optional arguments:
+          -h, --help
+                 Show this help message and exit.
+   
+          --no-anaconda-upload
+                 Do not ask to upload the package to anaconda.org.
+   
+          --anaconda-upload
+                 Upload the package to anaconda.org.
+   
+          --release RELEASE
+                 Version of the package to build.
+   
+          --pypi-url PYPI_URL
+                 Url to use for PyPI.
+   
+          --noarch-python
+                 Creates package as noarch
+   
+   
+   
+   Continuum Analytics             September 2016                        <B>CONDA(1)</B>
+   </PRE>

@@ -1,0 +1,286 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Overview &mdash; Conda   documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Conda   documentation" href="../index.html"/>
+        <link rel="up" title="Using conda" href="index.html"/>
+        <link rel="next" title="Managing environments" href="envs.html"/>
+        <link rel="prev" title="Using conda" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                 
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../get-started.html">Get started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Using conda</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#managing-conda">Managing conda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#verify-that-conda-is-installed-check-current-conda-version">Verify that conda is installed, check current conda version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-conda-to-the-current-version">Update conda to the current version</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="envs.html">Managing environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py2or3.html">Managing Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pkgs.html">Managing packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../r-with-conda.html">Using R with conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mro.html">Using Microsoft R Open</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../building/build.html">Building packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/help.html">Help &amp; reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get-involved.html">Get involved</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Conda</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Using conda</a> &raquo;</li>
+      
+    <li>Overview</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/conda/conda-docs/blob/master/docs/source/using/using.rst" class="fa fa-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="overview">
+<h1><a class="toc-backref" href="#id1">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#overview" id="id1">Overview</a><ul>
+<li><a class="reference internal" href="#introduction" id="id2">Introduction</a></li>
+<li><a class="reference internal" href="#managing-conda" id="id3">Managing conda</a></li>
+<li><a class="reference internal" href="#verify-that-conda-is-installed-check-current-conda-version" id="id4">Verify that conda is installed, check current conda version</a></li>
+<li><a class="reference internal" href="#update-conda-to-the-current-version" id="id5">Update conda to the current version</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>The quickest way to start using conda is to use our <a class="reference internal" href="../install/quick.html"><span class="doc">Quick install</span></a> guide, then run through the 30-minute <a class="reference internal" href="../test-drive.html"><span class="doc">Conda Test Drive</span></a>, which is a shortened version of this user guide.</p>
+<p>Then refer to the more detailed instructions below for managing environments, Python and other packages.</p>
+<p>For full usage of each command, check the  <a class="reference internal" href="../commands.html"><span class="doc">Command reference</span></a> guide. In your terminal window, you can
+enter the command name followed by &#8211;help.</p>
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#id2">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>You know that a package manager helps you find and install packages. But if you need a package that requires a different version of Python, there is no need to switch to a different environment manager, because conda is both a package manager and an environment manager. With just a few commands, you can set up a totally separate environment to run that different version of Python, and yet continue to run your usual version of Python in your normal environment.</p>
+<p>Anytime you wish to see the full documentation for any command, type the command followed by <code class="docutils literal"><span class="pre">--help</span></code> For example, to learn about the conda update command:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="o">--</span><span class="n">help</span>
+</pre></div>
+</div>
+<p>The same help that is available in conda is also available online from our  <a class="reference internal" href="../commands.html"><span class="doc">Command reference</span></a>.</p>
+</div>
+<div class="section" id="managing-conda">
+<h2><a class="toc-backref" href="#id3">Managing conda</a><a class="headerlink" href="#managing-conda" title="Permalink to this headline">¶</a></h2>
+<p>NOTE: Whether you are using Linux, OS X or the Windows command prompt, in your terminal window the conda commands are all the same unless noted.</p>
+</div>
+<div class="section" id="verify-that-conda-is-installed-check-current-conda-version">
+<h2><a class="toc-backref" href="#id4">Verify that conda is installed, check current conda version</a><a class="headerlink" href="#verify-that-conda-is-installed-check-current-conda-version" title="Permalink to this headline">¶</a></h2>
+<p>To be sure that you are starting in the right place, let’s verify that you have successfully installed Anaconda. In your terminal window, enter the following:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>Conda will respond with the version number that you have installed, like:  <code class="docutils literal"><span class="pre">conda</span> <span class="pre">3.11.0</span></code></p>
+<p>NOTE: If you see an error message, check to see that you are logged into the same user account that you used to install Anaconda or Miniconda, that you are in a directory that Anaconda or Miniconda can find,
+and that you have closed and re-opened the terminal window after installing it.</p>
+</div>
+<div class="section" id="update-conda-to-the-current-version">
+<h2><a class="toc-backref" href="#id5">Update conda to the current version</a><a class="headerlink" href="#update-conda-to-the-current-version" title="Permalink to this headline">¶</a></h2>
+<p>Next, let’s use the conda update command to update conda:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">conda</span>
+</pre></div>
+</div>
+<p>Conda will compare versions and let you know what is available to install. It will also tell you about other packages that will be automatically updated or changed with the update. If it tells you that a newer version of conda is available, type Y to update:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span>Proceed ([y]/n)? y
+</pre></div>
+</div>
+<p><a class="reference internal" href="envs.html"><span class="doc">Managing environments</span></a> is next.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="envs.html" class="btn btn-neutral float-right" title="Managing environments" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Using conda" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Continuum Analytics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:' ',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,399 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>conda build &mdash; Conda   documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Conda   documentation" href="../../index.html"/>
+        <link rel="up" title="Command reference" href="../../commands.html"/>
+        <link rel="next" title="conda convert" href="conda-convert.html"/>
+        <link rel="prev" title="conda upgrade" href="../conda-upgrade.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                 
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../get-started.html">Get started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../using/index.html">Using conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../building/build.html">Building packages</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../help/help.html">Help &amp; reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../using/cheatsheet.html">Conda cheat sheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../commands.html">Command reference</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../commands.html#conda-general-commands">Conda general commands</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../commands.html#conda-build-commands">Conda build commands</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">conda build</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda-convert.html">conda convert</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda-develop.html">conda develop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda-index.html">conda index</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda-inspect.html">conda inspect</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda-inspect-channels.html">conda inspect channels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda-inspect-linkages.html">conda inspect linkages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda-inspect-objects.html">conda inspect objects</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda-metapackage.html">conda metapackage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda-pipbuild.html">conda pipbuild</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda-render.html">conda render</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda-sign.html">conda sign</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda-skeleton.html">conda skeleton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda-skeleton-cpan.html">conda skeleton cpan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda-skeleton-cran.html">conda skeleton cran</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda-skeleton-luarocks.html">conda skeleton luarocks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda-skeleton-pypi.html">conda skeleton pypi</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../commands.html#conda-environment-commands">Conda environment commands</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../faq.html">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../help/support.html">Support options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html">Conda changelog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../license.html">Conda license</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../get-involved.html">Get involved</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Conda</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../help/help.html">Help &amp; reference</a> &raquo;</li>
+      
+          <li><a href="../../commands.html">Command reference</a> &raquo;</li>
+      
+    <li>conda build</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/conda/conda-docs/blob/master/docs/source/commands/build/conda-build.rst" class="fa fa-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="conda-build">
+<span id="build-ref"></span><h1>conda build<a class="headerlink" href="#conda-build" title="Permalink to this headline">¶</a></h1>
+<PRE>
+<!-- Manpage converted by man2html 3.0.1 -->
+<B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+
+
+
+NAME
+       conda - conda build
+
+DESCRIPTION
+       usage: conda-build [-h] [-V] [-n] [--output] [--python PYTHON_VER]
+
+              [--perl   PERL_VER]   [--numpy  NUMPY_VER]  [--R  R_VER]  [--lua
+              LUA_VER] [--check] [--no-anaconda-upload]  [--no-include-recipe]
+              [-s]    [-t]    [--no-test]    [-b]    [-p]    [--skip-existing]
+              [--keep-old-work] [--dirty] [-q] [--token TOKEN]  [--user  USER]
+              [--no-activate]  [--debug]  [-c  CHANNEL]  [--override-channels]
+              RECIPE_PATH [RECIPE_PATH ...]
+
+       Tool for building conda packages. A conda package is a  binary  tarball
+       containing system-level libraries, Python modules, executable programs,
+       or other components. conda keeps track of dependencies between packages
+       and platform specifics, making it simple to create working environments
+       from different sets of packages.
+
+   positional arguments:
+       RECIPE_PATH
+              Path to recipe directory.
+
+   optional arguments:
+       -h, --help
+              Show this help message and exit.
+
+       -V, --version
+              Show the conda-build version number and exit.
+
+       -n, --no-source
+              When templating can't be completed, do not obtain the source  to
+              try fill in related template variables.
+
+       --output
+              Output the conda package filename which would have been created
+
+       --python PYTHON_VER
+              Set the Python version used by conda build. Can be passed multi‐
+              ple times to build against multiple versions. Can  be  'all'  to
+              build  against  all known versions (['2.6', '2.7', '3.3', '3.4',
+              '3.5'])
+
+       --perl PERL_VER
+              Set the Perl version used by conda build. Can be passed multiple
+              times to build against multiple versions.
+
+       --numpy NUMPY_VER
+              Set  the NumPy version used by conda build. Can be passed multi‐
+              ple times to build against multiple versions. Can  be  'all'  to
+              build  against  all known versions (['1.6', '1.7', '1.8', '1.9',
+              '1.10', '1.11'])
+
+       --R R_VER
+              Set the R version used by conda build. Can  be  passed  multiple
+              times to build against multiple versions.
+
+       --lua LUA_VER
+              Set  the  Lua version used by conda build. Can be passedmultiple
+              times to build against multiple versions (['all', '2.0',  '5.1',
+              '5.2', '5.3']).
+
+       --check
+              Only check (validate) the recipe.
+
+       --no-anaconda-upload
+              Do not ask to upload the package to anaconda.org.
+
+       --no-include-recipe
+              Don't include the recipe inside the built package.
+
+       -s, --source
+              Only obtain the source (but don't build).
+
+       -t, --test
+              Test  package  (assumes  package  is already built).  RECIPE_DIR
+              argument can be either recipe directory, in  which  case  source
+              download  may be necessary to resolve packageversion, or path to
+              built package .tar.bz2 file, in which case no source  is  neces‐
+              sary.
+
+       --no-test
+              Do not test the package.
+
+       -b, --build-only
+              Only  run  the  build,  without  any post processing or testing.
+              Implies --no-test and --no-anaconda-upload.
+
+       -p, --post
+              Run  the  post-build  logic.  Implies  --no-test  and   --noana‐
+              conda-upload.
+
+       --skip-existing
+              Skip  recipes  for  which there already exists an existing build
+              (locally or in the channels).
+
+       --keep-old-work
+              Keep any existing,  old  work  directory.  Useful  if  debugging
+              across callstacks involving multiple packages/recipes.
+
+       --dirty
+              Do  not remove work directory or _build environment, to speed up
+              debugging. Does not apply patches or download source.
+
+       -q, --quiet
+              do not display progress bar
+
+       --token TOKEN
+              Token to pass through to anaconda upload
+
+       --user USER
+              User/organization to upload packages to on anaconda.org
+
+       --no-activate
+              do not display progress bar
+
+       --debug
+              show debugging output from conda and conda-build
+
+       -c CHANNEL, --channel CHANNEL
+              Additional channel  to  search  for  packages.  These  are  URLs
+              searched  in  the  order  they  are given (including file:// for
+              local directories). Then, the defaults or channels from .condarc
+              are  searched (unless --override-channels is given). You can use
+              'defaults' to get the default packages for conda,  and  'system'
+              to  get  the  system  packages,  which  also takes .condarc into
+              account. You can also  use  any  name  and  the  .condarc  chan‐
+              nel_alias  value will be prepended. The default channel_alias is
+              http://conda.anaconda.org/.
+
+       --override-channels
+              Do not search default or .condarc channels. Requires --channel.
+
+
+
+Continuum Analytics             September 2016                        <B>CONDA(1)</B>
+</PRE></div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="conda-convert.html" class="btn btn-neutral float-right" title="conda convert" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../conda-upgrade.html" class="btn btn-neutral" title="conda upgrade" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Continuum Analytics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:' ',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

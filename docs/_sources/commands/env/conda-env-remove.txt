@@ -1,0 +1,57 @@
+
+.. _env remove_ref:
+
+conda env remove
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda env remove
+   
+   DESCRIPTION
+          usage:  conda-env  remove [-h] [-n ENVIRONMENT | -p PATH] [--json] [-q]
+          [-y]
+   
+                 [--dry-run]
+   
+          Remove an environmentRemoves a provided environment.  You must  deacti‐
+          vate the existing environment before you can remove it.
+   
+   OPTIONS
+      optional arguments:
+          -h, --help
+                 Show this help message and exit.
+   
+          -n ENVIRONMENT, --name ENVIRONMENT
+                 Name of environment (in envs dirs).
+   
+          -p PATH, --prefix PATH
+                 Full  path to environment prefix (default: envs dirs/build-envi‐
+                 ronment).
+   
+          --json Report all output as json. Suitable for using conda programmati‐
+                 cally.
+   
+          -q, --quiet
+                 Do not display progress bar.
+   
+          -y, --yes
+                 Do not ask for confirmation.
+   
+          --dry-run
+                 Only display what would have been done.
+   
+   EXAMPLES
+                 conda env remove --name FOO conda env remove -n FOO
+   
+   
+   
+   Continuum Analytics             September 2016                        <B>CONDA(1)</B>
+   </PRE>

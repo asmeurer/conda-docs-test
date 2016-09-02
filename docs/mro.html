@@ -1,0 +1,314 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using Microsoft R Open &mdash; Conda   documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Conda   documentation" href="index.html"/>
+        <link rel="up" title="Using conda" href="using/index.html"/>
+        <link rel="next" title="Building packages" href="building/build.html"/>
+        <link rel="prev" title="Using R with conda" href="r-with-conda.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                 
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="get-started.html">Get started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="using/index.html">Using conda</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="using/using.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using/envs.html">Managing environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="py2or3.html">Managing Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using/pkgs.html">Managing packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="r-with-conda.html">Using R with conda</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Using Microsoft R Open</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#operating-systems-supported">Operating systems supported</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-mro-and-other-r-language-packages">Installing MRO and other R language packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-mro-or-r-language-packages">Use MRO or R language packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-the-intel-math-kernel-library-mkl-with-microsoft-r-open-mro">Install the Intel Math Kernel Library (MKL) with Microsoft R Open (MRO)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mkl-installation-on-windows">MKL installation on Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mkl-installation-on-linux">MKL installation on Linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#more-help-with-conda-and-mro">More help with conda and MRO</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="building/build.html">Building packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/help.html">Help &amp; reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-involved.html">Get involved</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Conda</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="using/index.html">Using conda</a> &raquo;</li>
+      
+    <li>Using Microsoft R Open</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/conda/conda-docs/blob/master/docs/source/mro.rst" class="fa fa-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-microsoft-r-open">
+<h1>Using Microsoft R Open<a class="headerlink" href="#using-microsoft-r-open" title="Permalink to this headline">¶</a></h1>
+<p>You can easily install the <a class="reference external" href="https://mran.revolutionanalytics.com/download/mro-for-mrs/">Microsoft R Open (MRO)</a> distribution of the R language by using conda. The MRO R language package and many more are available from the <a class="reference external" href="https://anaconda.org/mro/packages/">Anaconda Cloud channel named MRO</a>.</p>
+<div class="section" id="operating-systems-supported">
+<h2>Operating systems supported<a class="headerlink" href="#operating-systems-supported" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>For 64-bit systems only (Windows, OS X and Linux)</li>
+<li>Windows: Windows® 7.0 (SP1), 8.1, 10, and Windows Server® 2008 R2 (SP1) and 2012</li>
+<li>OS X versions: Mavericks (10.9), Yosemite (10.10), and El Capitan (10.11)</li>
+<li>Linux: CentOS, Red Hat Enterprise Linux, Debian, Ubuntu.</li>
+</ul>
+</div>
+<div class="section" id="installing-mro-and-other-r-language-packages">
+<h2>Installing MRO and other R language packages<a class="headerlink" href="#installing-mro-and-other-r-language-packages" title="Permalink to this headline">¶</a></h2>
+<p>There are several different ways to install MRO and other R language packages:</p>
+<ul class="simple">
+<li>Add the &#8220;mro&#8221; channel to your <a class="reference internal" href="config.html"><span class="doc">.condarc configuration file</span></a> above the &#8220;r&#8221; channel, and then use <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">r</span></code> and use conda to install other packages.</li>
+<li>Specify the &#8220;mro&#8221; channel on the command line each time you use the conda install command: <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">mro</span> <span class="pre">r</span></code></li>
+<li>Install R packages from the Comprehensive R Archive Network (CRAN) or the Microsoft R Application Network (MRAN). These R packages will install into the currently active conda environment. MRO includes the <a class="reference external" href="https://github.com/RevolutionAnalytics/checkpoint/">checkpoint package</a>, which installs from MRAN and is designed to offer enhanced <a class="reference external" href="https://mran.revolutionanalytics.com/documents/rro/reproducibility/">reproducibility</a>.</li>
+</ul>
+</div>
+<div class="section" id="use-mro-or-r-language-packages">
+<h2>Use MRO or R language packages<a class="headerlink" href="#use-mro-or-r-language-packages" title="Permalink to this headline">¶</a></h2>
+<p>To use MRO or R language packages, first activate the conda environment where they are installed to set your environment variables properly.</p>
+<p>NOTE: You must first activate the program&#8217;s environment, then execute the program. Errors may result if you try to execute a program at the pathname in that environment without first activating the environment.</p>
+<p>NOTE: Each conda environment may have packages installed from the channel &#8220;r&#8221; OR the channel &#8220;mro&#8221;, but no conda environment should contain packages from both channels. Doing so may result in errors. If this occurs, you may remove the packages that were installed incorrectly by using the command <code class="docutils literal"><span class="pre">conda</span> <span class="pre">remove</span></code>, or simply create a new environment and install the correct packages there.</p>
+</div>
+<div class="section" id="install-the-intel-math-kernel-library-mkl-with-microsoft-r-open-mro">
+<h2>Install the Intel Math Kernel Library (MKL) with Microsoft R Open (MRO)<a class="headerlink" href="#install-the-intel-math-kernel-library-mkl-with-microsoft-r-open-mro" title="Permalink to this headline">¶</a></h2>
+<p>The Intel Math Kernel Library (MKL) extensions are also available for MRO on Windows and Linux, while the Accelerate library is used instead on OS X. Just <a class="reference external" href="https://mran.revolutionanalytics.com/download/">download the MKL package for your platform</a> and install it according to the instructions below.</p>
+<p>NOTE: By using our install process, we assume that you have already agreed to the <a class="reference external" href="https://mran.revolutionanalytics.com/assets/text/mkl-eula.txt">MKL license</a>. Proceeding further is an implicit agreement to said license.</p>
+<p>When MKL is not installed, each time the R interpreter starts it will display a message saying so, such as:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>No performance acceleration libraries were detected. To take advantage of the
+available processing power, also install MKL for MRO 3.2.3. Visit
+http://go.microsoft.com/fwlink/?LinkID=698301 for more details.
+</pre></div>
+</div>
+<p>When the MKL extensions are properly installed, each time the R interpreter starts it will display a message stating that MKL is enabled, such as:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Multithreaded</span> <span class="n">BLAS</span><span class="o">/</span><span class="n">LAPACK</span> <span class="n">libraries</span> <span class="n">detected</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>(BLAS/LAPACK libraries such as MKL are implementations of the Basic Linear Algebra Subprograms specification of the LAPACK Linear Algebra PACKage.)</p>
+</div>
+<div class="section" id="mkl-installation-on-windows">
+<h2>MKL installation on Windows<a class="headerlink" href="#mkl-installation-on-windows" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Download the proper MKL installer file.</li>
+<li>Find the directory where R language is located. Look in the current user&#8217;s home directory, then in the Anaconda or Miniconda directory, then in the environments directory, and then in the directory for the current environment, for a directory called &#8220;R&#8221;. For example, an Anaconda user on Windows 8 with the username jsmith and an environment named my_r_env might find <code class="docutils literal"><span class="pre">C:\Users\jsmith\Anaconda\envs\my_r_env\R</span></code> .</li>
+<li>Run the installer, and enter the path when it says &#8220;Enter a path to MRO&#8221;.</li>
+</ol>
+<p>Starting the R language interpreter should now display the message showing that MKL is enabled.</p>
+<p>If you wish to uninstall MKL on Windows and continue using R language, uninstall MKL with the Windows Control Panel.</p>
+</div>
+<div class="section" id="mkl-installation-on-linux">
+<h2>MKL installation on Linux<a class="headerlink" href="#mkl-installation-on-linux" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Download and extract the proper MKL package to a temporary folder, which we will call $REVOMATH .</p>
+</li>
+<li><p class="first">Determine where R is located. The path will have the form of <code class="docutils literal"><span class="pre">/path/to/anaconda/envs/&lt;r</span> <span class="pre">environment&gt;</span></code> , which we will call $PREFIX . Ensure that you have write permissions to $PREFIX.</p>
+</li>
+<li><p class="first">Make backups of <code class="docutils literal"><span class="pre">$PREFIX/lib/R/lib/libRblas.so</span></code> and <code class="docutils literal"><span class="pre">$PREFIX/lib/R/lib/libRlapack.so</span></code> .</p>
+</li>
+<li><p class="first">Copy all the .so files from <code class="docutils literal"><span class="pre">$REVOMATH/mkl/libs/*.so</span></code> to <code class="docutils literal"><span class="pre">$PREFIX/lib/R/lib</span></code> . (This may prompt you to overwrite libRblas.so and libRlapack.so.)</p>
+</li>
+<li><p class="first">Edit <code class="docutils literal"><span class="pre">$PREFIX/lib/R/etc/Rprofile.site</span></code> and add the following two lines to the top:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sys</span><span class="o">.</span><span class="n">setenv</span><span class="p">(</span><span class="s2">&quot;MKL_INTERFACE_LAYER&quot;</span><span class="o">=</span><span class="s2">&quot;GNU,LP64&quot;</span><span class="p">)</span>
+<span class="n">Sys</span><span class="o">.</span><span class="n">setenv</span><span class="p">(</span><span class="s2">&quot;MKL_THREADING_LAYER&quot;</span><span class="o">=</span><span class="s2">&quot;GNU&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Execute this: <code class="docutils literal"><span class="pre">R</span> <span class="pre">CMD</span> <span class="pre">INSTALL</span> <span class="pre">$REVOMATH/RevoUtilsMath.tar.gz</span></code></p>
+</li>
+</ol>
+</div>
+<div class="section" id="more-help-with-conda-and-mro">
+<h2>More help with conda and MRO<a class="headerlink" href="#more-help-with-conda-and-mro" title="Permalink to this headline">¶</a></h2>
+<p>For community help using conda with MRO, please join the <a class="reference external" href="https://groups.google.com/a/continuum.io/forum/#!forum/conda">conda</a> email group.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="building/build.html" class="btn btn-neutral float-right" title="Building packages" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="r-with-conda.html" class="btn btn-neutral" title="Using R with conda" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Continuum Analytics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:' ',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

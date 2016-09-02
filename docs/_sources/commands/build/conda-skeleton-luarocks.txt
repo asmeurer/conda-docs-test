@@ -1,0 +1,44 @@
+
+.. _skeleton luarocks_ref:
+
+conda skeleton luarocks
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda skeleton luarocks
+   
+   DESCRIPTION
+          usage: conda-skeleton luarocks [-h] [--output-dir OUTPUT_DIR]
+   
+          [--version VERSION] [--recursive]
+                 packages [packages ...]
+   
+      positional arguments:
+          packages
+                 luarocks packages to create recipe skeletons for.
+   
+      optional arguments:
+          -h, --help
+                 Show this help message and exit.
+   
+          --output-dir OUTPUT_DIR
+                 Directory to write recipes to (default: .).
+   
+          --version VERSION
+                 Version to use. Applies to all packages.
+   
+          --recursive
+                 Create recipes for dependencies if they do not already exist.
+   
+   
+   
+   Continuum Analytics             September 2016                        <B>CONDA(1)</B>
+   </PRE>

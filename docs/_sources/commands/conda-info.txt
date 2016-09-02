@@ -1,0 +1,65 @@
+
+.. _info_ref:
+
+conda info
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda info
+   
+   DESCRIPTION
+          usage:  conda  info  [-h]  [--json]  [--offline]  [-a]  [-e]  [-l] [-s]
+          [--root]
+   
+                 [--unsafe-channels] [packages [packages ...]]
+   
+          Display information about current conda install.
+   
+   OPTIONS
+      positional arguments:
+          packages
+                 Display information about packages.
+   
+      optional arguments:
+          -h, --help
+                 Show this help message and exit.
+   
+          --json Report all output as json. Suitable for using conda programmati‐
+                 cally.
+   
+          --offline
+                 Offline mode, don't connect to the Internet.
+   
+          -a, --all
+                 Show  all information, (environments, license, and system infor‐
+                 mation.
+   
+          -e, --envs
+                 List all known conda environments.
+   
+          -l, --license
+                 Display information about the local conda licenses list.
+   
+          -s, --system
+                 List environment variables.
+   
+          --root Display root environment path.
+   
+          --unsafe-channels
+                 Display list of channels with tokens exposed.
+   
+   EXAMPLES
+                 conda info -a
+   
+   
+   
+   Continuum Analytics             September 2016                        <B>CONDA(1)</B>
+   </PRE>

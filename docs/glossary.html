@@ -1,0 +1,262 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Glossary &mdash; Conda   documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Conda   documentation" href="index.html"/>
+        <link rel="up" title="Help &amp; reference" href="help/help.html"/>
+        <link rel="next" title="Command reference" href="commands.html"/>
+        <link rel="prev" title="Help &amp; reference" href="help/help.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                 
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="get-started.html">Get started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using/index.html">Using conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building/build.html">Building packages</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="help/help.html">Help &amp; reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="using/cheatsheet.html">Conda cheat sheet</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html">Command reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="help/support.html">Support options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html">Conda changelog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license.html">Conda license</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-involved.html">Get involved</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Conda</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="help/help.html">Help &amp; reference</a> &raquo;</li>
+      
+    <li>Glossary</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/conda/conda-docs/blob/master/docs/source/glossary.rst" class="fa fa-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="glossary">
+<h1>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h1>
+<p>Please see also the <a class="reference internal" href="using/cheatsheet.html"><span class="doc">Conda cheat sheet</span></a>.</p>
+<dl class="docutils">
+<dt>.condarc:</dt>
+<dd>Conda Runtime Configuration file, an optional YAML file which allows users to configure many aspects of conda, such as which channels it searches for packages, proxy settings, environment directories, etc. A .condarc file is not included by default, but when you use the ‘conda config’ command it is automatically created in the user’s home directory. The .condarc file can also be located in a root environment, in which case it overrides any in the home directory.  See <a class="reference internal" href="config.html"><span class="doc">conda configuration</span></a> documentation for more information.</dd>
+<dt>Activate/deactivate environment:</dt>
+<dd>Conda commands used to switch or move between installed environments. Activate prepends the path of your current environment to PATH environment variable so you do not need to type it each time, and deactivate removes it. Even when an environment is not activated, programs in that environment can still be executed by specifying their path directly, as in ‘~/anaconda/envs/envname/bin/program_name’. When an environment is activated, you can just use ‘program_name’.</dd>
+<dt>Anaconda:</dt>
+<dd>A downloadable free, open source, high performance, optimized Python and R distribution with 100+ packages plus access to easily installing an additional 620+ popular open source packages for data science including advanced and scientific analytics. Anaconda includes conda, an open source package, dependency and environment manager. Thousands more open source packages can be installed with the conda command. Available for Windows, OS X and Linux, all versions are supported by the community.</dd>
+<dt>Anaconda Cloud:</dt>
+<dd>A web-based repository hosting service in the cloud. Packages created locally can be published to the cloud to be shared with others. Free accounts on Anaconda Cloud can publish packages to be shared publicly. Paid subscriptions to Anaconda Cloud can designate packages as private to be shared with authorized users.</dd>
+<dt>Anaconda Navigator:</dt>
+<dd>A desktop graphical user interface (GUI) included in all versions of Anaconda that allows you to easily manage conda packages, environments, channels and notebooks without the need to use the command line interface (CLI).</dd>
+<dt>Channels:</dt>
+<dd>The locations of the repositories where conda looks for packages. Channels may point to an Anaconda Cloud repository, a private location on a remote or local repository that you or your organization created. The conda channel command has a default set of channels to search beginning with <a class="reference external" href="https://repo.continuum.io/pkgs/">https://repo.continuum.io/pkgs/</a> which users may override, for example, to maintain a private or internal channel. These default channels are referred to in conda commands and in the .condarc file by the channel name ‘defaults’.</dd>
+<dt>Conda:</dt>
+<dd>The package and environment manager program bundled with Anaconda that installs and updates conda packages and their dependencies. Also lets you easily switch between conda environments on your local computer.</dd>
+<dt>Conda environment:</dt>
+<dd>A folder or directory that contains a specific collection of conda packages and their dependencies, so they can be maintained and run separately without interference from each other. For example, you may use one conda environment for only Python 2 and Python 2 packages, maintain another conda environment with only Python 3 and Python 3 packages, and another for R language packages. Environments can be created via the command line or via an environment specification file with the name your-environment-name.yml, or from the graphical user interface of Anaconda Navigator.</dd>
+<dt>Conda package:</dt>
+<dd>A compressed file that contains everything that a software program needs in order to be installed and run (including system-level libraries, Python or R language modules, executable programs, and/or other components) so you do not have to manually find and install each dependency separately. Managed with conda.</dd>
+<dt>Conda repository:</dt>
+<dd>A cloud-based repository that contains 720+ open source certified packages that are easily installed locally via the “conda install” command. May be accessed by anyone from a terminal or command prompt using conda commands, from the Anaconda Navigator GUI, or viewed directly at <a class="reference external" href="https://repo.continuum.io/pkgs/">https://repo.continuum.io/pkgs/</a></dd>
+<dt>Metapackage:</dt>
+<dd>A conda package that only lists dependencies, and does not include any functional programs of libraries itself. The metapackage may contain links to software files that will be automatically downloaded when executed. An example of a metapackage is ‘anaconda’, which collects together all the packages in the Anaconda installer, thus, ‘conda create -n envname anaconda’ will create an environment that exactly matches what would be created from the Anaconda installer.</dd>
+<dt>Miniconda:</dt>
+<dd>A minimal installer for conda. Like Anaconda, Miniconda is a free software package that includes the Anaconda distribution of Python and the conda package and environment manager and the packages they depend on, but Miniconda does not include any other packages. After Miniconda is installed, additional conda packages may be installed directly from the command line with &#8216;conda install&#8217;. See also Anaconda and conda.</dd>
+<dt>Noarch package:</dt>
+<dd>A conda package that contains nothing specific to any system architecture, so it may be installed from any system. When conda does a search for packages on any system in a channel, conda always checks both the system-specific subdirectory, for example, &#8220;linux-64&#8221; <em>and</em> the <code class="docutils literal"><span class="pre">noarch</span></code> directory.</dd>
+<dt>Repository:</dt>
+<dd>Any storage location from which software software assets may be retrieved and installed on a local computer. See also Anaconda Cloud and conda repository.</dd>
+</dl>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="commands.html" class="btn btn-neutral float-right" title="Command reference" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="help/help.html" class="btn btn-neutral" title="Help &amp; reference" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Continuum Analytics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:' ',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

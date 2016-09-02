@@ -1,0 +1,101 @@
+
+.. _render_ref:
+
+conda render
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda render
+   
+   DESCRIPTION
+          usage: conda-render [-h] [-V] [-n] [--output] [--python PYTHON_VER]
+   
+          [--perl PERL_VER] [--numpy NUMPY_VER] [--R R_VER]
+                 [--lua  LUA_VER]  [-c  CHANNEL]  [--override-channels] [-f FILE]
+                 [--verbose] RECIPE_PATH
+   
+          Tool for building conda packages. A conda package is a  binary  tarball
+          containing system-level libraries, Python modules, executable programs,
+          or other components. conda keeps track of dependencies between packages
+          and platform specifics, making it simple to create working environments
+          from
+   
+                 different sets of packages.
+   
+   OPTIONS
+      positional arguments:
+          RECIPE_PATH
+                 Path to recipe directory.
+   
+      optional arguments:
+          -h, --help
+                 Show this help message and exit.
+   
+          -V, --version
+                 Show the conda-build version number and exit.
+   
+          -n, --no-source
+                 When templating can't be completed, do not obtain the source  to
+                 try fill in related template variables.
+   
+          --output
+                 Output the conda package filename which would have been created
+   
+          --python PYTHON_VER
+                 Set the Python version used by conda build. Can be passed multi‐
+                 ple times to build against multiple versions. Can  be  'all'  to
+                 build  against  all known versions (['2.6', '2.7', '3.3', '3.4',
+                 '3.5'])
+   
+          --perl PERL_VER
+                 Set the Perl version used by conda build. Can be passed multiple
+                 times to build against multiple versions.
+   
+          --numpy NUMPY_VER
+                 Set  the NumPy version used by conda build. Can be passed multi‐
+                 ple times to build against multiple versions. Can  be  'all'  to
+                 build  against  all known versions (['1.6', '1.7', '1.8', '1.9',
+                 '1.10', '1.11'])
+   
+          --R R_VER
+                 Set the R version used by conda build. Can  be  passed  multiple
+                 times to build against multiple versions.
+   
+          --lua LUA_VER
+                 Set  the  Lua version used by conda build. Can be passedmultiple
+                 times to build against multiple versions (['all', '2.0',  '5.1',
+                 '5.2', '5.3']).
+   
+          -c CHANNEL, --channel CHANNEL
+                 Additional  channel  to  search  for  packages.  These  are URLs
+                 searched in the order they  are  given  (including  file://  for
+                 local directories). Then, the defaults or channels from .condarc
+                 are searched (unless --override-channels is given). You can  use
+                 'defaults'  to  get the default packages for conda, and 'system'
+                 to get the system  packages,  which  also  takes  .condarc  into
+                 account.  You  can  also  use  any  name  and the .condarc chan‐
+                 nel_alias value will be prepended. The default channel_alias  is
+                 http://conda.anaconda.org/.
+   
+          --override-channels
+                 Do not search default or .condarc channels. Requires --channel.
+   
+          -f FILE, --file FILE
+                 write  YAML to file, given as argument here. Overwrites existing
+                 files.
+   
+          --verbose
+                 Enable verbose output from download tools and progress updates
+   
+   
+   
+   Continuum Analytics             September 2016                        <B>CONDA(1)</B>
+   </PRE>

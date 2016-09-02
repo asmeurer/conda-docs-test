@@ -1,0 +1,57 @@
+
+.. _inspect objects_ref:
+
+conda inspect objects
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda inspect objects
+   
+   DESCRIPTION
+          usage: conda-inspect objects [-h] [--untracked]
+   
+          [--groupby {filename,filetype,rpath}] [--all]
+                 [-n ENVIRONMENT | -p PATH] [packages [packages ...]]
+   
+          Investigate binary object files in a package (only works on OS X). This
+          is an advanced command to aid  building  packages  that  have  compiled
+          libraries.  Aggregates  the  output  of  otool on all the binary object
+          files in a package.
+   
+   OPTIONS
+      positional arguments:
+          packages
+                 Conda packages to inspect.
+   
+      optional arguments:
+          -h, --help
+                 Show this help message and exit.
+   
+          --untracked
+                 Inspect the untracked files in the environment. This  is  useful
+                 when used in conjunction with conda build --build-only.
+   
+          --groupby {filename,filetype,rpath}
+                 Attribute to group by (default: filename).
+   
+          --all  Generate a report for all packages in the environment.
+   
+          -n ENVIRONMENT, --name ENVIRONMENT
+                 Name of environment (in envs dirs).
+   
+          -p PATH, --prefix PATH
+                 Full  path to environment prefix (default: envs dirs/build-envi‐
+                 ronment).
+   
+   
+   
+   Continuum Analytics             September 2016                        <B>CONDA(1)</B>
+   </PRE>

@@ -1,0 +1,58 @@
+
+.. _env update_ref:
+
+conda env update
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda env update
+   
+   DESCRIPTION
+          usage:  conda-env  update  [-h]  [-n  NAME]  [-f  FILE]  [--prune] [-q]
+          [--json]
+   
+                 [remote_definition]
+   
+          Update the current environment based on environment file
+   
+   OPTIONS
+      positional arguments:
+          remote_definition
+                 remote environment definition / IPython notebook
+   
+      optional arguments:
+          -h, --help
+                 Show this help message and exit.
+   
+          -n NAME, --name NAME
+                 name of environment (in envs dirs)
+   
+          -f FILE, --file FILE
+                 environment definition (default: environment.yml)
+   
+          --prune
+                 remove installed packages not defined in environment.yml
+   
+          -q, --quiet
+   
+          --json
+                 Report all output as json. Suitable for using conda programmati‐
+                 cally.
+   
+      examples:
+                 conda  env  update  conda  env  update  -n=foo  conda env update
+                 -f=/path/to/environment.yml   conda   env   update    --name=foo
+                 --file=environment.yml conda env update vader/deathstar
+   
+   
+   
+   Continuum Analytics             September 2016                        <B>CONDA(1)</B>
+   </PRE>

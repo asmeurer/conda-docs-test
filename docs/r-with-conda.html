@@ -1,0 +1,268 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using R with conda &mdash; Conda   documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Conda   documentation" href="index.html"/>
+        <link rel="up" title="Using conda" href="using/index.html"/>
+        <link rel="next" title="Using Microsoft R Open" href="mro.html"/>
+        <link rel="prev" title="Managing conda channels" href="channels.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                 
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="get-started.html">Get started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="using/index.html">Using conda</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="using/using.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using/envs.html">Managing environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="py2or3.html">Managing Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using/pkgs.html">Managing packages</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Using R with conda</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-install-r-essentials">How to install &#8220;R Essentials&#8221;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-and-share-your-own-custom-r-bundle">Create and share your own custom R bundle</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mro.html">Using Microsoft R Open</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="building/build.html">Building packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/help.html">Help &amp; reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-involved.html">Get involved</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Conda</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="using/index.html">Using conda</a> &raquo;</li>
+      
+    <li>Using R with conda</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/conda/conda-docs/blob/master/docs/source/r-with-conda.rst" class="fa fa-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-r-with-conda">
+<h1>Using R with conda<a class="headerlink" href="#using-r-with-conda" title="Permalink to this headline">¶</a></h1>
+<p>For Linux, OS X and Windows</p>
+<p>If you have conda installed, you can easily install the R programming language and over 80 of the most used R packages for data science with one command. Conda helps you keep your packages and dependencies up to date. You can also easily create and share your own custom R packages.</p>
+<p>R-Essentials works very much like Anaconda:</p>
+<ul class="simple">
+<li>Installs all of the most popular packages with all of their dependencies with one command: <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">r</span> <span class="pre">r-essentials</span></code></li>
+<li>Update all of the packages and their dependencies with one command: <code class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">-c</span> <span class="pre">r</span> <span class="pre">r-essentials</span></code></li>
+<li>Update a single package in R-Essentials (if a new version of  the package is available in the R channel) with the command <code class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">r-XXXX</span></code></li>
+</ul>
+<div class="section" id="how-to-install-r-essentials">
+<h2>How to install &#8220;R Essentials&#8221;<a class="headerlink" href="#how-to-install-r-essentials" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="https://www.continuum.io/downloads">Download and install Anaconda</a></li>
+<li>Install the R Essentials package into the current environment: <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">r</span> <span class="pre">r-essentials</span></code></li>
+</ol>
+</div>
+<div class="section" id="create-and-share-your-own-custom-r-bundle">
+<h2>Create and share your own custom R bundle<a class="headerlink" href="#create-and-share-your-own-custom-r-bundle" title="Permalink to this headline">¶</a></h2>
+<p>Building and sharing your own custom R bundles with others is like building and sharing conda packages.</p>
+<p>For example, create a simple custom R bundle meta-package named &#8220;Custom-R-Bundle&#8221; containing several popular programs and their dependencies with the command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">metapackage</span> <span class="n">custom</span><span class="o">-</span><span class="n">r</span><span class="o">-</span><span class="n">bundle</span> <span class="mf">0.1</span><span class="o">.</span><span class="mi">0</span> <span class="o">--</span><span class="n">dependencies</span> <span class="n">r</span><span class="o">-</span><span class="n">irkernel</span> <span class="n">jupyter</span> <span class="n">r</span><span class="o">-</span><span class="n">ggplot2</span> <span class="n">r</span><span class="o">-</span><span class="n">dplyr</span> <span class="o">--</span><span class="n">summary</span> <span class="s2">&quot;My custom R bundle&quot;</span>
+</pre></div>
+</div>
+<p>Now you can easily share your new meta-package with friends and colleagues by uploading it to your channel on <a class="reference external" href="https://anaconda.org">Anaconda Cloud</a>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">anaconda</span><span class="o">-</span><span class="n">client</span>
+<span class="n">anaconda</span> <span class="n">login</span>
+<span class="n">anaconda</span> <span class="n">upload</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">custom</span><span class="o">-</span><span class="n">r</span><span class="o">-</span><span class="n">bundle</span><span class="o">-</span><span class="mf">0.1</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="mf">0.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
+</pre></div>
+</div>
+<p>Your friends and colleagues now have access to your Custom-R-Bundle from any computer with the command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">anaconda</span><span class="o">.</span><span class="n">org</span> <span class="n">username</span><span class="o">&gt;</span> <span class="n">custom</span><span class="o">-</span><span class="n">r</span><span class="o">-</span><span class="n">bundle</span>
+</pre></div>
+</div>
+<p>For more information, see Christine Doig&#8217;s blog post <a class="reference external" href="https://www.continuum.io/blog/developer/jupyter-and-conda-r">Jupyter and conda for R language</a>.</p>
+<p>Next, let&#8217;s look at <a class="reference internal" href="mro.html"><span class="doc">Using Microsoft R Open</span></a>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mro.html" class="btn btn-neutral float-right" title="Using Microsoft R Open" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="channels.html" class="btn btn-neutral" title="Managing conda channels" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Continuum Analytics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:' ',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

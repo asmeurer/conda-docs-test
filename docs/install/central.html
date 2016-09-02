@@ -1,0 +1,448 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Centralized installation &mdash; Conda   documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Conda   documentation" href="../index.html"/>
+        <link rel="up" title="Installation" href="../installation.html"/>
+        <link rel="next" title="Test drive" href="../test-drive.html"/>
+        <link rel="prev" title="Tab Completion" href="tab-completion.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                 
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../get-started.html">Get started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../intro.html">Intro to conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../download.html">Download conda</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../installation.html">Installation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="quick.html">Quick install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="full.html">Full installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../config.html">Configuration</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Centralized installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#system-configuration-settings">System configuration settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-admin-controlled-installation">Example admin-controlled installation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../test-drive.html">Test drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using/cheatsheet.html">Conda cheat sheet</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../using/index.html">Using conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building/build.html">Building packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/help.html">Help &amp; reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get-involved.html">Get involved</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Conda</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../get-started.html">Get started</a> &raquo;</li>
+      
+          <li><a href="../installation.html">Installation</a> &raquo;</li>
+      
+    <li>Centralized installation</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/conda/conda-docs/blob/master/docs/source/install/central.rst" class="fa fa-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="centralized-installation">
+<h1><a class="toc-backref" href="#id1">Centralized installation</a><a class="headerlink" href="#centralized-installation" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#centralized-installation" id="id1">Centralized installation</a><ul>
+<li><a class="reference internal" href="#overview" id="id2">Overview</a></li>
+<li><a class="reference internal" href="#system-configuration-settings" id="id3">System configuration settings</a><ul>
+<li><a class="reference internal" href="#allow-other-channels-allow-other-channels" id="id4">Allow other channels (allow_other_channels)</a></li>
+<li><a class="reference internal" href="#default-channels-default-channels" id="id5">Default channels (default_channels)</a></li>
+<li><a class="reference internal" href="#ssl-verification-ssl-verify" id="id6">SSL verification (ssl_verify)</a></li>
+<li><a class="reference internal" href="#offline-mode-only-offline" id="id7">Offline mode only (offline)</a></li>
+<li><a class="reference internal" href="#channel-alias-channel-alias" id="id8">Channel alias (channel_alias)</a></li>
+<li><a class="reference internal" href="#disallow-installation-of-specific-packages-disallow" id="id9">Disallow installation of specific packages (disallow)</a></li>
+<li><a class="reference internal" href="#add-anaconda-org-token-to-automatically-see-private-packages-add-anaconda-token" id="id10">Add Anaconda.org token to automatically see private packages (add_anaconda_token)</a></li>
+<li><a class="reference internal" href="#specify-environment-directories-envs-dirs" id="id11">Specify environment directories (envs_dirs)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#example-admin-controlled-installation" id="id12">Example admin-controlled installation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="overview">
+<h2><a class="toc-backref" href="#id2">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Administrators who wish to restrict what programs users can install may do so with a system configuration file,
+or .condarc that follows the simple <a class="reference external" href="http://docs.ansible.com/YAMLSyntax.html">YAML syntax</a>. The system
+configuration file overrides any  .condarc configuration files installed by the user.</p>
+<p>By default, conda and all packages it installs, including Anaconda, are installed locally with a user-specific
+configuration. Administrative privileges are not required, and no upstream files or other users are affected by
+the installation.</p>
+<p>An administrator may make conda and any number of packages available to a group of one or more users, while
+still preventing these users from installing unwanted packages with conda. To do this, the administrator installs
+conda and the packages, if any, in a location that is controlled by the administrator and accessible by the users.</p>
+<p>Each user may then use the central conda installation, which will read settings from their own &#8220;user&#8221; .condarc configuration file
+located in their home directory. The users&#8217; configuration is limited by the second &#8220;system&#8221; .condarc
+file, and the path to it is the same as the root environment prefix displayed by <code class="docutils literal"><span class="pre">conda</span> <span class="pre">info</span></code>, as shown in the <a class="reference internal" href="#admin-inst"><span class="std std-ref">Example admin-controlled installation</span></a>
+below.</p>
+<p>The system configuration settings are commonly used in a system configuration file, although they may also be used in a
+user configuration file.  All user configuration settings may also be used in a system configuration file.</p>
+<p>See also: <a class="reference internal" href="../config.html"><span class="doc">Conda configuration file</span></a>.</p>
+</div>
+<div class="section" id="system-configuration-settings">
+<h2><a class="toc-backref" href="#id3">System configuration settings</a><a class="headerlink" href="#system-configuration-settings" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="allow-other-channels-allow-other-channels">
+<h3><a class="toc-backref" href="#id4">Allow other channels (allow_other_channels)</a><a class="headerlink" href="#allow-other-channels-allow-other-channels" title="Permalink to this headline">¶</a></h3>
+<p>The administrative system configuration .condarc may specify a set of allowed channels, and may allow the
+users to install packages from other channels with the boolean flag allow_other_channels.  The default is
+True.</p>
+<p>If allow_other_channels is set to false, only those channels explicitly specified in the administrative
+.condarc file are allowed:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">allow_other_channels</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+</pre></div>
+</div>
+<p>When set to true or not specified, then each user will have access to the default channels and to any
+channels that the user specifies in their local .condarc file. If the user specifies other channels, the
+other channels will be blocked and the user will receive a message explaining this. See example below.</p>
+<p>If the system .condarc  file specifies a channel_alias, it will override any channel aliases set in users&#8217;
+.condarc  files. See channel alias below.</p>
+</div>
+<div class="section" id="default-channels-default-channels">
+<h3><a class="toc-backref" href="#id5">Default channels (default_channels)</a><a class="headerlink" href="#default-channels-default-channels" title="Permalink to this headline">¶</a></h3>
+<p>Normally the default repository is repo.continuum.io, but if default_channels is
+defined it will set the new list of default channels. This is especially useful
+for air gap and enterprise installations.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">channels</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">&lt;anaconda_dot_org_username&gt;</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">http://some.custom/channel</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">file:///some/local/directory</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">defaults</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ssl-verification-ssl-verify">
+<span id="ssl-verification"></span><h3><a class="toc-backref" href="#id6">SSL verification (ssl_verify)</a><a class="headerlink" href="#ssl-verification-ssl-verify" title="Permalink to this headline">¶</a></h3>
+<p>If you are behind a proxy that does SSL inspection such as a Cisco IronPort Web Security Appliance (WSA),
+it may be necessary to override the SSL verification settings using <code class="docutils literal"><span class="pre">ssl_verify</span></code>.</p>
+<p>By default this variable is <code class="docutils literal"><span class="pre">True</span></code>, ssl verification is used and conda verifies
+certificates for SSL connections. The variable can be set to <code class="docutils literal"><span class="pre">False</span></code>, but this
+disables the connection&#8217;s normal security and is not recommended.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ssl_verify</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">ssl_verify</span></code> can also be set to a string path to a certificate to be used to verify SSL connections.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ssl_verify</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">corp.crt</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="offline-mode-only-offline">
+<h3><a class="toc-backref" href="#id7">Offline mode only (offline)</a><a class="headerlink" href="#offline-mode-only-offline" title="Permalink to this headline">¶</a></h3>
+<p>Offline mode filters out all channels URLs which do not start with <code class="docutils literal"><span class="pre">file:</span></code>. The default is False.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">offline</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="channel-alias-channel-alias">
+<h3><a class="toc-backref" href="#id8">Channel alias (channel_alias)</a><a class="headerlink" href="#channel-alias-channel-alias" title="Permalink to this headline">¶</a></h3>
+<p>Alias for non-url channels used with the -c or &#8211;channel flag. The default is <code class="docutils literal"><span class="pre">https://conda.anaconda.org/</span></code></p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">channel_alias</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://your.repo/</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="disallow-installation-of-specific-packages-disallow">
+<h3><a class="toc-backref" href="#id9">Disallow installation of specific packages (disallow)</a><a class="headerlink" href="#disallow-installation-of-specific-packages-disallow" title="Permalink to this headline">¶</a></h3>
+<p>Package specifications to disallow installing. The default is to allow all packages.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">disallow</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">anaconda</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-anaconda-org-token-to-automatically-see-private-packages-add-anaconda-token">
+<h3><a class="toc-backref" href="#id10">Add Anaconda.org token to automatically see private packages (add_anaconda_token)</a><a class="headerlink" href="#add-anaconda-org-token-to-automatically-see-private-packages-add-anaconda-token" title="Permalink to this headline">¶</a></h3>
+<p>When the channel alias is Anaconda.org or an Anaconda Server GUI, the system configuration file can be set so users
+automatically see private packages. (Anaconda.org was formerly known as binstar.org.)
+This uses the anaconda command line client (which can be installed with <code class="docutils literal"><span class="pre">conda</span>
+<span class="pre">install</span> <span class="pre">anaconda-client</span></code>) to automatically add the token to the channel urls.</p>
+<p>The default is True.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">add_anaconda_token</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+</pre></div>
+</div>
+<p>NOTE: Even when set to True, this is enabled only if the anaconda command line client is installed and you
+are logged in with the <code class="docutils literal"><span class="pre">anaconda</span> <span class="pre">login</span></code> command.</p>
+</div>
+<div class="section" id="specify-environment-directories-envs-dirs">
+<h3><a class="toc-backref" href="#id11">Specify environment directories (envs_dirs)</a><a class="headerlink" href="#specify-environment-directories-envs-dirs" title="Permalink to this headline">¶</a></h3>
+<p>Specify directories in which environments are located. If this key is set, the root prefix envs_dir is not used
+unless explicitly included. This key also determines where the package caches will be located.</p>
+<p>For each <code class="docutils literal"><span class="pre">envs</span></code> here, <code class="docutils literal"><span class="pre">envs/pkgs</span></code> will be used as the pkgs cache, except for the standard envs directory
+in the root directory, for which the normal <code class="docutils literal"><span class="pre">root_dir/pkgs</span></code> is used. The <code class="docutils literal"><span class="pre">CONDA_ENVS_PATH</span></code> environment
+variable will overwrite this configuration file setting.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">envs_dirs</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">~/my-envs</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/opt/anaconda/envs</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><strong>Linux, OS X:</strong> <code class="docutils literal"><span class="pre">CONDA_ENVS_PATH=~/my-envs:/opt/anaconda/envs</span></code></li>
+<li><strong>Windows:</strong> <code class="docutils literal"><span class="pre">set</span> <span class="pre">CONDA_ENVS_PATH=C:\Users\joe\envs;C:\Anaconda\envs</span></code></li>
+</ul>
+</div>
+</div>
+<div class="section" id="example-admin-controlled-installation">
+<span id="admin-inst"></span><h2><a class="toc-backref" href="#id12">Example admin-controlled installation</a><a class="headerlink" href="#example-admin-controlled-installation" title="Permalink to this headline">¶</a></h2>
+<p>In the following example, we take a look at the system configuration file, review the settings,
+compare it to the user&#8217;s configuration file, and see what happens when the user attempts to access a
+file from a channel that is blocked. We then show how the user must modify their configuration file to
+access the channels allowed by the administrator.</p>
+<p><strong>System configuration file</strong></p>
+<p>The system configuration file must be located in the top-level conda installation directory. So first we
+check to see the path where conda is located:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>which conda
+/tmp/miniconda/bin/conda
+</pre></div>
+</div>
+<p>Now we can look at the contents of the .condarc file located in the administrator&#8217;s directory:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>cat /tmp/miniconda/.condarc
+</pre></div>
+</div>
+<p>This administrative .condarc file sets allow_other_channels to false, and specifies that users may
+download packages from only the &#8216;admin&#8217; channel:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>cat /tmp/miniconda/.condarc
+allow_other_channels : false
+channel_alias: https://conda.anaconda.org/
+channels:
+  - admin
+</pre></div>
+</div>
+<p>Because <code class="docutils literal"><span class="pre">allow_other_channels</span></code> is false and the channel &#8216;defaults&#8217; are not explicitly specified, users
+are disallowed from downloading packages from the default channels. We will check this in the next step.</p>
+<p>Note: The admin channel can also be expressed as <a class="reference external" href="https://conda.anaconda.org/admin/">https://conda.anaconda.org/admin/</a></p>
+<p><strong>User configuration file</strong></p>
+<p>Let&#8217;s check to see where the user&#8217;s conda install is located:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>conda info
+Current conda install:
+. . .
+       channel URLs : http://repo.continuum.io/pkgs/free/osx-64/
+                      http://repo.continuum.io/pkgs/pro/osx-64/
+        config file : /Users/gergely/.condarc
+</pre></div>
+</div>
+<p>The &#8216;conda info&#8217; command shows us that conda is using the user&#8217;s .condarc file, located at
+<code class="docutils literal"><span class="pre">/Users/gergely/.condarc</span></code> and that the default channels such as <code class="docutils literal"><span class="pre">repo.continuum.io</span></code> are
+listed as channel URLs.</p>
+<p>Now let&#8217;s look at the contents of the administrative .condarc file located in that directory:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>cat ~/.condarc
+channels:
+  - defaults
+</pre></div>
+</div>
+<p>This user&#8217;s .condarc file specifies only the default channels.</p>
+<p>But the administrator config file has blocked default channels by specifying that only &#8220;admin&#8221; is
+allowed. If this user attempts to search for  a package in the default channels, they will see a
+message telling them what channels are allowed:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>conda search flask
+Fetching package metadata:
+Error: URL <span class="s1">&#39;http://repo.continuum.io/pkgs/pro/osx-64/&#39;</span> not in allowed channels.
+Allowed channels are:
+ - https://conda.anaconda.org/admin/osx-64/
+</pre></div>
+</div>
+<p>This error message tells the user to add the &#8220;admin&#8221; channel to their configuration file.</p>
+<p>Conclusion: The user must edit their local .condarc configuration file to access the package
+through the admin channel:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">channels</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">admin</span>
+</pre></div>
+</div>
+<p>Now the user can search for packages in the allowed admin channel.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../test-drive.html" class="btn btn-neutral float-right" title="Test drive" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tab-completion.html" class="btn btn-neutral" title="Tab Completion" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Continuum Analytics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:' ',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

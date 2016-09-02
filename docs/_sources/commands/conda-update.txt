@@ -1,0 +1,150 @@
+
+.. _update_ref:
+
+conda update
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda update
+   
+   DESCRIPTION
+          usage:   conda   update   [-h]  [-y]  [--dry-run]  [-f]  [--file  FILE]
+          [--no-deps] [-m]
+   
+          [--use-index-cache] [--use-local] [--offline] [--no-pin]
+                 [-c CHANNEL] [--override-channels] [-n ENVIRONMENT  |  -p  PATH]
+                 [-q]      [--copy]      [--alt-hint]     [--update-dependencies]
+                 [--no-update-dependencies]   [--channel-priority]    [--no-chan‐
+                 nel-priority]   [--show-channel-urls]   [--no-show-channel-urls]
+                 [--json] [--all] [package_spec [package_spec ...]]
+   
+          Updates conda packages to the latest compatible version.
+   
+          This command accepts a list of package names and updates  them  to  the
+          latest  versions  that  are  compatible  with all other packages in the
+          environment.
+   
+          Conda attempts to install the newest versions of  the  requested  pack‐
+          ages.  To accomplish this, it may update some packages that are already
+          installed, or install additional packages. To prevent existing packages
+          from updating, use the --no-update-deps option. This may force conda to
+          install older versions of the requested packages, and it does not  pre‐
+          vent additional dependency packages from being installed.
+   
+          If  you  wish to skip dependency checking altogether, use the '--force'
+          option. This may result in an environment with  incompatible  packages,
+          so this option must be used with great caution.
+   
+   OPTIONS
+      positional arguments:
+          package_spec
+                 Packages to update in the conda environment.
+   
+      optional arguments:
+          -h, --help
+                 Show this help message and exit.
+   
+          -y, --yes
+                 Do not ask for confirmation.
+   
+          --dry-run
+                 Only display what would have been done.
+   
+          -f, --force
+                 Force  install  (even  when  package already installed), implies
+                 --no-deps.
+   
+          --file FILE
+                 Read package versions from the given file. Repeated file  speci‐
+                 fications can be passed (e.g. --file=file1 --file=file2).
+   
+          --no-deps
+                 Do not install dependencies.
+   
+          -m, --mkdir
+                 Create the environment directory if necessary.
+   
+          --use-index-cache
+                 Use cache of channel index files.
+   
+          --use-local
+                 Use locally built packages.
+   
+          --offline
+                 Offline mode, don't connect to the Internet.
+   
+          --no-pin
+                 Ignore pinned file.
+   
+          -c CHANNEL, --channel CHANNEL
+                 Additional  channel  to  search  for  packages.  These  are URLs
+                 searched in the order they  are  given  (including  file://  for
+                 local directories). Then, the defaults or channels from .condarc
+                 are searched (unless --override-channels is given). You can  use
+                 'defaults'  to  get the default packages for conda, and 'system'
+                 to get the system  packages,  which  also  takes  .condarc  into
+                 account.  You  can  also  use  any  name  and the .condarc chan‐
+                 nel_alias value will be prepended. The default channel_alias  is
+                 http://conda.anaconda.org/.
+   
+          --override-channels
+                 Do not search default or .condarc channels. Requires --channel.
+   
+          -n ENVIRONMENT, --name ENVIRONMENT
+                 Name of environment (in envs dirs).
+   
+          -p PATH, --prefix PATH
+                 Full  path to environment prefix (default: envs dirs/build-envi‐
+                 ronment).
+   
+          -q, --quiet
+                 Do not display progress bar.
+   
+          --copy Install all packages using copies instead of hard- or soft-link‐
+                 ing.
+   
+          --alt-hint
+                 Use an alternate algorithm to generate an unsatisfiability hint.
+   
+          --update-dependencies, --update-deps
+                 Update dependencies (default: True).
+   
+          --no-update-dependencies, --no-update-deps
+                 Don't update dependencies (default: False).
+   
+          --channel-priority, --channel-pri, --chan-pri
+                 Channel priority takes precedence over package version (default:
+                 True). Note: This feature is in beta and may change in a  future
+                 release.
+   
+          --no-channel-priority, --no-channel-pri, --no-chan-pri
+                 Package version takes precedence over channel priority (default:
+                 False). Note: This feature is in beta and may change in a future
+                 release.
+   
+          --show-channel-urls
+                 Show channel urls (default: True).
+   
+          --no-show-channel-urls
+                 Don't show channel urls.
+   
+          --json Report all output as json. Suitable for using conda programmati‐
+                 cally.
+   
+          --all  Update all installed packages in the environment.
+   
+   EXAMPLES
+                 conda update -n myenv scipy
+   
+   
+   
+   Continuum Analytics             September 2016                        <B>CONDA(1)</B>
+   </PRE>

@@ -1,0 +1,47 @@
+
+.. _index_ref:
+
+conda index
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda index
+   
+   DESCRIPTION
+          usage: conda-index [-h] [-c] [-f] [-q] [--no-remove] [dir [dir ...]]
+   
+          Update package index metadata files in given directories.
+   
+   OPTIONS
+      positional arguments:
+          dir    Directory that contains an index to be updated.
+   
+      optional arguments:
+          -h, --help
+                 Show this help message and exit.
+   
+          -c, --check-md5
+                 Use  MD5 values instead of file modification times for determin‐
+                 ing if a package's metadata needs to be updated.
+   
+          -f, --force
+                 Force reading all files.
+   
+          -q, --quiet
+                 Don't show any output.
+   
+          --no-remove
+                 Don't remove entries for files that don't exist.
+   
+   
+   
+   Continuum Analytics             September 2016                        <B>CONDA(1)</B>
+   </PRE>

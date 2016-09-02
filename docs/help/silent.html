@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Silent installation &mdash; Conda   documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Conda   documentation" href="../index.html"/>
+        <link rel="up" title="FAQ" href="../faq.html"/>
+        <link rel="next" title="Using conda with Travis CI" href="../travis.html"/>
+        <link rel="prev" title="Test drive" href="../using/test-drive.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                 
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../get-started.html">Get started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using/index.html">Using conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building/build.html">Building packages</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="help.html">Help &amp; reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../using/cheatsheet.html">Conda cheat sheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands.html">Command reference</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../faq.html">FAQ</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../faq.html#general-questions">General questions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html#getting-help">Getting help</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html#searching-info">Searching &amp; info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html#managing-packages">Managing Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html#managing-environments">Managing Environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html#customization-condarc-file">Customization (.condarc file)</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../faq.html#conda-build-and-recipes">Conda build and recipes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../redirects.html">Redirects</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Silent installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../travis.html">Using conda with Travis CI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda-pip-virtualenv-translator.html">conda vs. pip vs. virtualenv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../winxp-proxy.html">Windows XP with proxy configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html#pinning-packages">Pinning packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html#conda-pip-and-virtualenv">Conda, pip, and virtualenv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html#silent-installation">Silent installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html#using-conda-with-travis-ci">Using conda with Travis CI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html#windows-xp-with-proxy-configuration">Windows XP with proxy configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support.html">Support options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html">Conda changelog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../license.html">Conda license</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../get-involved.html">Get involved</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Conda</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="help.html">Help &amp; reference</a> &raquo;</li>
+      
+          <li><a href="../faq.html">FAQ</a> &raquo;</li>
+      
+    <li>Silent installation</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/conda/conda-docs/blob/master/docs/source/help/silent.rst" class="fa fa-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="silent-installation">
+<h1>Silent installation<a class="headerlink" href="#silent-installation" title="Permalink to this headline">¶</a></h1>
+<p>Silent installation of Miniconda or Anaconda can be used for deployment or testing or building services such as Travis CI and
+Appveyor. In silent mode, screen prompts are not shown on screen and default settings are automatically accepted.</p>
+<p>NOTE: These instructions are written for Miniconda, but you can substitute &#8220;Anaconda&#8221; if you are using that version.</p>
+<p>We recommend starting with the latest version of Miniconda or Anaconda. Check to be sure your version
+is up to date with a simple:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">conda update conda</span>
+</pre></div>
+</div>
+<div class="section" id="windows">
+<h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
+<p>The Windows installer of Miniconda can be run in silent mode using
+the <code class="docutils literal"><span class="pre">/S</span></code> argument. The following optional arguments are supported:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">/InstallationType=[JustMe|AllUsers]</span></code>, default: <code class="docutils literal"><span class="pre">JustMe</span></code></li>
+<li><code class="docutils literal"><span class="pre">/AddToPath=[0|1]</span></code>, default: <code class="docutils literal"><span class="pre">1</span></code></li>
+<li><code class="docutils literal"><span class="pre">/RegisterPython=[0|1]</span></code>, make this the system&#8217;s default Python, default: <code class="docutils literal"><span class="pre">0</span></code> (Just me), <code class="docutils literal"><span class="pre">1</span></code> (All users)</li>
+<li><code class="docutils literal"><span class="pre">/S</span></code></li>
+<li><code class="docutils literal"><span class="pre">/D=&lt;installation</span> <span class="pre">path&gt;</span></code></li>
+</ul>
+<p>All arguments are case-sensitive. The installation path must be the last
+argument and should <strong>NOT</strong> be wrapped in quotation marks. When using silent
+installation with <code class="docutils literal"><span class="pre">/S</span></code> you must also specify a destination installation path
+with <code class="docutils literal"><span class="pre">/D</span></code>.</p>
+<p>The following command installs Miniconda for the current user without
+registering Python as the system&#8217;s default:</p>
+<div class="highlight-bat"><div class="highlight"><pre><span></span><span class="k">start</span> /wait <span class="s2">&quot;&quot;</span> Miniconda4-latest-Windows-x86_64.exe /InstallationType=JustMe /RegisterPython=0 /S /D=<span class="nv">%UserProfile%</span>\Miniconda3
+</pre></div>
+</div>
+</div>
+<div class="section" id="linux-and-os-x">
+<h2>Linux and OS X<a class="headerlink" href="#linux-and-os-x" title="Permalink to this headline">¶</a></h2>
+<p>Silent installation of Miniconda for Linux and OS X is a simple as specifying the <code class="docutils literal"><span class="pre">-b</span></code> and <code class="docutils literal"><span class="pre">-p</span></code> arguments of the
+bash installer. The following arguments are supported:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">-b</span></code>, batch mode</li>
+<li><code class="docutils literal"><span class="pre">-p</span></code>, installation prefix/path</li>
+<li><code class="docutils literal"><span class="pre">-f</span></code>, force installation even if prefix <code class="docutils literal"><span class="pre">-p</span></code> already exists</li>
+</ul>
+<p>Batch mode assumes that you agree to the license agreement, and it does not
+edit the .bashrc or .bash_profile files.</p>
+<p>A complete example:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>wget http://repo.continuum.io/miniconda/Miniconda3-3.7.0-Linux-x86_64.sh -O ~/miniconda.sh
+bash ~/miniconda.sh -b -p <span class="nv">$HOME</span>/miniconda
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/miniconda/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../travis.html" class="btn btn-neutral float-right" title="Using conda with Travis CI" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../using/test-drive.html" class="btn btn-neutral" title="Test drive" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Continuum Analytics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:' ',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

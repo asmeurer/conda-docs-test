@@ -1,0 +1,485 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Conda package specification &mdash; Conda   documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Conda   documentation" href="index.html"/>
+        <link rel="up" title="Building conda packages" href="building/bpp.html"/>
+        <link rel="next" title="Using shared libraries" href="building/shared-libraries.html"/>
+        <link rel="prev" title="Pre/Post link/unlink scripts" href="building/build-scripts.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                 
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="get-started.html">Get started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using/index.html">Using conda</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="building/build.html">Building packages</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="build_tutorials.html">Build tutorials</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="building/bpp.html">Building conda packages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="building/recipe.html">Conda build recipes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="building/pkg-name-conv.html">Package naming conventions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="building/meta-pkg.html">Metapackages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="building/dirs.html">Directory structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="building/meta-yaml.html">The meta.yaml file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="building/environment-vars.html">Environment variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="building/build-scripts.html">Pre/Post link/unlink scripts</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Conda package specification</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#package-metadata">Package metadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#link-and-unlink-scripts">Link and unlink scripts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#repository-structure-and-index">Repository structure and index</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#package-match-specifications">Package match specifications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="building/shared-libraries.html">Using shared libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom-channels.html">Custom channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signed-packages.html">Signing conda packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bdist_conda.html">Bdist_conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building/sample-recipes.html">Sample recipes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="help/help.html">Help &amp; reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-involved.html">Get involved</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Conda</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="building/build.html">Building packages</a> &raquo;</li>
+      
+          <li><a href="building/bpp.html">Building conda packages</a> &raquo;</li>
+      
+    <li>Conda package specification</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/conda/conda-docs/blob/master/docs/source/spec.rst" class="fa fa-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="conda-package-specification">
+<h1><a class="toc-backref" href="#id2">Conda package specification</a><a class="headerlink" href="#conda-package-specification" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#conda-package-specification" id="id2">Conda package specification</a><ul>
+<li><a class="reference internal" href="#package-metadata" id="id3">Package metadata</a></li>
+<li><a class="reference internal" href="#link-and-unlink-scripts" id="id4">Link and unlink scripts</a></li>
+<li><a class="reference internal" href="#repository-structure-and-index" id="id5">Repository structure and index</a></li>
+<li><a class="reference internal" href="#package-match-specifications" id="id6">Package match specifications</a><ul>
+<li><a class="reference internal" href="#examples" id="id7">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>A conda package is a bzipped tar archive (<code class="docutils literal"><span class="pre">.tar.bz2</span></code>) which contains
+metadata under the <code class="docutils literal"><span class="pre">info/</span></code> directory, and a collection of files which are
+installed directly into an install prefix.  The format is identical across
+platforms and operating systems.  It is important to note that during the
+install process, all files are basically just extracted into the install
+prefix, with the exception of the ones in <code class="docutils literal"><span class="pre">info/</span></code>.  Installing a conda
+package into an environment may be roughly thought of as executing the
+following command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ cd &lt;environment prefix&gt;
+$ tar xjf some-package-1.0-0.tar.bz2
+</pre></div>
+</div>
+<p>However, it should be noted that only files (including symbolic
+links) are part of a conda package, and not directories.  Directories
+are created and removed as needed, but you cannot create an empty directory
+from the tar archive directly.</p>
+<p>In the following, we describe the precise layout of the metadata contained in
+the <code class="docutils literal"><span class="pre">info/</span></code> directory and how it relates to the repository index
+(<code class="docutils literal"><span class="pre">repodata.json.bz</span></code>).</p>
+<div class="section" id="package-metadata">
+<span id="id1"></span><h2><a class="toc-backref" href="#id3">Package metadata</a><a class="headerlink" href="#package-metadata" title="Permalink to this headline">¶</a></h2>
+<p>All metadata about a package is contained under <code class="docutils literal"><span class="pre">info/</span></code>.  Files within this location are not installed under the install prefix. Though a package creator is free to add any file, conda will only inspect the content of the following files:</p>
+<p><code class="docutils literal"><span class="pre">info/index.json</span></code>: This file contains basic information about the package,
+such as name, version, build string, and dependencies.  The content of this
+file is what gets stored in the repository index file <code class="docutils literal"><span class="pre">repodata.json</span></code> (hence
+the name <code class="docutils literal"><span class="pre">index.json</span></code>).  The json object is a dictionary containing the
+following keys:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><code class="docutils literal"><span class="pre">name</span></code>: string</dt>
+<dd>The (lowercase) name of the package.  Note that this string
+may contain the <code class="docutils literal"><span class="pre">-</span></code> character.</dd>
+<dt><code class="docutils literal"><span class="pre">version</span></code>: string</dt>
+<dd>The package version, which may not contain <code class="docutils literal"><span class="pre">-</span></code>.
+Conda acknowledges <a class="reference external" href="https://www.python.org/dev/peps/pep-0440/">PEP 440</a>.</dd>
+<dt><code class="docutils literal"><span class="pre">build</span></code>: string</dt>
+<dd>The build string, which also may not contain <code class="docutils literal"><span class="pre">-</span></code>.
+The filename of the conda package is composed from these
+three values, that is <code class="docutils literal"><span class="pre">&lt;name&gt;-&lt;version&gt;-&lt;build&gt;.tar.bz2</span></code>.</dd>
+<dt><code class="docutils literal"><span class="pre">build_number</span></code>: integer</dt>
+<dd>A (non-negative) integer representing the build
+number of the package.</dd>
+<dt><code class="docutils literal"><span class="pre">depends</span></code>: list of strings</dt>
+<dd>List of dependency specifications, where each element is a string
+as outlined in <a class="reference internal" href="#build-version-spec"><span class="std std-ref">Package match specifications</span></a>.</dd>
+<dt><code class="docutils literal"><span class="pre">arch</span></code>: string (optional)</dt>
+<dd>The architecture the package is built for, e.g. <code class="docutils literal"><span class="pre">x86_64</span></code>.
+Conda currently does not do anything with this key.</dd>
+<dt><code class="docutils literal"><span class="pre">platform</span></code>: string (optional)</dt>
+<dd>The platform (OS) the package is built for, e.g. <code class="docutils literal"><span class="pre">osx</span></code>.
+Conda currently does not do anything with this key.  Packages for a
+specific architecture and platform are usually distinguished by the
+repository sub-directory they are contained in (see below).</dd>
+</dl>
+</div></blockquote>
+<p>The build string is used to differentiate builds of packages with otherwise
+the same name and version, e.g. a build with other dependencies (like Python
+3.4 instead of Python 2.7), a bug fix in the build process, or some different
+optional dependencies (MKL vs. ATLAS linkage), etc.  Nothing in conda actually
+inspects the build string&#8212;strings such as <code class="docutils literal"><span class="pre">np18py34_1</span></code> are only
+designed for human readability, but are never parsed by conda.</p>
+<p>Unlike the build sting, the build number is inspected by conda.
+It is used to sort packages (with otherwise same name and version) to
+determine the latest one.
+This is important, because new builds (bug fixes to the way a package is
+build) may be added to a repository.</p>
+<p><code class="docutils literal"><span class="pre">info/files</span></code>: This file lists all files which are part of the package
+itself (one per line), i.e. all files which need to get linked into the
+environment.  Any files in the package not listed in this file will not be
+linked when the package is installed.  The directory delimiter for the files
+in <code class="docutils literal"><span class="pre">info/files</span></code> should always be <code class="docutils literal"><span class="pre">/</span></code>, even on Windows.  This matches the
+directory delimiter used in the tarball.</p>
+<p><code class="docutils literal"><span class="pre">info/has_prefix</span></code>: This optional file lists all files that contain a
+hard-coded build prefix or placeholder prefix, which needs to be replaced by
+the install prefix at installation time. Note that due to the way the binary
+replacement works, the placeholder prefix must be longer than the install
+prefix.</p>
+<p>Each line of this file should either be a path, in which case it is considered
+a text file with the default placeholder, <code class="docutils literal"><span class="pre">/opt/anaconda1anaconda2anaconda3</span></code>,
+or a space-separated list of <code class="docutils literal"><span class="pre">placeholder</span></code>, <code class="docutils literal"><span class="pre">mode</span></code>, <code class="docutils literal"><span class="pre">path</span></code>, where
+<code class="docutils literal"><span class="pre">placeholder</span></code> is the build or placeholder prefix, <code class="docutils literal"><span class="pre">mode</span></code> is either <code class="docutils literal"><span class="pre">text</span></code>
+or <code class="docutils literal"><span class="pre">binary</span></code>, and <code class="docutils literal"><span class="pre">path</span></code> is the relative path of the file to be updated. For
+instance, on Linux or OS X</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">bin</span><span class="o">/</span><span class="n">script</span><span class="o">.</span><span class="n">sh</span>
+<span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="n">anaconda</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">_build</span> <span class="n">binary</span> <span class="nb">bin</span><span class="o">/</span><span class="n">binary</span>
+<span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="n">anaconda</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">_build</span> <span class="n">text</span> <span class="n">share</span><span class="o">/</span><span class="n">text</span>
+</pre></div>
+</div>
+<p>or on Windows</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;Scripts/script1.py&quot;</span>
+<span class="s2">&quot;C:\Users\username</span><span class="se">\a</span><span class="s2">naconda\envs\_build&quot;</span> <span class="n">text</span> <span class="s2">&quot;Scripts/script2.bat&quot;</span>
+<span class="s2">&quot;C:/Users/username/anaconda/envs/_build&quot;</span> <span class="n">binary</span> <span class="s2">&quot;Scripts/binary&quot;</span>
+</pre></div>
+</div>
+<p>Note the directory delimiter for the relative <code class="docutils literal"><span class="pre">path</span></code> must always be <code class="docutils literal"><span class="pre">/</span></code>,
+even on Windows. The placeholder may contain either <code class="docutils literal"><span class="pre">\</span></code> or <code class="docutils literal"><span class="pre">/</span></code> on Windows;
+the replacement prefix will match the delimiter used in the placeholder. (The
+default placeholder <code class="docutils literal"><span class="pre">/opt/anaconda1anaconda2anaconda3</span></code> is an exception, being
+replaced with the install prefix using the native path delimiter.) On Windows,
+the <code class="docutils literal"><span class="pre">placeholder</span></code> and <code class="docutils literal"><span class="pre">path</span></code> always appear in &#8220;quotes&#8221; to support paths
+with spaces.</p>
+<p><code class="docutils literal"><span class="pre">info/license.txt</span></code>: This optional file is the software license for the package.</p>
+<p><code class="docutils literal"><span class="pre">info/no_link</span></code>: This optional file lists all files which cannot be linked
+(either soft or hard) into environments, and are copied instead.</p>
+<p><code class="docutils literal"><span class="pre">info/about.json</span></code>: This optional file contains the entries in the <a class="reference internal" href="building/meta-yaml.html#about"><span class="std std-ref">About section</span></a> section
+of <a class="reference internal" href="building/meta-yaml.html"><span class="doc">The meta.yaml file</span></a> file. The following keys will be added to <code class="docutils literal"><span class="pre">info/about.json</span></code>
+if present in the build recipe</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">home</span>
+<span class="n">dev_url</span>
+<span class="n">doc_url</span>
+<span class="n">license_url</span>
+<span class="n">license</span>
+<span class="n">summary</span>
+<span class="n">description</span>
+<span class="n">license_family</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">info/recipe</span></code>: This directory will contain the full contents of the build recipe.</p>
+<blockquote>
+<div><p><code class="docutils literal"><span class="pre">meta.yaml.rendered</span></code>: This is the fully rendered build recipe. See <a class="reference internal" href="commands/build/conda-render.html"><span class="doc">conda render</span></a>.</p>
+<p>This directory is only present when the the <code class="docutils literal"><span class="pre">include_recipe</span></code> flag is true in the <a class="reference internal" href="building/meta-yaml.html#meta-build"><span class="std std-ref">Build section</span></a>.</p>
+</div></blockquote>
+</div>
+<div class="section" id="link-and-unlink-scripts">
+<h2><a class="toc-backref" href="#id4">Link and unlink scripts</a><a class="headerlink" href="#link-and-unlink-scripts" title="Permalink to this headline">¶</a></h2>
+<p>A couple of scripts may optionally be executed before and after the link
+and unlink step.  These scripts are executed in a subprocess by conda,
+using <code class="docutils literal"><span class="pre">/bin/bash</span> <span class="pre">&lt;script&gt;</span></code> on Unix and <code class="docutils literal"><span class="pre">%COMSPEC%</span> <span class="pre">/c</span> <span class="pre">&lt;script&gt;</span></code> on
+Windows.  For this to work, there needs to be a convention for the path and
+filenames of these scripts.  On Unix we have <code class="docutils literal"><span class="pre">bin/.&lt;name&gt;-&lt;action&gt;.sh</span></code>,
+and on Windows <code class="docutils literal"><span class="pre">Scripts/.&lt;name&gt;-&lt;action&gt;.bat</span></code>, where <code class="docutils literal"><span class="pre">&lt;name&gt;</span></code> is the
+package name, and <code class="docutils literal"><span class="pre">&lt;action&gt;</span></code> is one of the following:</p>
+<p><code class="docutils literal"><span class="pre">pre-link</span></code>: executed prior to linking, an error causes conda to stop.</p>
+<p><code class="docutils literal"><span class="pre">post-link</span></code>: executed after linking, when the post-link step fails,
+we don&#8217;t write any package metadata and return here.  This way the package
+is not considered installed.</p>
+<p><code class="docutils literal"><span class="pre">pre-unlink</span></code>: executed prior to unlinking, errors are ignored.</p>
+<p>For example, when there is a script named <code class="docutils literal"><span class="pre">/bin/.foo-post-link.sh</span></code> in the
+package <code class="docutils literal"><span class="pre">foo-1.0-0.tar.bz2</span></code>, it is executed after the linking is completed.
+Moreover, the following environment variables are set while the script is
+being executed: <code class="docutils literal"><span class="pre">PREFIX</span></code>, <code class="docutils literal"><span class="pre">PKG_NAME</span></code>, <code class="docutils literal"><span class="pre">PKG_VERSION</span></code></p>
+</div>
+<div class="section" id="repository-structure-and-index">
+<h2><a class="toc-backref" href="#id5">Repository structure and index</a><a class="headerlink" href="#repository-structure-and-index" title="Permalink to this headline">¶</a></h2>
+<p>A conda repository (or channel) is a directory tree, usually served over
+HTTPS, which has platform sub-directories, each of which contain conda
+packages and a repository index.  The index file <code class="docutils literal"><span class="pre">repodata.json</span></code> lists all
+conda packages in the platform sub-directory.  The command <code class="docutils literal"><span class="pre">conda</span> <span class="pre">index</span></code> can
+be used to create such an index from the conda packages within a directory.
+It is simple mapping of the full conda package filename to the dictionary
+object in <code class="docutils literal"><span class="pre">info/index.json</span></code> described in the previous section.</p>
+<p>In the following example, a repository provides the conda package
+<code class="docutils literal"><span class="pre">misc-1.0-np17py27_0.tar.bz2</span></code> on 64-bit Linux and 32-bit Windows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">some</span> <span class="n">path</span><span class="o">&gt;/</span><span class="n">linux</span><span class="o">-</span><span class="mi">64</span><span class="o">/</span><span class="n">repodata</span><span class="o">.</span><span class="n">json</span>
+                     <span class="n">repodata</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">bz2</span>
+                     <span class="n">misc</span><span class="o">-</span><span class="mf">1.0</span><span class="o">-</span><span class="n">np17py27_0</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
+           <span class="o">/</span><span class="n">win</span><span class="o">-</span><span class="mi">32</span><span class="o">/</span><span class="n">repodata</span><span class="o">.</span><span class="n">json</span>
+                   <span class="n">repodata</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">bz2</span>
+                   <span class="n">misc</span><span class="o">-</span><span class="mf">1.0</span><span class="o">-</span><span class="n">np17py27_0</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
+</pre></div>
+</div>
+<p>Note that both conda packages have identical filenames, and are only
+distinguished by the repository sub-directory they are contained in.</p>
+</div>
+<div class="section" id="package-match-specifications">
+<span id="build-version-spec"></span><h2><a class="toc-backref" href="#id6">Package match specifications</a><a class="headerlink" href="#package-match-specifications" title="Permalink to this headline">¶</a></h2>
+<p>Note that this is not the same as the syntax used at the command line with
+conda install (like <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">python=3.4</span></code>). Internally, conda
+translates the command line syntax to the spec defined below (for example,
+<code class="docutils literal"><span class="pre">python=3.4</span></code> is translated to <code class="docutils literal"><span class="pre">python</span> <span class="pre">3.4*</span></code>).</p>
+<p>Package dependencies are specified using a match specification.  A match
+specification a space separated string of 1, 2 or 3 parts:</p>
+<ul>
+<li><p class="first">The first part is always the (exact) name of the package.</p>
+</li>
+<li><p class="first">The second part refers to the version, and may contain special
+characters.</p>
+<p><code class="docutils literal"><span class="pre">|</span></code> means &#8220;or&#8221;, e.g. <code class="docutils literal"><span class="pre">1.0|1.2</span></code> matches either version 1.0 or 1.2</p>
+<p><code class="docutils literal"><span class="pre">*</span></code> matches zero or more characters in the version string. In terms of
+regular expressions, it is the same as <code class="docutils literal"><span class="pre">r'.*'</span></code>.</p>
+<p>For example, <code class="docutils literal"><span class="pre">1.0|1.4*</span></code>  matches 1.0, 1.4, 1.4.1b2, but not 1.2</p>
+<p><code class="docutils literal"><span class="pre">&lt;</span></code>, <code class="docutils literal"><span class="pre">&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;=</span></code>, <code class="docutils literal"><span class="pre">&gt;=</span></code>, <code class="docutils literal"><span class="pre">==</span></code> and <code class="docutils literal"><span class="pre">!=</span></code> are relational operators on
+versions, which are compared using [PEP
+440](<a class="reference external" href="https://www.python.org/dev/peps/pep-0440/">https://www.python.org/dev/peps/pep-0440/</a>).  For example, <code class="docutils literal"><span class="pre">&lt;=1.0</span></code>
+matches <code class="docutils literal"><span class="pre">0.9</span></code>, <code class="docutils literal"><span class="pre">0.9.1</span></code>, and <code class="docutils literal"><span class="pre">1.0</span></code>, but not <code class="docutils literal"><span class="pre">1.0.1</span></code>. <code class="docutils literal"><span class="pre">==</span></code> and
+<code class="docutils literal"><span class="pre">!=</span></code> are exact equality,</p>
+<p><code class="docutils literal"><span class="pre">,</span></code> means &#8220;and&#8221;, e.g., <code class="docutils literal"><span class="pre">&gt;=2,&lt;3</span></code> matches all packages in the &#8220;2&#8221; series,
+e.g., <code class="docutils literal"><span class="pre">2.0</span></code>, <code class="docutils literal"><span class="pre">2.1</span></code>, and <code class="docutils literal"><span class="pre">2.9</span></code> all match, but <code class="docutils literal"><span class="pre">3.0</span></code> and <code class="docutils literal"><span class="pre">1.0</span></code> do
+not.</p>
+<p><code class="docutils literal"><span class="pre">,</span></code> has higher precedence than <code class="docutils literal"><span class="pre">|</span></code>, i.e., <code class="docutils literal"><span class="pre">&gt;=1,&lt;2|&gt;3</span></code> means &#8220;(greater
+than or equal to 1 and less than 2) or (greater than 3),&#8221; which matches
+<code class="docutils literal"><span class="pre">1</span></code>, <code class="docutils literal"><span class="pre">1.3</span></code>, and <code class="docutils literal"><span class="pre">3.0</span></code>, but not <code class="docutils literal"><span class="pre">2.2</span></code>.</p>
+<p>Conda parses the version by splitting it into parts separated by <code class="docutils literal"><span class="pre">|</span></code>. If
+the part begins with <code class="docutils literal"><span class="pre">&lt;</span></code>, <code class="docutils literal"><span class="pre">&gt;</span></code>, <code class="docutils literal"><span class="pre">=</span></code>, or <code class="docutils literal"><span class="pre">!</span></code>, it is parsed as a
+relational operator. Otherwise, it is parsed as a version, possibly
+containing the <code class="docutils literal"><span class="pre">*</span></code> operator.</p>
+</li>
+<li><p class="first">The third part is always the (exact) build string.  When there are 3
+parts, the second part has to be the exact version.</p>
+</li>
+</ul>
+<p>Remember that the version specification cannot contain spaces, as spaces are
+used to delimit the package, version, and build string in the whole match
+specification. <code class="docutils literal"><span class="pre">python</span> <span class="pre">&gt;=</span> <span class="pre">2.7</span></code> is an invalid match
+specification. Furthermore, <code class="docutils literal"><span class="pre">python&gt;=2.7</span></code> will be matched as any version of
+a package named &#8220;python&gt;=2.7&#8221;.</p>
+<div class="section" id="examples">
+<h3><a class="toc-backref" href="#id7">Examples</a><a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<p>The following are all valid match specifications for numpy-1.8.1-py27_0:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">numpy</span></code></li>
+<li><code class="docutils literal"><span class="pre">numpy</span> <span class="pre">1.8*</span></code></li>
+<li><code class="docutils literal"><span class="pre">numpy</span> <span class="pre">1.8.1</span></code></li>
+<li><code class="docutils literal"><span class="pre">numpy</span> <span class="pre">&gt;=1.8</span></code></li>
+<li><code class="docutils literal"><span class="pre">numpy</span> <span class="pre">==1.8.1</span></code></li>
+<li><code class="docutils literal"><span class="pre">numpy</span> <span class="pre">1.8|1.8*</span></code></li>
+<li><code class="docutils literal"><span class="pre">numpy</span> <span class="pre">&gt;=1.8,&lt;2</span></code></li>
+<li><code class="docutils literal"><span class="pre">numpy</span> <span class="pre">&gt;=1.8,&lt;2|1.9</span></code></li>
+<li><code class="docutils literal"><span class="pre">numpy</span> <span class="pre">1.8.1</span> <span class="pre">py27_0</span></code></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="building/shared-libraries.html" class="btn btn-neutral float-right" title="Using shared libraries" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="building/build-scripts.html" class="btn btn-neutral" title="Pre/Post link/unlink scripts" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Continuum Analytics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:' ',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

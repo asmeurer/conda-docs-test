@@ -1,0 +1,128 @@
+
+.. _config_ref:
+
+conda config
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda config
+   
+   DESCRIPTION
+          usage: conda config [-h] [--json] [--system | --file FILE]
+   
+          (--get  [KEY  [KEY ...]] | --add KEY VALUE | --append KEY VALUE | --set
+          KEY VALUE | --remove KEY VALUE | --remove-key KEY)
+                 [-f]
+   
+          Modify configuration values in .condarc.  This is modeled after the git
+          config  command.  Writes to the user .condarc file (user .condarc path)
+          by default.
+   
+   OPTIONS
+      optional arguments:
+          -h, --help
+                 Show this help message and exit.
+   
+          --json Report all output as json. Suitable for using conda programmati‐
+                 cally.
+   
+          --system
+                 Write to the system .condarc file (system .condarc path). Other‐
+                 wise writes to the user config file (user .condarc path).
+   
+          --file FILE
+                 Write to the given file. Otherwise writes  to  the  user  config
+                 file  (user  .condarc  path) or the file path given by the 'CON‐
+                 DARC' environment variable, if it is set (default: user .condarc
+                 path).
+   
+          --get [KEY [KEY ...]]
+                 Get a configuration value.
+   
+          --add KEY VALUE
+                 Add  one  configuration value to the beginning of a list key. To
+                 add to the end of the list, use --append.
+   
+          --append KEY VALUE
+                 Add one configuration value to a list key. The default  behavior
+                 is to prepend.
+   
+          --set KEY VALUE
+                 Set a boolean or string key
+   
+          --remove KEY VALUE
+                 Remove  a  configuration value from a list key. This removes all
+                 instances of the value.
+   
+          --remove-key KEY
+                 Remove a configuration key (and all its values).
+   
+          -f, --force
+                 Write to the config file using the yaml parser. This will remove
+                 any comments or structure from the file.
+   
+          See  http://conda.pydata.org/docs/config.html  for  details  on all the
+          options that can go in .condarc.
+   
+          List keys, like
+   
+                 channels:
+   
+                 - conda - defaults
+   
+          are modified with the --add and --remove options. For example
+   
+                 conda config --add channels r
+   
+          on the above configuration would prepend the key 'r', giving
+   
+                 channels:
+   
+                 - r - conda - defaults
+   
+          Note that the key 'channels' implicitly contains the key 'defaults'  if
+          it has not been configured yet.
+   
+          Boolean keys, like
+   
+                 always_yes: true
+   
+          are modified with --set and removed with --remove-key. For example
+   
+                 conda config --set always_yes false
+   
+          gives
+   
+                 always_yes: false
+   
+          Note  that  in YAML, "yes", "YES", "on", "true", "True", and "TRUE" are
+          all valid ways  to  spell  "true",  and  "no",  "NO",  "off",  "false",
+          "False", and "FALSE", are all valid ways to spell "false".
+   
+          The .condarc file is YAML, and any valid YAML syntax is allowed.
+   
+   EXAMPLES
+          Get the channels defined in the system .condarc:
+   
+                 conda config --get channels --system
+   
+          Add the 'foo' Binstar channel:
+   
+                 conda config --add channels foo
+   
+          Disable the 'show_channel_urls' option:
+   
+                 conda config --set show_channel_urls no
+   
+   
+   
+   Continuum Analytics             September 2016                        <B>CONDA(1)</B>
+   </PRE>

@@ -1,0 +1,512 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Configuration &mdash; Conda   documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Conda   documentation" href="index.html"/>
+        <link rel="up" title="Installation" href="installation.html"/>
+        <link rel="next" title="Sample .condarc file" href="install/sample-condarc.html"/>
+        <link rel="prev" title="Full installation" href="install/full.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                 
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="get-started.html">Get started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Intro to conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download.html">Download conda</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="installation.html">Installation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="install/quick.html">Quick install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install/full.html">Full installation</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-conda-configuration-file-condarc">The conda configuration file (.condarc)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#general-configuration">General configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#advanced-configuration">Advanced configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#conda-build-configuration">Conda build configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="install/central.html">Centralized installation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="test-drive.html">Test drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using/cheatsheet.html">Conda cheat sheet</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="using/index.html">Using conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building/build.html">Building packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/help.html">Help &amp; reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-involved.html">Get involved</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Conda</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="get-started.html">Get started</a> &raquo;</li>
+      
+          <li><a href="installation.html">Installation</a> &raquo;</li>
+      
+    <li>Configuration</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/conda/conda-docs/blob/master/docs/source/config.rst" class="fa fa-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="configuration">
+<h1><a class="toc-backref" href="#id1">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#configuration" id="id1">Configuration</a><ul>
+<li><a class="reference internal" href="#the-conda-configuration-file-condarc" id="id2">The conda configuration file (.condarc)</a></li>
+<li><a class="reference internal" href="#general-configuration" id="id3">General configuration</a><ul>
+<li><a class="reference internal" href="#channel-locations-channels" id="id4">Channel locations (channels)</a></li>
+<li><a class="reference internal" href="#update-conda-automatically-auto-update-conda" id="id5">Update conda automatically (auto_update_conda)</a></li>
+<li><a class="reference internal" href="#always-yes-always-yes" id="id6">Always yes (always_yes)</a></li>
+<li><a class="reference internal" href="#show-channel-urls-show-channel-urls" id="id7">Show Channel URLs (show_channel_urls)</a></li>
+<li><a class="reference internal" href="#change-command-prompt-changeps1" id="id8">Change command prompt (changeps1)</a></li>
+<li><a class="reference internal" href="#add-pip-as-python-dependency-add-pip-as-python-depedency" id="id9">Add PIP as Python Dependency (add_pip_as_python_depedency)</a></li>
+<li><a class="reference internal" href="#use-pip-use-pip" id="id10">Use PIP (use_pip)</a></li>
+<li><a class="reference internal" href="#configure-conda-for-use-behind-a-proxy-server-proxy-servers" id="id11">Configure conda for use behind a proxy server (proxy_servers)</a></li>
+<li><a class="reference internal" href="#offline-mode-only-offline" id="id12">Offline mode only (offline)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#advanced-configuration" id="id13">Advanced configuration</a><ul>
+<li><a class="reference internal" href="#disallow-soft-linking-allow-softlinks" id="id14">Disallow soft-linking (allow_softlinks)</a></li>
+<li><a class="reference internal" href="#set-a-channel-alias-channel-alias" id="id15">Set a channel alias (channel_alias)</a></li>
+<li><a class="reference internal" href="#always-add-packages-by-default-create-default-packages" id="id16">Always add packages by default (create_default_packages)</a></li>
+<li><a class="reference internal" href="#track-features-track-features" id="id17">Track features (track_features)</a></li>
+<li><a class="reference internal" href="#disable-updating-of-dependencies-update-dependencies" id="id18">Disable updating of dependencies (update_dependencies)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#conda-build-configuration" id="id19">Conda build configuration</a><ul>
+<li><a class="reference internal" href="#automatically-upload-conda-build-packages-to-anaconda-org-anaconda-upload" id="id20">Automatically upload conda build packages to Anaconda.org (anaconda_upload)</a></li>
+<li><a class="reference internal" href="#specify-conda-build-output-root-directory-conda-build" id="id21">Specify conda build output root directory (conda-build)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="the-conda-configuration-file-condarc">
+<h2><a class="toc-backref" href="#id2">The conda configuration file (.condarc)</a><a class="headerlink" href="#the-conda-configuration-file-condarc" title="Permalink to this headline">¶</a></h2>
+<p>The conda configuration file  (.condarc) is an OPTIONAL runtime configuration
+file which allows advanced users to configure various aspects of conda, such as which
+channels it searches for packages, proxy settings, environment directories, etc.</p>
+<p>A .condarc file is not included by default, but it is automatically created in
+the user’s home directory the first time you run the <code class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span></code> command.</p>
+<p>A .condarc file may also be located in the root environment, in which case it
+overrides any in the home directory.</p>
+<p>Note: A .condarc file can also be used in an administrator-controlled
+installation to override the users’ configuration. Please see <a class="reference internal" href="install/central.html"><span class="doc">Centralized installation</span></a>.</p>
+<p>The conda configuration file can be used to change:</p>
+<ul class="simple">
+<li>Where conda looks for packages</li>
+<li>If and how conda uses a proxy server</li>
+<li>Where conda lists known environments</li>
+<li>Whether to update the bash prompt with the current activated environment name</li>
+<li>Whether user-built packages should be uploaded to Anaconda.org</li>
+<li>Default packages or features to include in new environments</li>
+<li>And more.</li>
+</ul>
+<p>To create or modify a .condarc configuration file, from the command line, use
+the <code class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span></code> command, or use a text editor to create a new file named
+.condarc and save to your user home directory or root directory.</p>
+<p>Example:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda config --add channels r</span>
+</pre></div>
+</div>
+<p>SEE ALSO: For a complete list of conda config commands available, see the
+<a class="reference internal" href="commands/conda-config.html"><span class="doc">command reference</span></a>. The same list is available
+at the command prompt by typing <code class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--help</span></code>.</p>
+<p>The .condarc configuration file follows
+simple <a class="reference external" href="http://docs.ansible.com/YAMLSyntax.html">YAML syntax</a>.</p>
+<p><a class="reference internal" href="install/sample-condarc.html"><span class="doc">Download a sample .condarc file</span></a> to edit in your editor
+and save to your user home directory or root directory.</p>
+<p>TIP: Conda supports <a class="reference internal" href="install/tab-completion.html"><span class="doc">tab completion</span></a> with external packages
+instead of internal configuration.</p>
+<p>For more configuration information see: <a class="reference external" href="http://continuum.io/blog/advanced-conda-part-1#configuration">http://continuum.io/blog/advanced-conda-part-1#configuration</a></p>
+</div>
+<div class="section" id="general-configuration">
+<h2><a class="toc-backref" href="#id3">General configuration</a><a class="headerlink" href="#general-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="channel-locations-channels">
+<h3><a class="toc-backref" href="#id4">Channel locations (channels)</a><a class="headerlink" href="#channel-locations-channels" title="Permalink to this headline">¶</a></h3>
+<p>Listing channel locations in the .condarc file will override conda defaults,
+causing conda to search only the channels listed here, in the order given.</p>
+<p>Use <code class="docutils literal"><span class="pre">defaults</span></code> to automatically include all default channels. Non-url channels
+will be interpreted as Anaconda.org usernames, and this can be changed by modifying
+the <code class="docutils literal"><span class="pre">channel_alias</span></code> key as explained below. The default is just <code class="docutils literal"><span class="pre">defaults</span></code>.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">channels</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">&lt;anaconda_dot_org_username&gt;</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">http://some.custom/channel</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">file:///some/local/directory</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">defaults</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="update-conda-automatically-auto-update-conda">
+<h3><a class="toc-backref" href="#id5">Update conda automatically (auto_update_conda)</a><a class="headerlink" href="#update-conda-automatically-auto-update-conda" title="Permalink to this headline">¶</a></h3>
+<p>When True, conda updates itself any time a user updates or installs a package
+in the root environment. When False, conda updates itself only if the user
+manually issues a conda update command. The default is <code class="docutils literal"><span class="pre">True</span></code>. You can edit
+the .condarc file or set the option with a command such
+as <code class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--set</span> <span class="pre">auto_update_conda</span> <span class="pre">False</span></code>.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">auto_update_conda</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="always-yes-always-yes">
+<h3><a class="toc-backref" href="#id6">Always yes (always_yes)</a><a class="headerlink" href="#always-yes-always-yes" title="Permalink to this headline">¶</a></h3>
+<p>Choose the yes option whenever asked to proceed, such as when installing. Same
+as using the <code class="docutils literal"><span class="pre">--yes</span></code> flag at the command line. The default is <code class="docutils literal"><span class="pre">False</span></code>.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">always_yes</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="show-channel-urls-show-channel-urls">
+<h3><a class="toc-backref" href="#id7">Show Channel URLs (show_channel_urls)</a><a class="headerlink" href="#show-channel-urls-show-channel-urls" title="Permalink to this headline">¶</a></h3>
+<p>Show channel URLs when displaying what is going to be downloaded and
+in <code class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span></code>. The default is <code class="docutils literal"><span class="pre">False</span></code>.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">show_channel_urls</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="change-command-prompt-changeps1">
+<h3><a class="toc-backref" href="#id8">Change command prompt (changeps1)</a><a class="headerlink" href="#change-command-prompt-changeps1" title="Permalink to this headline">¶</a></h3>
+<p>When using <code class="docutils literal"><span class="pre">activate</span></code>, change the command prompt (<code class="docutils literal"><span class="pre">$PS1</span></code>) to include the activated
+environment. The default is <code class="docutils literal"><span class="pre">True</span></code>.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">changeps1</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-pip-as-python-dependency-add-pip-as-python-depedency">
+<h3><a class="toc-backref" href="#id9">Add PIP as Python Dependency (add_pip_as_python_depedency)</a><a class="headerlink" href="#add-pip-as-python-dependency-add-pip-as-python-depedency" title="Permalink to this headline">¶</a></h3>
+<p>Add pip, wheel and setuptools as dependencies of python. This ensures pip, wheel
+and setuptools will always be installed any time python is installed.
+The default is <code class="docutils literal"><span class="pre">True</span></code>.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">add_pip_as_python_dependency</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="use-pip-use-pip">
+<h3><a class="toc-backref" href="#id10">Use PIP (use_pip)</a><a class="headerlink" href="#use-pip-use-pip" title="Permalink to this headline">¶</a></h3>
+<p>Use pip when listing packages with <code class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span></code>. Note that this does not affect
+any conda command or functionality other than the output of the
+command <code class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span></code>. The default is <code class="docutils literal"><span class="pre">True</span></code>.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">use_pip</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="configure-conda-for-use-behind-a-proxy-server-proxy-servers">
+<h3><a class="toc-backref" href="#id11">Configure conda for use behind a proxy server (proxy_servers)</a><a class="headerlink" href="#configure-conda-for-use-behind-a-proxy-server-proxy-servers" title="Permalink to this headline">¶</a></h3>
+<p>By default, proxy settings are pulled from the <code class="docutils literal"><span class="pre">HTTP_PROXY</span></code> and <code class="docutils literal"><span class="pre">HTTPS_PROXY</span></code>
+environment variables or the system. Setting them here overrides that default.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">proxy_servers</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">http</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">http://user:pass@corp.com:8080</span>
+    <span class="l l-Scalar l-Scalar-Plain">https</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://user:pass@corp.com:8080</span>
+</pre></div>
+</div>
+<p>To give a proxy for a specific scheme and host, use the scheme://hostname form
+for the key. This will match for any request to the given scheme and exact hostname.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">proxy_servers</span><span class="p p-Indicator">:</span>
+  <span class="s">&#39;http://10.20.1.128&#39;</span><span class="p p-Indicator">:</span> <span class="s">&#39;http://10.10.1.10:5323&#39;</span>
+</pre></div>
+</div>
+<p>Note: If you do not include the username and password, of if authentication
+fails, conda will prompt for a username and password.</p>
+<p>Note: If your password contains special characters they will need to be escaped
+as follows: <a class="reference external" href="https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters">https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters</a></p>
+<p>Note: Be careful not to use <code class="docutils literal"><span class="pre">http</span></code> when you mean <code class="docutils literal"><span class="pre">https</span></code>, or <code class="docutils literal"><span class="pre">https</span></code> when you mean <code class="docutils literal"><span class="pre">http</span></code>.</p>
+<p>Note: If you are behind a proxy that does SSL inspection such as a Cisco IronPort Web Security Appliance (WSA),
+it may be necessary to override the SSL verification settings using <code class="docutils literal"><span class="pre">ssl_verify</span></code> as described in <a class="reference internal" href="install/central.html#ssl-verification"><span class="std std-ref">SSL verification (ssl_verify)</span></a>.</p>
+</div>
+<div class="section" id="offline-mode-only-offline">
+<h3><a class="toc-backref" href="#id12">Offline mode only (offline)</a><a class="headerlink" href="#offline-mode-only-offline" title="Permalink to this headline">¶</a></h3>
+<p>Filters out all channels URLs which do not use the <code class="docutils literal"><span class="pre">file://</span></code> protocol. The
+default is <code class="docutils literal"><span class="pre">False</span></code>.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">offline</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="advanced-configuration">
+<h2><a class="toc-backref" href="#id13">Advanced configuration</a><a class="headerlink" href="#advanced-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="disallow-soft-linking-allow-softlinks">
+<h3><a class="toc-backref" href="#id14">Disallow soft-linking (allow_softlinks)</a><a class="headerlink" href="#disallow-soft-linking-allow-softlinks" title="Permalink to this headline">¶</a></h3>
+<p>When <code class="docutils literal"><span class="pre">allow_softlinks</span></code> is <code class="docutils literal"><span class="pre">True</span></code>, conda uses hard-links when possible, and soft-links
+(symlinks) when hard-links are not possible, such as when installing on a
+different filesystem than the one that the package cache is on.</p>
+<p>When <code class="docutils literal"><span class="pre">allow_softlinks</span></code> is <code class="docutils literal"><span class="pre">False</span></code>, conda still uses hard-links when possible, but when it is
+not possible, conda copies files. Note that individual packages can override
+this, specifying that certain files should never be soft-linked, independent of
+this option (see the <code class="docutils literal"><span class="pre">no_link</span></code> option in the build recipe documentation).</p>
+<p>The default is <code class="docutils literal"><span class="pre">True</span></code>.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">allow_softlinks</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-a-channel-alias-channel-alias">
+<h3><a class="toc-backref" href="#id15">Set a channel alias (channel_alias)</a><a class="headerlink" href="#set-a-channel-alias-channel-alias" title="Permalink to this headline">¶</a></h3>
+<p>By default, <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">--channel</span> <span class="pre">asmeurer</span> <span class="pre">&lt;package&gt;</span></code> is the same
+as <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">--channel</span> <span class="pre">https://conda.anaconda.org/asmeurer</span> <span class="pre">&lt;package&gt;</span></code>. This
+is because the default <code class="docutils literal"><span class="pre">channel_alias</span></code> is <a class="reference external" href="https://conda.anaconda.org/">https://conda.anaconda.org/</a> . Whenever
+conda is given a channel name that is not a URL, it prepends the <code class="docutils literal"><span class="pre">channel_alias</span></code>
+to the front of the name it was given.</p>
+<p>You can set the <code class="docutils literal"><span class="pre">channel_alias</span></code> to your own repository. If your repository is at
+<a class="reference external" href="https://yourrepo.com">https://yourrepo.com</a> then <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">--channel</span> <span class="pre">jsmith</span> <span class="pre">&lt;package&gt;</span></code> would be
+the same as <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">--channel</span> <span class="pre">https://yourrepo.com/jsmith</span> <span class="pre">&lt;package&gt;</span></code> .</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">channel_alias</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://your.repo/</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="always-add-packages-by-default-create-default-packages">
+<h3><a class="toc-backref" href="#id16">Always add packages by default (create_default_packages)</a><a class="headerlink" href="#always-add-packages-by-default-create-default-packages" title="Permalink to this headline">¶</a></h3>
+<p>When creating new environments add these packages by default. You can override
+this option at the command prompt with the <code class="docutils literal"><span class="pre">--no-default-packages</span></code> flag. The
+default is not to include any packages.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">create_default_packages</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ipython</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="track-features-track-features">
+<h3><a class="toc-backref" href="#id17">Track features (track_features)</a><a class="headerlink" href="#track-features-track-features" title="Permalink to this headline">¶</a></h3>
+<p>Enable certain features to be tracked by default. The default is to not track
+any features. This is similar to adding <code class="docutils literal"><span class="pre">mkl</span></code> to the <code class="docutils literal"><span class="pre">create_default_packages</span></code>
+list.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">track_features</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">mkl</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="disable-updating-of-dependencies-update-dependencies">
+<h3><a class="toc-backref" href="#id18">Disable updating of dependencies (update_dependencies)</a><a class="headerlink" href="#disable-updating-of-dependencies-update-dependencies" title="Permalink to this headline">¶</a></h3>
+<p>By default, <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span></code> updates the given package and all its
+dependencies to the latest versions.</p>
+<p>If you prefer to only update the packages given explicitly at the command line
+and avoid updating existing installed packages as much as possible, you can
+set <code class="docutils literal"><span class="pre">update_dependencies</span></code> to <code class="docutils literal"><span class="pre">True</span></code>.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">update_dependencies</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+</pre></div>
+</div>
+<p>Note that conda will still ensure that dependency specifications are
+satisfied, so some dependencies may still be updated, or, conversely, this may
+prevent packages given at the command line from being updated to their latest
+versions. You can always specify versions at the command line to force conda
+to install a given version (like <code class="docutils literal"><span class="pre">conda</span>
+<span class="pre">install</span> <span class="pre">numpy=1.9.3</span></code>).</p>
+<p>This option can also be enabled or disabled at the command line with the
+<code class="docutils literal"><span class="pre">--update-dependencies</span></code> and <code class="docutils literal"><span class="pre">--no-update-dependencies</span></code> flags.</p>
+<p>To avoid updating only specific packages in an environment, a better option
+may be to <em>pin</em> them. See <a class="reference internal" href="faq.html#pinning-packages"><span class="std std-ref">Pinning packages</span></a> for more information.</p>
+</div>
+</div>
+<div class="section" id="conda-build-configuration">
+<h2><a class="toc-backref" href="#id19">Conda build configuration</a><a class="headerlink" href="#conda-build-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="automatically-upload-conda-build-packages-to-anaconda-org-anaconda-upload">
+<h3><a class="toc-backref" href="#id20">Automatically upload conda build packages to Anaconda.org (anaconda_upload)</a><a class="headerlink" href="#automatically-upload-conda-build-packages-to-anaconda-org-anaconda-upload" title="Permalink to this headline">¶</a></h3>
+<p>Automatically upload packages built with <code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></code> to Anaconda.org. The
+default is <code class="docutils literal"><span class="pre">False</span></code>.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">anaconda_upload</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="specify-conda-build-output-root-directory-conda-build">
+<h3><a class="toc-backref" href="#id21">Specify conda build output root directory (conda-build)</a><a class="headerlink" href="#specify-conda-build-output-root-directory-conda-build" title="Permalink to this headline">¶</a></h3>
+<p>Build output root directory. This can also be set with the <code class="docutils literal"><span class="pre">CONDA_BLD_PATH</span></code>
+environment variable. The default is <code class="docutils literal"><span class="pre">&lt;CONDA_PREFIX&gt;/conda-bld/</span></code>, or if you do
+not have write permissions to <code class="docutils literal"><span class="pre">&lt;CONDA_PREFIX&gt;/conda-bld/</span></code> , <code class="docutils literal"><span class="pre">~/conda-bld/</span></code> .</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">root-dir</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">~/conda-builds</span>
+</pre></div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="install/sample-condarc.html" class="btn btn-neutral float-right" title="Sample .condarc file" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="install/full.html" class="btn btn-neutral" title="Full installation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Continuum Analytics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:' ',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

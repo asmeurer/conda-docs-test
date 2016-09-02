@@ -1,0 +1,343 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Conda build recipes &mdash; Conda   documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Conda   documentation" href="../index.html"/>
+        <link rel="up" title="Building conda packages" href="bpp.html"/>
+        <link rel="next" title="Package naming conventions" href="pkg-name-conv.html"/>
+        <link rel="prev" title="Building conda packages" href="bpp.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                 
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../get-started.html">Get started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using/index.html">Using conda</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="build.html">Building packages</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../build_tutorials.html">Build tutorials</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="bpp.html">Building conda packages</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Conda build recipes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#conda-build-requirements">Conda build requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#conda-recipe-files-overview">Conda recipe files overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-windows-start-menu-items">Adding Windows start menu items</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#more-information-about-meta-yaml">More information about meta.yaml</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pkg-name-conv.html">Package naming conventions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="meta-pkg.html">Metapackages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dirs.html">Directory structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="meta-yaml.html">The meta.yaml file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment-vars.html">Environment variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="build-scripts.html">Pre/Post link/unlink scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../spec.html">Conda package specification</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="shared-libraries.html">Using shared libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../custom-channels.html">Custom channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../signed-packages.html">Signing conda packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bdist_conda.html">Bdist_conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sample-recipes.html">Sample recipes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../help/help.html">Help &amp; reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get-involved.html">Get involved</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Conda</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="build.html">Building packages</a> &raquo;</li>
+      
+          <li><a href="bpp.html">Building conda packages</a> &raquo;</li>
+      
+    <li>Conda build recipes</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/conda/conda-docs/blob/master/docs/source/building/recipe.rst" class="fa fa-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="conda-build-recipes">
+<span id="build"></span><h1>Conda build recipes<a class="headerlink" href="#conda-build-recipes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Building a conda package with conda build involves creating a conda recipe. The recipe
+is a flat directory holding metadata and the scripts needed to build the package.
+The conda package is then built from the conda recipe using the <code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></code> command.</p>
+<p>Conda packages can be built from a variety of source code projects, most notably Python.
+Please refer to the <a class="reference external" href="https://setuptools.readthedocs.io/en/latest/">Setuptools documentation</a>
+for help packing a Python project.</p>
+<p>TIP: If you are new to building packages with conda, we recommend taking our series
+of three <a class="reference internal" href="../build_tutorials.html"><span class="doc">build tutorials</span></a>.</p>
+</div>
+<div class="section" id="conda-build-requirements">
+<h2>Conda build requirements<a class="headerlink" href="#conda-build-requirements" title="Permalink to this headline">¶</a></h2>
+<p>Conda and conda-build are required, and available from either Miniconda or Anaconda.
+Please follow the <a class="reference internal" href="../install/quick.html"><span class="doc">Quick install</span></a> instructions.</p>
+<p><strong>All platforms:</strong> Install conda-build:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>conda install conda-build
+</pre></div>
+</div>
+<p>OPTIONAL: If you wish to upload packages to Anaconda.org , an <a class="reference external" href="http://anaconda.org">Anaconda.org</a>
+account and client are required.</p>
+<div class="section" id="update-conda-build">
+<h3>Update conda build<a class="headerlink" href="#update-conda-build" title="Permalink to this headline">¶</a></h3>
+<p>It is important to keep your version of <code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></code> up to date to take advantage of
+bug fixes and new features.</p>
+<p><strong>All platforms:</strong> Upgrade conda-build:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>conda update conda
+conda update conda-build
+</pre></div>
+</div>
+<p>Release notes are available on the <a class="reference external" href="https://github.com/conda/conda-build/releases">conda-build Github page.</a></p>
+</div>
+</div>
+<div class="section" id="conda-recipe-files-overview">
+<h2>Conda recipe files overview<a class="headerlink" href="#conda-recipe-files-overview" title="Permalink to this headline">¶</a></h2>
+<p>The files in a conda recipe are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">meta.yaml</span></code> (metadata file)</li>
+<li><code class="docutils literal"><span class="pre">build.sh</span></code> (Unix build script which is executed using bash)</li>
+<li><code class="docutils literal"><span class="pre">bld.bat</span></code> (Windows build script which is executed using cmd)</li>
+<li><code class="docutils literal"><span class="pre">run_test.[py,pl,sh,bat]</span></code> (optional) test file</li>
+<li>patches to the source (optional, see below)</li>
+<li>other resources, which are not included in the source and cannot be generated
+by the build scripts. Examples are icon files, readme, or build notes.</li>
+</ul>
+</div></blockquote>
+<p>Conda-build invokes the following steps in this order:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Reads the metadata.</li>
+<li>Downloads the source into a cache.</li>
+<li>Extracts the source into the <em>source directory</em>.</li>
+<li>Applies any patches.</li>
+<li>Creates a <em>build environment</em> and installs the build dependencies there.</li>
+<li>Runs the actual build script. The current working directory is the source
+directory with environment variables set. The build script installs into
+the build environment.</li>
+<li>Does some necessary post-processing steps: shebang, rpath, etc.</li>
+<li>Packages up all the files in the build environment that are new from step 5
+into a conda package along with the necessary conda package metadata.</li>
+<li>Tests the new conda package: deletes the <em>build environment</em> and creates a
+<em>test environment</em> with the package and its dependencies, and runs the test
+scripts. This step is not run if there are no tests in the recipe.</li>
+</ol>
+</div></blockquote>
+<p>There are example recipes for many conda packages in the <a class="reference external" href="https://github.com/continuumio/conda-recipes">conda-recipes</a> repo.</p>
+<p>NOTE: All recipe files, including meta.yaml and build scripts, are included in
+the final package archive which is distributed to users, so be careful not to
+put passwords or other sensitive information into recipes where it could leak to
+the public.</p>
+<p>The <a class="reference internal" href="../commands/build/conda-skeleton.html#skeleton-ref"><span class="std std-ref">conda skeleton</span></a> command can help to make skeleton
+recipes for common repositories, such as <a class="reference external" href="https://pypi.python.org/pypi">PyPI</a>.</p>
+</div>
+<div class="section" id="adding-windows-start-menu-items">
+<h2>Adding Windows start menu items<a class="headerlink" href="#adding-windows-start-menu-items" title="Permalink to this headline">¶</a></h2>
+<p>When a package is installed it can add a shortcut to the Windows start menu.
+Conda and conda build handle this with the
+package <a class="reference external" href="https://github.com/ContinuumIO/menuinst">menuinst</a>, which only
+supports Windows at this time. Instructions for using menuinst are available
+on <a class="reference external" href="https://github.com/ContinuumIO/menuinst/wiki">the menuinst wiki</a>.</p>
+<p>The easiest way to ensure a package made
+with <a class="reference external" href="https://github.com/conda/constructor">conda constructor</a> does not
+install any menu shortcuts is by removing <code class="docutils literal"><span class="pre">menuinst</span></code> from the list of conda
+packages included. To do this, add the following to the constuct.yaml file:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">exclude</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">menuinst</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="more-information-about-meta-yaml">
+<h2>More information about meta.yaml<a class="headerlink" href="#more-information-about-meta-yaml" title="Permalink to this headline">¶</a></h2>
+<p>Next, please continue on to learn more about <a class="reference internal" href="meta-yaml.html"><span class="doc">the meta.yaml file</span></a>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pkg-name-conv.html" class="btn btn-neutral float-right" title="Package naming conventions" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="bpp.html" class="btn btn-neutral" title="Building conda packages" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Continuum Analytics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:' ',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,573 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Test drive &mdash; Conda   documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Conda   documentation" href="index.html"/>
+        <link rel="up" title="Get started" href="get-started.html"/>
+        <link rel="next" title="Conda cheat sheet" href="using/cheatsheet.html"/>
+        <link rel="prev" title="Centralized installation" href="install/central.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                 
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="get-started.html">Get started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Intro to conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download.html">Download conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Test drive</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#conda-test-drive-milestones">Conda test drive milestones:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#managing-conda">1. Managing conda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#managing-environments">2. Managing environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#managing-python">3. Managing Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#managing-packages">4. Managing packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#removing-packages-environments-or-conda">5. Removing packages, environments, or conda</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="using/cheatsheet.html">Conda cheat sheet</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="using/index.html">Using conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building/build.html">Building packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/help.html">Help &amp; reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-involved.html">Get involved</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Conda</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="get-started.html">Get started</a> &raquo;</li>
+      
+    <li>Test drive</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/conda/conda-docs/blob/master/docs/source/test-drive.rst" class="fa fa-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="test-drive">
+<h1>Test drive<a class="headerlink" href="#test-drive" title="Permalink to this headline">¶</a></h1>
+<p>To start the conda 30-minute test drive, you should have already followed our 2-minute <a class="reference internal" href="install/quick.html"><span class="doc">Quick install</span></a> guide to download, install and update Miniconda, OR have downloaded, installed and updated Anaconda or Miniconda on your own.</p>
+<p>NOTE: After installing, be sure you have closed and then re-opened the terminal window so the changes can take effect.</p>
+<div class="section" id="conda-test-drive-milestones">
+<h2>Conda test drive milestones:<a class="headerlink" href="#conda-test-drive-milestones" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference internal" href="#managing-conda"><span class="std std-ref">USING CONDA</span></a>. First we will verify that you have installed Anaconda or Miniconda, and check that it is updated to the current version. 3 min.</li>
+<li><a class="reference internal" href="#managing-envs"><span class="std std-ref">MANAGING ENVIRONMENTS</span></a>. Next we will play with environments by creating a few environments, so you can learn to move easily between the environments. We will also verify which environment you are in, and make an exact copy of an environment as a backup. 10 min.</li>
+<li><a class="reference internal" href="#managing-python"><span class="std std-ref">MANAGING PYTHON</span></a>. Then we will check to see which versions of Python are available to install, install another version of Python, and switch between versions. 4 min.</li>
+<li><a class="reference internal" href="#managing-pkgs"><span class="std std-ref">MANAGING PACKAGES</span></a>. We play with packages. We will a) list packages installed on your computer, b) see a list of available packages, and c) install and remove some packages using conda install. For packages not available using conda install, we will d) search on Anaconda.org. For packages that are in neither location, we’ll e) install a package with the pip package manager. We will also install a free 30 day trial of Continuum’s commercial package IOPro. 10 min.</li>
+<li><a class="reference internal" href="#remove-pkgs-envs-conda"><span class="std std-ref">REMOVING PACKAGES, ENVIRONMENTS, OR CONDA</span></a>. We’ll end the test drive by removing one or more of your test packages, environments, and/or conda,  if you wish. 3 min.</li>
+</ol>
+<p>TOTAL 30 Minutes</p>
+<p>TIP:  Anytime you wish to see the full documentation for any command, type the command followed by  <code class="docutils literal"><span class="pre">--help</span></code>.
+For example, to learn about the conda update command:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="o">--</span><span class="n">help</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="managing-conda">
+<span id="id1"></span><h2>1. Managing conda<a class="headerlink" href="#managing-conda" title="Permalink to this headline">¶</a></h2>
+<p>Conda is both a package manager and an environment manager. You know that a package manager helps you find and
+install packages. But let’s say that you want to use a package that requires a different version of Python than
+you are currently using. With just a few commands you can set up a totally separate environment to run that
+different version of Python, and yet continue to run your usual version of Python in your normal environment.
+That’s the power of having an environment manager like conda.</p>
+<p>TIP: Whether you are using Linux, OS X or the Windows command prompt, in your terminal window the conda commands
+are all the same unless noted.</p>
+<p><strong>Verify that conda is installed</strong></p>
+<p>To be sure that you are starting in the right place, let’s verify that you have successfully installed Anaconda.
+In your terminal window, enter the following:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>Conda will respond with the version number that you have installed, like:  <code class="docutils literal"><span class="pre">conda</span> <span class="pre">3.11.0</span></code></p>
+<p>NOTE: If you see an error message, check to see that you are logged into the same user account that you used
+to install Anaconda or Miniconda, and that you have closed and re-opened the terminal window after installing it.</p>
+<p><strong>Update conda to the current version</strong></p>
+<p>Next, let’s use the conda update command to update conda:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">conda</span>
+</pre></div>
+</div>
+<p>Conda will compare versions and let you know what is available to install. It will also tell you about other
+packages that will be automatically updated or changed with the update.</p>
+<p>If a newer version of conda is available,
+type Y to update:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span>Proceed ([y]/n)? y
+</pre></div>
+</div>
+<p>When conda is updated, move to the next topic.</p>
+</div>
+<div class="section" id="managing-environments">
+<span id="managing-envs"></span><h2>2. Managing environments<a class="headerlink" href="#managing-environments" title="Permalink to this headline">¶</a></h2>
+<p>Now let’s play with environments by creating a few, then moving between them.</p>
+<p><strong>Create and activate an environment</strong></p>
+<p>Use the conda create command, followed by any name you wish to call it:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">snowflakes</span> <span class="n">biopython</span>
+</pre></div>
+</div>
+<p>This will create a new environment named /envs/snowflakes with the program Biopython.</p>
+<p>TIP:  Many frequently used options after two dashes (<code class="docutils literal"><span class="pre">--</span></code>) can be abbreviated with just a dash and the
+first letter. So <code class="docutils literal"><span class="pre">--name</span></code> and <code class="docutils literal"><span class="pre">-n</span></code> options are the same and <code class="docutils literal"><span class="pre">--envs</span></code> and <code class="docutils literal"><span class="pre">-e</span></code> are the same. See <code class="docutils literal"><span class="pre">conda</span> <span class="pre">--help</span></code> or
+<code class="docutils literal"><span class="pre">conda</span> <span class="pre">-h</span></code> for a list of abbreviations.</p>
+<p><strong>Activate the new environment:</strong></p>
+<ul class="simple">
+<li>Linux, OS X: <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snowflakes</span></code></li>
+<li>Windows:  <code class="docutils literal"><span class="pre">activate</span> <span class="pre">snowflakes</span></code></li>
+</ul>
+<p>TIP: Environments are installed by default into the envs directory in your conda directory. You can specify a
+different path, see <code class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--help</span></code> for details.</p>
+<p>TIP: Since we did not specify a version of Python, conda installs the same version that you used when you
+download and installed conda.</p>
+<p><strong>Create a second environment</strong></p>
+<p>This time let’s create and name a new environment, AND install a different version of Python, and two packages
+named Astroid and Babel:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">bunnies</span> <span class="n">python</span><span class="o">=</span><span class="mi">3</span> <span class="n">astroid</span> <span class="n">babel</span>
+</pre></div>
+</div>
+<p>This will create a second new environment named /envs/bunnies with Python 3 and Astroid and Babel installed.</p>
+<p>TIP: Install all the programs you will want in this environment at the same time. Installing one program at
+a time can lead to dependency conflicts.</p>
+<p>TIP: You can add much more to the conda create command, type <code class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--help</span></code> for details.</p>
+<p><strong>List all environments</strong></p>
+<p>Now let’s check to see which environments you have installed so far. Use the conda environment info command
+to find out:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">info</span> <span class="o">--</span><span class="n">envs</span>
+</pre></div>
+</div>
+<p>You will see a list of environments like the following:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">environments</span><span class="p">:</span>
+
+     <span class="n">snowflakes</span>          <span class="o">*</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="n">miniconda</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">snowflakes</span>
+     <span class="n">bunnies</span>               <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="n">miniconda</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">bunnies</span>
+     <span class="n">root</span>                  <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="n">miniconda</span>
+</pre></div>
+</div>
+<p><strong>Verify current environment</strong></p>
+<p>Which of these environments are you using right now &#8211; snowflakes or bunnies? To find out, type the same command:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">info</span> <span class="o">--</span><span class="n">envs</span>
+</pre></div>
+</div>
+<p>Conda displays the list of all environments, with the current environment shown in (parentheses) or [brackets] in front of your prompt:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">snowflakes</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>NOTE: conda also puts an asterisk (*) in front of the active environment in your environment list; see above in &#8220;List all environments.&#8221;</p>
+<p><strong>Switch to another environment (activate/deactivate)</strong></p>
+<p>To change to another environment, type the following with the name of the environment:</p>
+<ul class="simple">
+<li>Linux, OS X: <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">bunnies</span></code></li>
+<li>Windows:  <code class="docutils literal"><span class="pre">activate</span> <span class="pre">bunnies</span></code></li>
+</ul>
+<p>To change your path from the current environment back to the root:</p>
+<ul class="simple">
+<li>Linux, OS X: <code class="docutils literal"><span class="pre">source</span> <span class="pre">deactivate</span></code></li>
+<li>Windows:  <code class="docutils literal"><span class="pre">deactivate</span></code></li>
+</ul>
+<p>TIP: When the environment is deactivated, <code class="docutils literal"><span class="pre">(bunnies)</span></code> will no longer be shown in the prompt.</p>
+<p><strong>Make an exact copy of an environment</strong></p>
+<p>Make an exact copy of an environment by creating a clone of it. Here we will clone snowflakes to
+create an exact copy named flowers:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">flowers</span> <span class="o">--</span><span class="n">clone</span> <span class="n">snowflakes</span>
+</pre></div>
+</div>
+<p><strong>Check to see the exact copy was made:</strong></p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">info</span> <span class="o">--</span><span class="n">envs</span>
+</pre></div>
+</div>
+<p>You should now see the three environments listed:  flowers, bunnies, and snowflakes.</p>
+<p><strong>Delete an environment</strong></p>
+<p>If you didn’t really want an environment named flowers, just remove it as follows:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">remove</span> <span class="o">--</span><span class="n">name</span> <span class="n">flowers</span> <span class="o">--</span><span class="nb">all</span>
+</pre></div>
+</div>
+<p>To verify that the flowers environment has now been removed, type the command:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">info</span> <span class="o">--</span><span class="n">envs</span>
+</pre></div>
+</div>
+<p>Flowers is no longer in your environment list, so we know it was deleted.</p>
+<p><strong>Learn more about environments</strong></p>
+<p>To learn more about any conda command, just type the command followed by  <code class="docutils literal"><span class="pre">--help</span></code>:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">remove</span> <span class="o">--</span><span class="n">help</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="managing-python">
+<span id="id2"></span><h2>3. Managing Python<a class="headerlink" href="#managing-python" title="Permalink to this headline">¶</a></h2>
+<p>Conda treats Python the same as any other package, so it’s very easy to manage and update multiple installations.</p>
+<p><strong>Check Python versions</strong></p>
+<p>First let’s check to see which versions of Python are available to install:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">search</span> <span class="o">--</span><span class="n">full</span><span class="o">-</span><span class="n">name</span> <span class="n">python</span>
+</pre></div>
+</div>
+<p>You can use <code class="docutils literal"><span class="pre">conda</span> <span class="pre">search</span> <span class="pre">python</span></code> to show all packages whose names contain the
+text &#8220;python&#8221; or add the <code class="docutils literal"><span class="pre">--full-name</span></code> option for only the packages whose full
+name is exactly &#8220;python&#8221;.</p>
+<p><strong>Install a different version of Python</strong></p>
+<p>So now let’s say you need Python 3 to learn programming, but you don’t want to overwrite your Python 2.7
+environment by updating Python. You can create and activate a new environment named snakes, and install
+the latest version of Python 3 as follows:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">snakes</span> <span class="n">python</span><span class="o">=</span><span class="mi">3</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Linux, OS X: <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snakes</span></code></li>
+<li>Windows:  <code class="docutils literal"><span class="pre">activate</span> <span class="pre">snakes</span></code></li>
+</ul>
+<p>TIP: It would be wise to name this environment a descriptive name like <code class="docutils literal"><span class="pre">python3</span></code> but that is not as much fun.</p>
+<p><strong>Verify environment added</strong></p>
+<p>To verify that the snakes environment has now been added, type the command:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">info</span> <span class="o">--</span><span class="n">envs</span>
+</pre></div>
+</div>
+<p>Conda displays the list of all environments, with the current environment shown in (parentheses) or [brackets] in front of your prompt:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">snakes</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Verify Python version in new environment</strong></p>
+<p>Verify that the snakes environment uses Python version 3:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p><strong>Use a different version of Python</strong></p>
+<p>To switch to the new environment with a different version of Python, you simply need to activate it.
+Let’s switch back to the default, 2.7:</p>
+<ul class="simple">
+<li>Linux, OS X: <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snowflakes</span></code></li>
+<li>Windows:  <code class="docutils literal"><span class="pre">activate</span> <span class="pre">snowflakes</span></code></li>
+</ul>
+<p><strong>Verify Python version in environment</strong></p>
+<p>Verify that the snowflakes environment uses the same Python version used when you installed conda:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p><strong>Deactivate this environment</strong></p>
+<p>After you are finished working in the snowflakes environment, deactivate this environment and
+revert your PATH to its previous state:</p>
+<ul class="simple">
+<li>Linux, OS X: <code class="docutils literal"><span class="pre">source</span> <span class="pre">deactivate</span></code></li>
+<li>Windows: <code class="docutils literal"><span class="pre">deactivate</span></code></li>
+</ul>
+</div>
+<div class="section" id="managing-packages">
+<span id="managing-pkgs"></span><h2>4. Managing packages<a class="headerlink" href="#managing-packages" title="Permalink to this headline">¶</a></h2>
+<p>Now let’s play with packages. We’ve already installed several packages (Astroid, Babel and a specific
+version of Python) when we created a new environment. We’ll check what packages we have, check what
+are available, look for a specific package and install it. Then we’ll look for and install specific
+packages on the Anaconda.org repository, install more using pip install instead of conda install, and
+install a commercial package.</p>
+<p><strong>View a list of packages and versions installed in an environment</strong></p>
+<p>Use this to see which version of Python or another program is installed in the environment, or to confirm that a package has been added or removed.
+In your terminal window, simply type:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<p><strong>View a list of packages available with the conda install command</strong></p>
+<p>A list of packages available for conda install, sorted by Python version, is available
+from <a class="reference external" href="http://docs.continuum.io/anaconda/pkg-docs.html">http://docs.continuum.io/anaconda/pkg-docs.html</a></p>
+<p><strong>Search for a package</strong></p>
+<p>First let’s check to see if a package we want is available for conda to install:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">search</span> <span class="n">beautifulsoup4</span>
+</pre></div>
+</div>
+<p>This displays the package, so we know it is available.</p>
+<p><strong>Install a new package</strong></p>
+<p>We will install Beautiful Soup into the current environment, using conda install as follows:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">--</span><span class="n">name</span> <span class="n">bunnies</span> <span class="n">beautifulsoup4</span>
+</pre></div>
+</div>
+<p>NOTE: You must tell conda the name of the environment (<code class="docutils literal"><span class="pre">--name</span> <span class="pre">bunnies</span></code>) OR it will install in
+the current environment.</p>
+<p>Now activate the bunnies environment, and do a conda list to see the new program installed:</p>
+<ul class="simple">
+<li>Linux, OS X: <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">bunnies</span></code></li>
+<li>Windows:  <code class="docutils literal"><span class="pre">activate</span> <span class="pre">bunnies</span></code></li>
+</ul>
+<p>All platforms:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<p><strong>Install a package from Anaconda.org</strong></p>
+<p>For packages that are not available using conda install, we can next look on Anaconda.org.
+Anaconda.org is a package management service for both public and private package repositories.
+Anaconda.org is a Continuum Analytics product, just like Anaconda and Miniconda.</p>
+<p>TIP: You are not required to register with Anaconda.org to download files.</p>
+<p>To download into the current environment from Anaconda.org, we will specify Anaconda.org as the
+“channel” by typing the full URL to the package we want.</p>
+<p>In a browser, go to <a class="reference external" href="http://anaconda.org">http://anaconda.org</a>.  We are looking for a package named “bottleneck” so in
+the top left box named “Search Anaconda Cloud” type “bottleneck” and click the Search button.</p>
+<p>There are more than a dozen copies of bottleneck available on Anaconda.org, but we want the most
+frequently downloaded copy. So you can sort by number of downloads by clicking the “Downloads” heading.</p>
+<p>Select the version that has the most downloads by clicking the package name.
+This brings you to the Anaconda.org detail page that shows the exact command to use to download it:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">--</span><span class="n">channel</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">conda</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">pandas</span> <span class="n">bottleneck</span>
+</pre></div>
+</div>
+<p><strong>Check to see that the package downloaded</strong></p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<p><strong>Install a package with pip</strong></p>
+<p>For packages that are not available from conda or Anaconda.org, we can often install the package with pip (short for &#8220;pip installs packages&#8221;).</p>
+<p>TIP:  Pip is only a package manager, so it cannot manage environments for you. Pip cannot even update
+Python, because unlike conda it does not consider Python a package. But it does install some things
+that conda does not, and vice versa. Both pip and conda are included in Anaconda and Miniconda.</p>
+<p>We activate the environment where we want to put the program, then pip install a program named “See”:</p>
+<ul class="simple">
+<li>Linux, OS X: <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">bunnies</span></code></li>
+<li>Windows:  <code class="docutils literal"><span class="pre">activate</span> <span class="pre">bunnies</span></code></li>
+</ul>
+<p>All platforms:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">see</span>
+</pre></div>
+</div>
+<p><strong>Verify pip installs</strong></p>
+<p>Check to see that See was installed:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<p><strong>Install commercial package</strong></p>
+<p>Installing commercial packages is the same as installing any other package with conda. So, as an example,
+let’s install and then delete a free trial of one of Continuum’s commercial packages IOPro, which can speed
+up your Python processing:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">iopro</span>
+</pre></div>
+</div>
+<p>TIP: Except for academic use, this free trial expires after 30 days.</p>
+<p>You can now install and verify any package you want using conda, whether using the conda command, downloading from Anaconda.org, or using pip install, and whether open source or commercial.</p>
+</div>
+<div class="section" id="removing-packages-environments-or-conda">
+<span id="remove-pkgs-envs-conda"></span><h2>5. Removing packages, environments, or conda<a class="headerlink" href="#removing-packages-environments-or-conda" title="Permalink to this headline">¶</a></h2>
+<p>Let’s end this test drive by removing one or more of your test packages, environments, and/or conda,  if you wish.</p>
+<p><strong>Remove a package</strong></p>
+<p>Let’s say that you decided not to continue using the commercial package IOPro.  You can remove it from the
+bunnies environment with:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">remove</span> <span class="o">--</span><span class="n">name</span> <span class="n">bunnies</span> <span class="n">iopro</span>
+</pre></div>
+</div>
+<p><strong>Confirm that program has been removed</strong></p>
+<p>Use conda list to confirm that IOPro has been removed:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<p><strong>Remove an environment</strong></p>
+<p>We no longer need the snakes environment, so type the command:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">remove</span> <span class="o">--</span><span class="n">name</span> <span class="n">snakes</span> <span class="o">--</span><span class="nb">all</span>
+</pre></div>
+</div>
+<p><strong>Verify environment was removed</strong></p>
+<p>To verify that the snakes environment has now been removed, type the command:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">info</span> <span class="o">--</span><span class="n">envs</span>
+</pre></div>
+</div>
+<p>Snakes is no longer shown in the environment list, so we know it was deleted.</p>
+<p><strong>Remove conda</strong></p>
+<ul class="simple">
+<li>Linux, OS X:</li>
+</ul>
+<p>Remove the Anaconda OR Miniconda install directory:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">~/</span><span class="n">miniconda</span> <span class="n">OR</span>  <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">~/</span><span class="n">anaconda</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Windows:  Go to Control Panel, click “Add or remove Program,” select “Python 2.7 (Anaconda)” OR “Python 2.7 Miniconda)” and click Remove Program.</li>
+</ul>
+<p><strong>More resources</strong></p>
+<ul class="simple">
+<li>To read the full documentation for any conda command, type the command
+followed by  <code class="docutils literal"><span class="pre">-h</span></code> for “help.” For example, to learn about the conda update
+command: <code class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">-h</span></code></li>
+<li>Full documentation:   <a class="reference external" href="http://conda.pydata.org/docs/">http://conda.pydata.org/docs/</a></li>
+<li>Cheat sheet: <a class="reference internal" href="using/cheatsheet.html"><span class="doc">Conda cheat sheet</span></a></li>
+<li>FAQs:                                 <a class="reference external" href="http://docs.continuum.io/anaconda/faq.html">http://docs.continuum.io/anaconda/faq.html</a> and <a class="reference internal" href="faq.html"><span class="doc">FAQ</span></a></li>
+<li>Free community support:        <a class="reference external" href="https://groups.google.com/a/continuum.io/forum/#!forum/anaconda">https://groups.google.com/a/continuum.io/forum/#!forum/anaconda</a></li>
+<li>Paid support options: <a class="reference external" href="http://continuum.io/support">http://continuum.io/support</a></li>
+<li><a class="reference external" href="http://continuum.io/contact-us">Continuum Analytics Training &amp; Consulting</a> : Continuum Analytics offers Python training courses. Our teaching philosophy is that the best way to learn is with hands-on experience to real world problems. Courses are available to individuals online, at numerous sites, or in-house at your place of business. We also offer consulting services for the analysis, management and visualization of scientific and business data or optimizing your processing workflows on modern hardware and GPUs.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="using/cheatsheet.html" class="btn btn-neutral float-right" title="Conda cheat sheet" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="install/central.html" class="btn btn-neutral" title="Centralized installation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Continuum Analytics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:' ',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+
+.. _skeleton_ref:
+
+conda skeleton
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda skeleton
+   
+   DESCRIPTION
+          usage: conda-skeleton [-h] {pypi,cpan,cran,luarocks} ...
+   
+          Generates  a  boilerplate/skeleton  recipe,  which you can then edit to
+          create a full recipe. Some simple skeleton recipes may  not  even  need
+          edits.
+   
+   OPTIONS
+      positional arguments:
+                 {pypi,cpan,cran,luarocks}
+   
+          pypi   Create recipe skeleton for packages hosted on the Python Packag‐
+                 ing Index (PyPI) (pypi.python.org).
+   
+          cpan   Create recipe skeleton for packages hosted on the  Comprehensive
+                 Perl Archive Network (CPAN) (cpan.org).
+   
+          cran   Create  recipe skeleton for packages hosted on the Comprehensive
+                 R Archive Network (CRAN) (cran.r-project.org).
+   
+          luarocks
+                 Create recipe skeleton for luarocks, hosted at luarocks.org
+   
+      optional arguments:
+          -h, --help
+                 Show this help message and exit.
+   
+          Run --help on the subcommands like 'conda skeleton pypi --help' to  see
+          the options available.
+   
+   
+   
+   Continuum Analytics             September 2016                        <B>CONDA(1)</B>
+   </PRE>

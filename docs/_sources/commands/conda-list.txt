@@ -1,0 +1,92 @@
+
+.. _list_ref:
+
+conda list
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda list
+   
+   DESCRIPTION
+          usage: conda list [-h] [-n ENVIRONMENT | -p PATH] [--json]
+   
+                 [--show-channel-urls]    [--no-show-channel-urls]    [-c]   [-f]
+                 [--explicit] [--md5] [-e] [-r] [--no-pip] [regex]
+   
+          List linked packages in a conda environment.
+   
+   OPTIONS
+      positional arguments:
+          regex  List only packages matching this regular expression.
+   
+      optional arguments:
+          -h, --help
+                 Show this help message and exit.
+   
+          -n ENVIRONMENT, --name ENVIRONMENT
+                 Name of environment (in envs dirs).
+   
+          -p PATH, --prefix PATH
+                 Full path to environment prefix (default: envs  dirs/build-envi‐
+                 ronment).
+   
+          --json Report all output as json. Suitable for using conda programmati‐
+                 cally.
+   
+          --show-channel-urls
+                 Show channel urls (default: True).
+   
+          --no-show-channel-urls
+                 Don't show channel urls.
+   
+          -c, --canonical
+                 Output canonical names of packages only. Implies --nopip.
+   
+          -f, --full-name
+                 Only search for full names, i.e., ^&lt;regex&gt;$.
+   
+          --explicit
+                 List explicitly all installed conda packaged  with  URL  (output
+                 may be used by conda create --file).
+   
+          --md5  Add MD5 hashsum when using --explicit
+   
+          -e, --export
+                 Output requirement string only (output may be used by conda cre‐
+                 ate --file).
+   
+          -r, --revisions
+                 List the revision history and exit.
+   
+          --no-pip
+                 Do not include pip-only installed packages.
+   
+   EXAMPLES
+          List all packages in the current environment:
+   
+                 conda list
+   
+          List all packages installed into the environment 'myenv':
+   
+                 conda list -n myenv
+   
+          Save packages for future use:
+   
+                 conda list --export &gt; package-list.txt
+   
+          Reinstall packages from an export file:
+   
+                 conda create -n myenv --file package-list.txt
+   
+   
+   
+   Continuum Analytics             September 2016                        <B>CONDA(1)</B>
+   </PRE>

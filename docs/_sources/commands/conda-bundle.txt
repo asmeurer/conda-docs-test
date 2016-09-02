@@ -1,0 +1,68 @@
+
+.. _bundle_ref:
+
+conda bundle
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda bundle
+   
+   DESCRIPTION
+          usage: conda bundle [-h] [-c | -x PATH | --metadump PATH]
+   
+          [-n ENVIRONMENT | -p PATH] [-q] [--bundle-name NAME]
+                 [--data-path PATH] [--extra-meta PATH] [--no-env] [--json]
+   
+          Create or extract a "bundle package" (EXPERIMENTAL)
+   
+   OPTIONS
+      optional arguments:
+          -h, --help
+                 Show this help message and exit.
+   
+          -c, --create
+                 Create bundle.
+   
+          -x PATH, --extract PATH
+                 Extact bundle located at PATH.
+   
+          --metadump PATH
+                 Dump metadata of bundle at PATH.
+   
+          -n ENVIRONMENT, --name ENVIRONMENT
+                 Name of environment (in envs dirs).
+   
+          -p PATH, --prefix PATH
+                 Full  path to environment prefix (default: envs dirs/build-envi‐
+                 ronment).
+   
+          -q, --quiet
+                 Do not display progress bar.
+   
+          --bundle-name NAME
+                 Name of bundle.
+   
+          --data-path PATH
+                 Path to data to be included in bundle.
+   
+          --extra-meta PATH
+                 Path to json file with additional meta-data.
+   
+          --no-env
+                 No environment.
+   
+          --json Report all output as json. Suitable for using conda programmati‐
+                 cally.
+   
+   
+   
+   Continuum Analytics             September 2016                        <B>CONDA(1)</B>
+   </PRE>

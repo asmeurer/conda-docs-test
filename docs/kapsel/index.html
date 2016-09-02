@@ -1,0 +1,674 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Conda kapsel tutorial &mdash; Conda   documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Conda   documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                 
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../get-started.html">Get started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using/index.html">Using conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building/build.html">Building packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/help.html">Help &amp; reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get-involved.html">Get involved</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Conda</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Conda kapsel tutorial</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/conda/conda-docs/blob/master/docs/source/kapsel/index.rst" class="fa fa-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="conda-kapsel-tutorial">
+<h1>Conda kapsel tutorial<a class="headerlink" href="#conda-kapsel-tutorial" title="Permalink to this headline">¶</a></h1>
+<p>Conda kapsel automates setup steps such as installing the right
+packages, downloading files, and configuring passwords so that
+anyone who wants to look at your notebooks, Bokeh plots or other
+analysis code can type <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span> <span class="pre">run</span></code> and have it Just
+Work(tm).</p>
+<p>Even if you never share your project with others, you will find it
+more convenient to use <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span></code> than to manually maintain
+an environment with commands such as <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span></code>.</p>
+<p>In this tutorial, you will create a kapsel containing a Bokeh
+application, then package it up as a zip file and &#8220;send&#8221; it to an
+imaginary colleague. Your colleague will then be able to unpack it
+and run it with a single command. You do not need to know Bokeh to
+do this tutorial.</p>
+<p>This tutorial is for all platforms: Windows, OS X and Linux.</p>
+<p>NOTE: You must have <a class="reference external" href="http://conda.pydata.org/docs/install/quick.html">conda installed</a> before
+beginning this tutorial.</p>
+<p>NOTE: Windows users using Python 3.5.1 should upgrade to Python 3.5.2+
+with the command <code class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">python</span></code> to avoid an issue with
+Windows and Python 3.5.1.</p>
+<div class="section" id="install-conda-kapsel">
+<h2>Install conda kapsel<a class="headerlink" href="#install-conda-kapsel" title="Permalink to this headline">¶</a></h2>
+<p>Create and activate a conda environment for this tutorial, naming
+it &#8220;kapsel-tutorial&#8221;.</p>
+<p><strong>On Windows</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">kapsel</span><span class="o">-</span><span class="n">tutorial</span> <span class="n">python</span>
+<span class="n">activate</span> <span class="n">kapsel</span><span class="o">-</span><span class="n">tutorial</span>
+</pre></div>
+</div>
+<p><strong>On OS X or Linux</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">kapsel</span><span class="o">-</span><span class="n">tutorial</span> <span class="n">python</span>
+<span class="n">source</span> <span class="n">activate</span> <span class="n">kapsel</span><span class="o">-</span><span class="n">tutorial</span>
+</pre></div>
+</div>
+<p>Next, use conda to install the keyring package from the
+conda-forge channel:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">keyring</span>
+</pre></div>
+</div>
+<p>Next, use conda to install conda-kapsel from the conda-kapsel
+channel:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">kapsel</span> <span class="n">conda</span><span class="o">-</span><span class="n">kapsel</span>
+</pre></div>
+</div>
+<p>Test your installation by running the &#8220;version&#8221; command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">kapsel</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>If it installed correctly, kapsel will respond with the version
+number.</p>
+</div>
+<div class="section" id="create-an-empty-project">
+<h2>Create an empty project<a class="headerlink" href="#create-an-empty-project" title="Permalink to this headline">¶</a></h2>
+<p>We&#8217;ll create a project directory called <code class="docutils literal"><span class="pre">iris</span></code>. At the command
+prompt, switch to a directory you&#8217;d like to contain the <code class="docutils literal"><span class="pre">iris</span></code>
+project. To create the <code class="docutils literal"><span class="pre">iris</span></code> project directory, type this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">kapsel</span> <span class="n">init</span> <span class="o">--</span><span class="n">directory</span> <span class="n">iris</span>
+</pre></div>
+</div>
+<p>It will ask you whether to create the <code class="docutils literal"><span class="pre">iris</span></code> directory. Type &#8220;y&#8221;
+to confirm.  Your command line session will look something like
+this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ cd /home/alice/mystuff
+$ conda kapsel init --directory iris
+Create directory &#39;/home/alice/mystuff/iris&#39;? y
+Project configuration is in /home/alice/mystuff/iris/kapsel.yml
+</pre></div>
+</div>
+<p>Optional: You can use your editor now to look through the file
+<code class="docutils literal"><span class="pre">iris/kapsel.yml</span></code>. We won&#8217;t edit <code class="docutils literal"><span class="pre">kapsel.yml</span></code> manually in this
+tutorial, but you will see later that the commands we use in this
+tutorial will modify it.</p>
+<p>Before continuing, change into your new <code class="docutils literal"><span class="pre">iris</span></code> directory:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">iris</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-some-data-to-work-with">
+<h2>Get some data to work with<a class="headerlink" href="#get-some-data-to-work-with" title="Permalink to this headline">¶</a></h2>
+<p>Often data sets are too large to keep locally, so you may want to
+download them on demand. We&#8217;ll use a small data set about iris
+flowers to show how download on demand works.</p>
+<p>Change into your new <code class="docutils literal"><span class="pre">iris</span></code> project directory, then copy and
+paste in this code:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">kapsel</span> <span class="n">add</span><span class="o">-</span><span class="n">download</span> <span class="n">IRIS_CSV</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">bokeh</span><span class="o">/</span><span class="n">bokeh</span><span class="o">/</span><span class="n">f9aa6a8caae8c7c12efd32be95ec7b0216f62203</span><span class="o">/</span><span class="n">bokeh</span><span class="o">/</span><span class="n">sampledata</span><span class="o">/</span><span class="n">iris</span><span class="o">.</span><span class="n">csv</span>
+</pre></div>
+</div>
+<p>After clicking &#8220;enter&#8221; <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span></code> downloads the data
+file. You will see a new file <code class="docutils literal"><span class="pre">iris.csv</span></code> in your iris
+directory. Now if you look at <code class="docutils literal"><span class="pre">kapsel.yml</span></code>, you&#8217;ll see a new
+entry in the <code class="docutils literal"><span class="pre">downloads:</span></code> section.</p>
+<p>Here&#8217;s what the command line session looks like:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ cd /home/alice/mystuff/iris
+$ conda kapsel add-download IRIS_CSV  https://raw.githubusercontent.com/bokeh/bokeh/f9aa6a8caae8c7c12efd32be95ec7b0216f62203/bokeh/sampledata/iris.csv
+File downloaded to /home/alice/mystuff/iris/iris.csv
+Added https://raw.githubusercontent.com/bokeh/bokeh/f9aa6a8caae8c7c12efd32be95ec7b0216f62203/bokeh/sampledata/iris.csv to the project file.
+</pre></div>
+</div>
+<p>TIP: The name <code class="docutils literal"><span class="pre">IRIS_CSV</span></code> shown on the second line is the name of
+an environment variable. We&#8217;ll get to those in a moment.</p>
+</div>
+<div class="section" id="create-a-command-to-run">
+<h2>Create a command to run<a class="headerlink" href="#create-a-command-to-run" title="Permalink to this headline">¶</a></h2>
+<p>A project should contain some sort of code, right? Let&#8217;s make a
+&#8220;hello world&#8221;.  Create a file <code class="docutils literal"><span class="pre">hello.py</span></code> with these contents:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now you could run <code class="docutils literal"><span class="pre">hello.py</span></code> with the command <code class="docutils literal"><span class="pre">python</span>
+<span class="pre">hello.py</span></code>. But that won&#8217;t do any <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span></code> magic. To be
+sure things get set up, add <code class="docutils literal"><span class="pre">hello.py</span></code> as a project command,
+like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">kapsel</span> <span class="n">add</span><span class="o">-</span><span class="n">command</span> <span class="n">hello</span> <span class="s2">&quot;python hello.py&quot;</span>
+</pre></div>
+</div>
+<p>It will ask you what kind of command it is; choose <code class="docutils literal"><span class="pre">C</span></code> for
+command line. The command line session looks like:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ conda kapsel add-command hello &quot;python hello.py&quot;
+Is `hello` a (B)okeh app, (N)otebook, or (C)ommand line? C
+Added a command &#39;hello&#39; to the project. Run it with `conda kapsel run hello`.
+</pre></div>
+</div>
+<p>Now try <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span> <span class="pre">run</span> <span class="pre">hello</span></code>. There will be a short delay as
+the new dedicated project is created, and then it will print
+&#8220;hello&#8221;.</p>
+<p>NOTE: Since you have only one command, plain <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span> <span class="pre">run</span></code>
+would work too.</p>
+<p>When you run the command the second time, it runs much faster
+because the dedicated project is already created.</p>
+<p>In your <code class="docutils literal"><span class="pre">iris</span></code> directory, you will now see an <code class="docutils literal"><span class="pre">envs</span></code>
+subdirectory. By default every project has its own packages in its
+own sandbox to ensure that projects do not interfere with one
+another.</p>
+<p>Now if you look at <code class="docutils literal"><span class="pre">kapsel.yml</span></code> in your text editor you will see
+the <code class="docutils literal"><span class="pre">hello</span></code> command in the <code class="docutils literal"><span class="pre">commands:</span></code> section.</p>
+<p>You can also list all the commands in your project by typing
+<code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span> <span class="pre">list-commands</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ conda kapsel list-commands
+Commands for project: /home/alice/mystuff/iris
+
+Name      Description
+====      ===========
+hello     python hello.py
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-required-packages">
+<h2>Adding required packages<a class="headerlink" href="#adding-required-packages" title="Permalink to this headline">¶</a></h2>
+<p>In the next steps, we&#8217;ll need to use some packages that aren&#8217;t in
+our <code class="docutils literal"><span class="pre">iris/envs/default</span></code> environment yet: Bokeh and Pandas.</p>
+<p>In your <code class="docutils literal"><span class="pre">iris</span></code> directory, type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">kapsel</span> <span class="n">add</span><span class="o">-</span><span class="n">packages</span> <span class="n">bokeh</span><span class="o">=</span><span class="mf">0.12</span> <span class="n">pandas</span>
+</pre></div>
+</div>
+<p>The command line session will look something like:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ conda kapsel add-packages bokeh=0.12 pandas
+conda install: Using Anaconda Cloud api site https://api.anaconda.org
+Using Conda environment /home/alice/mystuff/iris/envs/default.
+Added packages to project file: bokeh=0.12, pandas.
+</pre></div>
+</div>
+<p>If you look at <code class="docutils literal"><span class="pre">kapsel.yml</span></code> now, you&#8217;ll see bokeh and pandas
+listed under the <code class="docutils literal"><span class="pre">packages:</span></code> section. Since the packages have
+now been installed in your project&#8217;s environment, you will also
+see files such as <code class="docutils literal"><span class="pre">envs/YOUR-PATH-TO/bokeh</span></code>.</p>
+</div>
+<div class="section" id="configure-your-project-with-environment-variables">
+<h2>Configure your project with environment variables<a class="headerlink" href="#configure-your-project-with-environment-variables" title="Permalink to this headline">¶</a></h2>
+<p>You may have wondered about that string <code class="docutils literal"><span class="pre">IRIS_CSV</span></code> when you
+first looked in your <code class="docutils literal"><span class="pre">kapsel.yml</span></code> file. That&#8217;s the environment
+variable that tells your program where <code class="docutils literal"><span class="pre">iris.csv</span></code> lives. There
+are also some other environment variables that <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span></code>
+sets automatically, such as <code class="docutils literal"><span class="pre">PROJECT_DIR</span></code> which locates your
+project directory.</p>
+<p>You can grab these variables from within your scripts with
+Python&#8217;s <code class="docutils literal"><span class="pre">os.getenv</span></code> function.</p>
+<p>Let&#8217;s make a script that prints out our data. In your text editor,
+name the script <code class="docutils literal"><span class="pre">showdata.py</span></code> and paste in the following code:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">project_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;PROJECT_DIR&quot;</span><span class="p">)</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;CONDA_DEFAULT_ENV&quot;</span><span class="p">)</span>
+<span class="n">iris_csv</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;IRIS_CSV&quot;</span><span class="p">)</span>
+
+<span class="n">flowers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">iris_csv</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">flowers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My project directory is </span><span class="si">{}</span><span class="s2"> and my conda environment is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">project_dir</span><span class="p">,</span> <span class="n">env</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Save and close the editor. If you tried to run your new script now
+with <code class="docutils literal"><span class="pre">python</span> <span class="pre">showdata.py</span></code> it probably wouldn&#8217;t work, because
+Pandas might not be installed yet and the environment variables
+wouldn&#8217;t be set.</p>
+<p>Tell <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span></code> how to run your new script by adding a new
+command called showdata:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">kapsel</span> <span class="n">add</span><span class="o">-</span><span class="n">command</span> <span class="n">showdata</span> <span class="s2">&quot;python showdata.py&quot;</span>
+</pre></div>
+</div>
+<p>(When prompted, choose &#8220;C&#8221; for &#8220;command line&#8221;.)</p>
+<p>Now run that new command at the command prompt:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">kapsel</span> <span class="n">run</span> <span class="n">showdata</span>
+</pre></div>
+</div>
+<p>You will see the data print out, and then the sentence about &#8220;My
+project directory is... and my conda environment is...&#8221;.</p>
+<p>Good work so far!</p>
+</div>
+<div class="section" id="custom-variables">
+<h2>Custom variables<a class="headerlink" href="#custom-variables" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s say your new command needs a database password, or has
+another tunable parameter. You can require (or just allow) users
+to configure these before the command runs.</p>
+<p>NOTE: Encrypted variables such as passwords are treated
+differently from plain variables. Encrypted variable values are
+kept in the system keychain, while plain variable values are kept
+in the file <code class="docutils literal"><span class="pre">kapsel-local.yml</span></code>.</p>
+<p>Let&#8217;s try out a plain unencrypted variable first.</p>
+<p>Type the command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">kapsel</span> <span class="n">add</span><span class="o">-</span><span class="n">variable</span> <span class="n">COLUMN_TO_SHOW</span>
+</pre></div>
+</div>
+<p>In <code class="docutils literal"><span class="pre">kapsel.yml</span></code> you now have a variable named <code class="docutils literal"><span class="pre">COLUMN_TO_SHOW</span></code>
+in the <code class="docutils literal"><span class="pre">variables:</span></code> section, and <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span> <span class="pre">list-variables</span></code>
+lists <code class="docutils literal"><span class="pre">COLUMN_TO_SHOW</span></code>.</p>
+<p>Now modify your script <code class="docutils literal"><span class="pre">showdata.py</span></code> to use this new variable:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">project_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;PROJECT_DIR&quot;</span><span class="p">)</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;CONDA_DEFAULT_ENV&quot;</span><span class="p">)</span>
+<span class="n">iris_csv</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;IRIS_CSV&quot;</span><span class="p">)</span>
+<span class="n">column_to_show</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;COLUMN_TO_SHOW&quot;</span><span class="p">)</span>
+
+<span class="n">flowers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">iris_csv</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Showing column </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">column_to_show</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">flowers</span><span class="p">[</span><span class="n">column_to_show</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My project directory is </span><span class="si">{}</span><span class="s2"> and my conda environment is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">project_dir</span><span class="p">,</span> <span class="n">env</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Because there&#8217;s no value yet for <code class="docutils literal"><span class="pre">COLUMN_TO_SHOW</span></code>, it will be
+mandatory for users to provide one. Try this command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">kapsel</span> <span class="n">run</span> <span class="n">showdata</span>
+</pre></div>
+</div>
+<p>The first time you run this, you will see a prompt asking you to
+type in a column name. If you enter a column at the prompt (try
+&#8220;sepal_length&#8221;), it will be saved in <code class="docutils literal"><span class="pre">kapsel-local.yml</span></code>. Next
+time you run it, you won&#8217;t be prompted for a value.</p>
+<p>To change the value in <code class="docutils literal"><span class="pre">kapsel-local.yml</span></code>, use:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">kapsel</span> <span class="nb">set</span><span class="o">-</span><span class="n">variable</span> <span class="n">COLUMN_TO_SHOW</span><span class="o">=</span><span class="n">petal_length</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">kapsel-local.yml</span></code> is local to this user and machine, while
+<code class="docutils literal"><span class="pre">kapsel.yml</span></code> is shared across all users of a project.</p>
+<p>You can also set a default value for a variable in <code class="docutils literal"><span class="pre">kapsel.yml</span></code>;
+if you do this, users are not prompted for a value, but they can
+override the default if they want to. Set a default value like
+this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">kapsel</span> <span class="n">add</span><span class="o">-</span><span class="n">variable</span> <span class="o">--</span><span class="n">default</span><span class="o">=</span><span class="n">sepal_width</span> <span class="n">COLUMN_TO_SHOW</span>
+</pre></div>
+</div>
+<p>Now you should see the default in <code class="docutils literal"><span class="pre">kapsel.yml</span></code>.</p>
+<p>If you&#8217;ve set the variable in <code class="docutils literal"><span class="pre">kapsel-local.yml</span></code>, the default
+will be ignored.  You can unset your local override with:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">kapsel</span> <span class="n">unset</span><span class="o">-</span><span class="n">variable</span> <span class="n">COLUMN_TO_SHOW</span>
+</pre></div>
+</div>
+<p>The default will then be used when you <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span> <span class="pre">run</span> <span class="pre">showdata</span></code>.</p>
+<p>NOTE: <code class="docutils literal"><span class="pre">unset-variable</span></code> removes the variable value, but keeps the
+requirement that <code class="docutils literal"><span class="pre">COLUMN_TO_SHOW</span></code> must be set.
+<code class="docutils literal"><span class="pre">remove-variable</span></code> removes the variable requirement from
+<code class="docutils literal"><span class="pre">kapsel.yml</span></code> so that the project will no longer require a
+<code class="docutils literal"><span class="pre">COLUMN_TO_SHOW</span></code> value in order to run.</p>
+</div>
+<div class="section" id="an-encrypted-custom-variable">
+<h2>An encrypted custom variable<a class="headerlink" href="#an-encrypted-custom-variable" title="Permalink to this headline">¶</a></h2>
+<p>It&#8217;s good practice to use variables for passwords and secrets in
+particular.  This way, every user of the project can input their
+own password, and it will be kept in their system keychain.</p>
+<p>Any variable ending in <code class="docutils literal"><span class="pre">_PASSWORD</span></code>, <code class="docutils literal"><span class="pre">_SECRET</span></code>, or
+<code class="docutils literal"><span class="pre">_SECRET_KEY</span></code> is encrypted by default.</p>
+<p>To create an encrypted custom variable, type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">kapsel</span> <span class="n">add</span><span class="o">-</span><span class="n">variable</span> <span class="n">DB_PASSWORD</span>
+</pre></div>
+</div>
+<p>In <code class="docutils literal"><span class="pre">kapsel.yml</span></code> you now have a <code class="docutils literal"><span class="pre">DB_PASSWORD</span></code> in the
+<code class="docutils literal"><span class="pre">variables:</span></code> section, and <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span> <span class="pre">list-variables</span></code> lists
+<code class="docutils literal"><span class="pre">DB_PASSWORD</span></code>.</p>
+<p>From here, things work just like the <code class="docutils literal"><span class="pre">COLUMN_TO_SHOW</span></code> example
+above, except that the value of <code class="docutils literal"><span class="pre">DB_PASSWORD</span></code> is saved in the
+system keychain rather than in <code class="docutils literal"><span class="pre">kapsel-local.yml</span></code>.</p>
+<p>Try for example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">kapsel</span> <span class="n">run</span> <span class="n">showdata</span>
+</pre></div>
+</div>
+<p>This will prompt you for a value the first time, and then save it
+in the keychain and use it from there on the second run.  You can
+also use <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span> <span class="pre">set-variable</span> <span class="pre">DB_PASSWORD=whatever</span></code>,
+<code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span> <span class="pre">unset-variable</span> <span class="pre">DB_PASSWORD</span></code>, and so on.</p>
+<p>Because this Iris example does not need a database password, we&#8217;ll
+now remove it. Type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">kapsel</span> <span class="n">remove</span><span class="o">-</span><span class="n">variable</span> <span class="n">DB_PASSWORD</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-a-bokeh-app">
+<h2>Creating a Bokeh app<a class="headerlink" href="#creating-a-bokeh-app" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s plot that flower data!</p>
+<p>Inside your <code class="docutils literal"><span class="pre">iris</span></code> project directory, create a new directory
+<code class="docutils literal"><span class="pre">iris_plot</span></code>, and in it save a new file named <code class="docutils literal"><span class="pre">main.py</span></code> with
+these contents:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="k">import</span> <span class="n">Figure</span>
+<span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="k">import</span> <span class="n">curdoc</span>
+
+<span class="n">iris_csv</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;IRIS_CSV&quot;</span><span class="p">)</span>
+
+<span class="n">flowers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">iris_csv</span><span class="p">)</span>
+
+<span class="n">colormap</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;setosa&#39;</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;versicolor&#39;</span><span class="p">:</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;virginica&#39;</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">}</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">colormap</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">flowers</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]]</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">Figure</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Iris Morphology&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">axis_label</span> <span class="o">=</span> <span class="s1">&#39;Petal Length&#39;</span>
+<span class="n">p</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">axis_label</span> <span class="o">=</span> <span class="s1">&#39;Petal Width&#39;</span>
+
+<span class="n">p</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">flowers</span><span class="p">[</span><span class="s2">&quot;petal_length&quot;</span><span class="p">],</span> <span class="n">flowers</span><span class="p">[</span><span class="s2">&quot;petal_width&quot;</span><span class="p">],</span>
+         <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">fill_alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">curdoc</span><span class="p">()</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Iris Example&quot;</span>
+<span class="n">curdoc</span><span class="p">()</span><span class="o">.</span><span class="n">add_root</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You should now have a file <code class="docutils literal"><span class="pre">iris_plot/main.py</span></code> inside the
+project.  The <code class="docutils literal"><span class="pre">iris_plot</span></code> directory is a simple Bokeh app. (If
+you aren&#8217;t familiar with Bokeh you can learn more from the <a class="reference external" href="http://bokeh.pydata.org/en/latest/">Bokeh
+documentation</a>.)</p>
+<p>To tell <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span></code> about the Bokeh app, be sure you are in
+the directory &#8220;iris&#8221; and type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">kapsel</span> <span class="n">add</span><span class="o">-</span><span class="n">command</span> <span class="n">plot</span> <span class="n">iris_plot</span>
+</pre></div>
+</div>
+<p>When prompted, type <code class="docutils literal"><span class="pre">B</span></code> for Bokeh app. The command line session
+looks like:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ conda kapsel add-command plot iris_plot
+Is `plot` a (B)okeh app, (N)otebook, or (C)ommand line? B
+Added a command &#39;plot&#39; to the project. Run it with `conda kapsel run plot`.
+</pre></div>
+</div>
+<p>NOTE: We use the app directory path, not the script path
+<code class="docutils literal"><span class="pre">iris_plot/main.py</span></code>, to refer to a Bokeh app. Bokeh looks for
+the file <code class="docutils literal"><span class="pre">main.py</span></code> by convention.</p>
+<p>To see your Bokeh plot, run this command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">kapsel</span> <span class="n">run</span> <span class="n">plot</span> <span class="o">--</span><span class="n">show</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">--show</span></code> gets passed to the <code class="docutils literal"><span class="pre">bokeh</span> <span class="pre">serve</span></code> command, and tells
+Bokeh to open a browser window. Other options for <code class="docutils literal"><span class="pre">bokeh</span> <span class="pre">serve</span></code>
+can be appended to the <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span> <span class="pre">run</span></code> command line as well,
+if you like.</p>
+<p>A browser window opens, displaying the Iris plot. Success!</p>
+</div>
+<div class="section" id="clean-and-reproduce">
+<h2>Clean and reproduce<a class="headerlink" href="#clean-and-reproduce" title="Permalink to this headline">¶</a></h2>
+<p>You&#8217;ve left a trail of breadcrumbs in <code class="docutils literal"><span class="pre">kapsel.yml</span></code> describing
+how to reproduce your project. Look around in your <code class="docutils literal"><span class="pre">iris</span></code>
+directory and you&#8217;ll see you have <code class="docutils literal"><span class="pre">envs/default</span></code> and
+<code class="docutils literal"><span class="pre">iris.csv</span></code>, which you didn&#8217;t create manually. Let&#8217;s get rid of
+the unnecessary stuff.</p>
+<p>Type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">kapsel</span> <span class="n">clean</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">iris.csv</span></code> and <code class="docutils literal"><span class="pre">envs/default</span></code> should now be gone.</p>
+<p>Run one of your commands again, and they&#8217;ll come back. Type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">kapsel</span> <span class="n">run</span> <span class="n">showdata</span>
+</pre></div>
+</div>
+<p>You should have <code class="docutils literal"><span class="pre">iris.csv</span></code> and <code class="docutils literal"><span class="pre">envs/default</span></code> back as they
+were before.</p>
+<p>You could also redo the setup steps without running a
+command. Clean again:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">kapsel</span> <span class="n">clean</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">iris.csv</span></code> and <code class="docutils literal"><span class="pre">envs/default</span></code> should be gone again. Then re-prepare the project:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">kapsel</span> <span class="n">prepare</span>
+</pre></div>
+</div>
+<p>You should have <code class="docutils literal"><span class="pre">iris.csv</span></code> and <code class="docutils literal"><span class="pre">envs/default</span></code> back again, but
+this time without running a command.</p>
+</div>
+<div class="section" id="zip-it-up-for-a-colleague">
+<h2>Zip it up for a colleague<a class="headerlink" href="#zip-it-up-for-a-colleague" title="Permalink to this headline">¶</a></h2>
+<p>To share this project with a colleague, you likely want to put it
+in a zip file.  You won&#8217;t want to include <code class="docutils literal"><span class="pre">envs/default</span></code>,
+because conda environments are large and don&#8217;t work if moved
+between machines. If <code class="docutils literal"><span class="pre">iris.csv</span></code> were a larger file, you might
+not want to include that either. The <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span> <span class="pre">archive</span></code>
+command automatically omits the files it can reproduce
+automatically.</p>
+<p>Type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">kapsel</span> <span class="n">archive</span> <span class="n">iris</span><span class="o">.</span><span class="n">zip</span>
+</pre></div>
+</div>
+<p>You will now have a file <code class="docutils literal"><span class="pre">iris.zip</span></code>. If you list the files in
+the zip, you&#8217;ll see that the automatically-generated ones aren&#8217;t
+in there:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ unzip -l iris.zip
+Archive:  iris.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+       16  06-10-2016 10:04   iris/hello.py
+      281  06-10-2016 10:22   iris/showdata.py
+      222  06-10-2016 09:46   iris/.kapselignore
+     4927  06-10-2016 10:31   iris/kapsel.yml
+      557  06-10-2016 10:33   iris/iris_plot/main.py
+---------                     -------
+     6003                     5 files
+</pre></div>
+</div>
+<p>NOTE: There&#8217;s a <code class="docutils literal"><span class="pre">.kapselignore</span></code> file you can use to manually
+exclude anything you don&#8217;t want in your archives.</p>
+<p>NOTE: <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span></code> also supports creating <code class="docutils literal"><span class="pre">.tar.gz</span></code> and
+<code class="docutils literal"><span class="pre">.tar.bz2</span></code> archives. The archive format will match the filename
+you provide.</p>
+<p>When your colleague unzips the archive, they can list the commands
+in it:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ conda kapsel list-commands
+Commands for project: /home/bob/projects/iris
+
+Name      Description
+====      ===========
+hello     python hello.py
+plot      Bokeh app iris_plot
+showdata  python showdata.py
+</pre></div>
+</div>
+<p>Then your colleague can type <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span> <span class="pre">run</span> <span class="pre">showdata</span></code> (for
+example), and <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span></code> will download the data, install
+needed packages, and run the command.</p>
+</div>
+<div class="section" id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>There&#8217;s much more that <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span></code> can do.</p>
+<blockquote>
+<div><ul class="simple">
+<li>It can automatically start processes that your commands depend
+on. Right now it only supports starting Redis, for
+demonstration purposes. Use the <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span> <span class="pre">add-service</span>
+<span class="pre">redis</span></code> command to play with this. More kinds of service will
+be supported soon! Let us know if there are particular ones
+you&#8217;d find useful.</li>
+<li>You can have multiple conda environment specifications in your
+project, which is useful if some of your commands use a
+different version of Python or otherwise have distinct
+dependencies. <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span> <span class="pre">add-env-spec</span></code> adds these
+additional environment specs.</li>
+<li>Commands can be ipython notebooks. If you create a notebook in
+your project directory it will automatically be listed in
+<code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span> <span class="pre">list-commands</span></code>.</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Continuum Analytics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:' ',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

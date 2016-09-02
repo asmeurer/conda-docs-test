@@ -1,0 +1,304 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Managing conda channels &mdash; Conda   documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Conda   documentation" href="index.html"/>
+        <link rel="up" title="Managing packages" href="using/pkgs.html"/>
+        <link rel="next" title="Using R with conda" href="r-with-conda.html"/>
+        <link rel="prev" title="Managing packages" href="using/pkgs.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                 
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="get-started.html">Get started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="using/index.html">Using conda</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="using/using.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using/envs.html">Managing environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="py2or3.html">Managing Python</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="using/pkgs.html">Managing packages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="using/pkgs.html#list-all-packages">List all packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="using/pkgs.html#search-for-a-package">Search for a package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="using/pkgs.html#install-a-package">Install a package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="using/pkgs.html#install-a-package-from-anaconda-org">Install a package from Anaconda.org</a></li>
+<li class="toctree-l3"><a class="reference internal" href="using/pkgs.html#install-non-conda-packages">Install non-conda packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="using/pkgs.html#install-a-commercial-package">Install a commercial package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="using/pkgs.html#package-update">Package update</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="using/pkgs.html#package-remove">Package remove</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Managing conda channels</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="r-with-conda.html">Using R with conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mro.html">Using Microsoft R Open</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="building/build.html">Building packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/help.html">Help &amp; reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-involved.html">Get involved</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Conda</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="using/index.html">Using conda</a> &raquo;</li>
+      
+          <li><a href="using/pkgs.html">Managing packages</a> &raquo;</li>
+      
+    <li>Managing conda channels</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/conda/conda-docs/blob/master/docs/source/channels.rst" class="fa fa-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="managing-conda-channels">
+<h1>Managing conda channels<a class="headerlink" href="#managing-conda-channels" title="Permalink to this headline">¶</a></h1>
+<p>It is possible for different channels to have the same package, so conda must
+handle these channel collisions. If you only use the defaults channel, or only
+use channels that only contain packages that do not exist in any of the other
+channels in your list, there will be no channel collisions. The way conda
+resolves these collisions only matters when you have multiple channels in your
+channel list that host the same package.</p>
+<div class="section" id="before-conda-4-1-0">
+<h2>Before conda 4.1.0<a class="headerlink" href="#before-conda-4-1-0" title="Permalink to this headline">¶</a></h2>
+<p>Before conda 4.1.0 was released on June 14th, 2016, when two channels hosted
+packages with the same name, conda would install the package with the highest
+version number. If there were two packages with the same version number, conda
+would install the one with the highest build number. Only if both the version
+numbers and build numbers were identical did your channel ordering make a
+difference. This had three problems.</p>
+<ol class="arabic simple">
+<li><em>Build numbers from different channels are not comparable.</em> Channel A could
+do nightly builds while Channel B does weekly builds, so build 2 from Channel
+B could be newer than build 4 from Channel A.</li>
+<li><em>Users could not specify a preferred channel.</em> You might consider Channel B
+more reliable than Channel A and prefer to get packages from that channel
+even if the version is older than the package in Channel A. Before version
+4.1.0 conda provided no way to choose that behavior. Only version and build
+numbers mattered.</li>
+<li><em>Build number conflicts.</em> This is an effect of the other two problems. If you
+were happily using package Alpha from Channel A and package Bravo from
+Channel B, and the provider from Channel B then added a version of Alpha to
+Channel B with a very high build number, your conda updates would start
+installing new versions of Alpha from Channel B whether you wanted that or
+not. This could cause both unintentional problems and a risk of deliberate
+attacks.</li>
+</ol>
+</div>
+<div class="section" id="after-conda-4-1-0">
+<h2>After conda 4.1.0<a class="headerlink" href="#after-conda-4-1-0" title="Permalink to this headline">¶</a></h2>
+<p>By default conda now prefers packages from a higher priority channel over any
+version from a lower priority channel. Therefore you can now safely put channels
+at the bottom of your channel list to provide additional packages that are not
+in the default channels, and still be confident that these channels will not
+override the core package set.</p>
+<p>By default conda collects all of the packages with the same name across all
+listed channels and sorts them from highest to lowest channel priority, then
+sorts packages that are tied from highest to lowest version number, then sorts
+packages that are still tied from highest to lowest build number, and then
+installs the first package on the sorted list that satisfies the installation
+specifications.</p>
+<p>To make conda use the old method and install the newest version of a package in
+any listed channel, add <code class="docutils literal"><span class="pre">channel_priority:</span> <span class="pre">false</span></code> to your .condarc file. (You
+may instead run the equivalent
+command <code class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--set</span> <span class="pre">channel_priority</span> <span class="pre">false</span></code>.) Then conda will sort the
+package list from highest to lowest version number, then sort tied packages from
+highest to lowest channel priority, and then sort tied packages from highest to
+lowest build number. Because build numbers from different channels are not
+comparable, build number still comes after channel priority.</p>
+<p>The command <code class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--add</span> <span class="pre">channels</span> <span class="pre">new_channel</span></code> adds the new channel to
+the top of the channel list, making it the highest priority. Conda now has an
+equivalent command <code class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--prepend</span> <span class="pre">channels</span> <span class="pre">new_channel</span></code>. Conda also
+now has a new command <code class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--append</span> <span class="pre">channels</span> <span class="pre">new_channel</span></code> that puts
+the new channel at the bottom of the channel list, making it the lowest
+priority.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="r-with-conda.html" class="btn btn-neutral float-right" title="Using R with conda" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="using/pkgs.html" class="btn btn-neutral" title="Managing packages" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Continuum Analytics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:' ',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

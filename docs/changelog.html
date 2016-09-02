@@ -1,0 +1,1732 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Conda changelog &mdash; Conda   documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Conda   documentation" href="index.html"/>
+        <link rel="up" title="Help &amp; reference" href="help/help.html"/>
+        <link rel="next" title="Conda license" href="license.html"/>
+        <link rel="prev" title="Support options" href="help/support.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                 
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="get-started.html">Get started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using/index.html">Using conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building/build.html">Building packages</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="help/help.html">Help &amp; reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="using/cheatsheet.html">Conda cheat sheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html">Command reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="help/support.html">Support options</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Conda changelog</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">2016-07-12  4.1.8:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">2016-07-09  4.0.11:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">2016-07-07  4.1.7:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">2016-07-01  4.1.6:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">2016-06-29  4.1.5:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">2016-06-29  4.0.10:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">2016-06-27   4.1.4:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">2016-06-23   4.1.3:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">2016-06-17   4.1.2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">2016-06-16   4.1.1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">2016-06-15  4.0.9:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">2016-06-14   4.1.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">2016-06-03   4.0.8:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">2016-05-26   4.0.7:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">2016-05-11   4.0.6:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">2016-03-16   4.0.5:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">2016-03-10   4.0.4:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">2016-03-10   4.0.3:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">2016-03-08   4.0.2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id20">2016-03-07   4.0.1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id21">2016-03-04   4.0.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id22">2016-02-19   3.19.3:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id23">2016-02-19   3.19.2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id24">2016-02-01   3.19.1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id25">2015-12-17   3.19.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id26">2015-12-10   3.18.9:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id27">2015-12-03   3.18.8:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id28">2015-12-02   3.18.7:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id29">2015-11-19   3.18.6:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id30">2015-11-11   3.18.5:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id31">2015-11-09   3.18.4:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id32">2015-10-15   3.18.3:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id33">2015-10-12   3.18.2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id34">2015-09-28   3.18.1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id35">2015-09-28   3.18.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id36">2015-09-11   3.17.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id37">2015-08-10   3.16.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id38">2015-07-23   3.15.1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id39">2015-07-22   3.15.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id40">2015-06-29   3.14.1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id41">2015-06-16   3.14.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id42">2015-06-04   3.13.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id43">2015-05-05   3.12.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id44">2015-04-22   3.11.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id45">2015-04-06   3.10.1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id46">2015-03-12   3.10.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id47">2015-02-24   3.9.1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id48">2015-02-16   3.9.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id49">2015-02-03   3.8.4:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id50">2015-01-28   3.8.3:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id51">2015-01-27   3.8.2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id52">2015-01-23   3.8.1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id53">2015-01-22   3.8.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id54">2014-12-18   3.7.4:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id55">2014-11-05   3.7.3:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id56">2014-10-31   3.7.2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id57">2014-10-07   3.7.1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id58">2014-09-19   3.7.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id59">2014-09-08   3.6.4:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id60">2014-09-04   3.6.3:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id61">2014-08-20   3.6.2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id62">2014-08-13   3.6.1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id63">2014-08-11   3.6.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id64">2014-06-10   3.5.5:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id65">2014-06-10   3.5.4:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id66">2014-06-09   3.5.3:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id67">2014-05-27   3.5.2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id68">2014-05-26   3.5.1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id69">2014-05-15   3.5.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id70">2014-05-05   3.4.3:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id71">2014-04-21   3.4.2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id72">2014-04-07   3.4.1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id73">2014-04-02   3.4.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id74">2014-03-24   3.3.2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id75">2014-03-19   3.3.1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id76">2014-03-18   3.3.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id77">2014-03-12   3.2.1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id78">2014-03-11   3.2.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a1">2014-03-07   3.2.0a1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id79">2014-03-07   3.1.1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id80">2014-03-07   3.1.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id81">2014-02-20   3.0.6:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id82">2014-02-17   3.0.5:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id83">2014-02-14   3.0.4:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id84">2014-02-06   3.0.3:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id85">2014-02-03   3.0.2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id86">2014-01-31   3.0.1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id87">2014-01-24   3.0.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id88">2014-01-17   2.3.1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id89">2014-01-16   2.3.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id90">2014-01-06   2.2.8:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id91">2014-01-02   2.2.7:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id92">2013-12-31   2.2.6:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id93">2013-12-17   2.2.5:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id94">2013-12-10   2.2.4:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id95">2013-12-03   2.2.3:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id96">2013-11-27   2.2.2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id97">2013-11-15   2.2.1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id98">2013-11-14   2.2.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id99">2013-11-07   2.1.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id100">2013-11-04   2.0.4:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id101">2013-10-28   2.0.3:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id102">2013-10-27   2.0.2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id103">2013-10-23   2.0.1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id104">2013-10-01   2.0.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id105">2013-09-06   1.9.1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id106">2013-09-05   1.9.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id107">2013-08-16   1.8.2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id108">2013-08-07   1.8.1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id109">2013-07-31   1.8.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id110">2013-07-02   1.7.2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id111">2013-06-21   1.7.1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id112">2013-06-20   1.7.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a2">2013-06-20   1.7.0a2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id113">2013-06-13   1.7.0a1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id114">2013-06-05   1.6.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rc2">2013-05-31   1.6.0rc2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rc1">2013-05-30   1.6.0rc1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id115">2013-04-29   1.5.2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id116">2013-04-19   1.5.1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id117">2013-03-22   1.5.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id118">2013-03-12   1.4.6:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id119">2013-03-11   1.4.5:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id120">2013-03-09   1.4.4:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id121">2013-03-09   1.4.3:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id122">2013-03-08   1.4.2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id123">2013-03-07   1.4.1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id124">2013-03-05   1.4.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id125">2013-02-05   1.3.5:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id126">2013-01-28   1.3.4:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id127">2013-01-23   1.3.3:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id128">2013-01-23   1.3.2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id129">2013-01-22   1.3.1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id130">2013-01-22   1.3.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id131">2012-11-21   1.2.1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id132">2012-11-20   1.2.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id133">2012-11-13   1.1.0:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id134">2012-09-06   1.0.0:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="license.html">Conda license</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-involved.html">Get involved</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Conda</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="help/help.html">Help &amp; reference</a> &raquo;</li>
+      
+    <li>Conda changelog</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/conda/conda-docs/blob/master/docs/source/changelog.rst" class="fa fa-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="conda-changelog">
+<h1>Conda changelog<a class="headerlink" href="#conda-changelog" title="Permalink to this headline">¶</a></h1>
+<p>This page is drawn from the GitHub conda project changelog: <a class="reference external" href="https://github.com/conda/conda/blob/master/CHANGELOG.md">https://github.com/conda/conda/blob/master/CHANGELOG.md</a></p>
+<div class="section" id="id1">
+<h2>2016-07-12  4.1.8:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fix #3004 UNAUTHORIZED for url (null binstar token), #3008</li>
+<li>fix overwrite existing redirect shortcuts when symlinking envs, #3025</li>
+<li>partially revert no default shortcuts, #3032, #3047</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>2016-07-09  4.0.11:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>allow auto_update_conda from sysrc, #3015 via #3021</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>2016-07-07  4.1.7:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>add msys2 channel to defaults on Windows, #2999</li>
+<li>fix #2939 channel_alias issues; improve offline enforcement, #2964</li>
+<li>fix #2970, #2974 improve handling of <a class="reference external" href="file://">file://</a> URLs inside channel, #2976</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>2016-07-01  4.1.6:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>slow down exp backoff from 1 ms to 100 ms factor, #2944</li>
+<li>set max time on exp_backoff to ~6.5 sec,#2955</li>
+<li>fix #2914 add/subtract from PATH; kill folder output text, #2917</li>
+<li>normalize use of get_index behavior across clone/explicit, #2937</li>
+<li>wrap root prefix check with normcase, #2938</li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h2>2016-06-29  4.1.5:<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>more conservative auto updates of conda #2900</li>
+<li>fix some permissions errors with more aggressive use of move_path_to_trash, #2882</li>
+<li>fix #2891 error if allow_other_channels setting is used, #2896</li>
+<li>fix #2886, #2907 installing a tarball directly from the package cache, #2908</li>
+<li>fix #2681, #2778 reverting #2320 lock behavior changes, #2915</li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h2>2016-06-29  4.0.10:<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fix #2846 revert the use of UNC paths; shorten trash filenames, #2859 via #2878</li>
+<li>fix some permissions errors with more aggressive use of move_path_to_trash, #2882 via #2894</li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h2>2016-06-27   4.1.4:<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fix #2846 revert the use of UNC paths; shorten trash filenames, #2859</li>
+<li>fix exp backoff on Windows, #2860</li>
+<li>fix #2845 URL for local file repos, #2862</li>
+<li>fix #2764 restore full path var on win; create to CONDA_PREFIX env var, #2848</li>
+<li>fix #2754 improve listing pip installed packages, #2873</li>
+<li>change root prefix detection to avoid clobbering root activate scripts, #2880</li>
+<li>address #2841 add lowest and highest priority indication to channel config output, #2875</li>
+<li>add SYMLINK_CONDA to planned instructions, #2861</li>
+<li>use CONDA_PREFIX, not CONDA_DEFAULT_ENV for activate.d, #2856</li>
+<li>call scripts with redirect on win; more error checking to activate, #2852</li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h2>2016-06-23   4.1.3:<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>ensure conda-env auto update, along with conda, #2772</li>
+<li>make yaml booleans behave how everyone expects them to, #2784</li>
+<li>use accept-encoding for repodata; prefer repodata.json to repodata.json.bz2, #2821</li>
+<li>additional integration and regression tests, #2757, #2774, #2787</li>
+<li>add offline mode to printed info; use offline flag when grabbing channels, #2813</li>
+<li>show conda-env version in conda info, #2819</li>
+<li>adjust channel priority superseded list, #2820</li>
+<li>support epoch ! characters in command line specs, #2832</li>
+<li>accept old default names and new ones when canonicalizing channel URLs #2839</li>
+<li>push PATH, PS1 manipulation into shell scripts, #2796</li>
+<li>fix #2765 broken source activate without arguments, #2806</li>
+<li>fix standalone execution of install.py, #2756</li>
+<li>fix #2810 activating conda environment broken with git bash on Windows, #2795</li>
+<li>fix #2805, #2781 handle both file-based channels and explicit file-based URLs, #2812</li>
+<li>fix #2746 conda create &#8211;clone of root, #2838</li>
+<li>fix #2668, #2699 shell recursion with activate #2831</li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h2>2016-06-17   4.1.2:<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>improve messaging for &#8220;downgrades&#8221; due to channel priority, #2718</li>
+<li>support conda config channel append/prepend, handle duplicates, #2730</li>
+<li>remove &#8211;shortcuts option to internal CLI code, #2723</li>
+<li>fix an issue concerning space characters in paths in activate.bat, #2740</li>
+<li>fix #2732 restore yes/no/on/off for booleans on the command line, #2734</li>
+<li>fix #2642 tarball install on Windows, #2729</li>
+<li>fix #2687, #2697 WindowsError when creating environments on Windows, #2717</li>
+<li>fix #2710 link instruction in conda create causes TypeError, #2715</li>
+<li>revert #2514, #2695, disabling of .netrc files, #2736</li>
+<li>revert #2281 printing progress bar to terminal, #2707</li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h2>2016-06-16   4.1.1:<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>add auto_update_conda config parameter, #2686</li>
+<li>fix #2669 conda config &#8211;add channels can leave out defaults, #2670</li>
+<li>fix #2703 ignore activate symlink error if links already exist, #2705</li>
+<li>fix #2693 install duplicate packages with older version of Anaconda, #2701</li>
+<li>fix #2677 respect HTTP_PROXY, #2695</li>
+<li>fix #2680 broken fish integration, #2685, #2694</li>
+<li>fix an issue with conda never exiting, #2689</li>
+<li>fix #2688 explicit file installs, #2708</li>
+<li>fix #2700 conda list UnicodeDecodeError, #2706</li>
+</ul>
+</div>
+<div class="section" id="id11">
+<h2>2016-06-15  4.0.9:<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>add auto_update_conda config parameter, #2686</li>
+</ul>
+</div>
+<div class="section" id="id12">
+<h2>2016-06-14   4.1.0:<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>clean up activate and deactivate scripts, moving back to conda repo, #1727, #2265, #2291, #2473, #2501, #2484</li>
+<li>replace pyyaml with ruamel_yaml, #2283, #2321</li>
+<li>better handling of channel collisions, #2323, #2369 #2402, #2428</li>
+<li>improve listing of pip packages with conda list, #2275</li>
+<li>re-license progressbar under BSD 3-clause, #2334</li>
+<li>reduce the amount of extraneous info in hints, #2261</li>
+<li>add &#8211;shortcuts option to install shortcuts on windows, #2623</li>
+<li>skip binary replacement on windows, #2630</li>
+<li>don&#8217;t show channel urls by default in conda list, #2282</li>
+<li>package resolution and solver tweaks, #2443, #2475, #2480</li>
+<li>improved version &amp; build matching, #2442, #2488</li>
+<li>print progress to the terminal rather than stdout, #2281</li>
+<li>verify version specs given on command line are valid, #2246</li>
+<li>fix for try_write function in case of odd permissions, #2301</li>
+<li>fix a conda search &#8211;spec error, #2343</li>
+<li>update User-Agent for conda connections, #2347</li>
+<li>remove some dead code paths, #2338, #2374</li>
+<li>fixes a thread safety issue with http requests, #2377, #2383</li>
+<li>manage BeeGFS hard-links non-POSIX configuration, #2355</li>
+<li>prevent version downgrades during removes, #2394</li>
+<li>fix conda info &#8211;json, #2445</li>
+<li>truncate shebangs over 127 characters using /usr/bin/env, #2479</li>
+<li>extract packages to a temporary directory then rename, #2425, #2483</li>
+<li>fix help in install, #2460</li>
+<li>fix re-install bug when sha1 differs, #2507</li>
+<li>fix a bug with file deletion, #2499</li>
+<li>disable .netrc files, #2514</li>
+<li>dont fetch index on remove &#8211;all, #2553</li>
+<li>allow track_features to be a string <em>or</em> a list in .condarc, #2541</li>
+<li>fix #2415 infinite recursion in invalid_chains, #2566</li>
+<li>allow channel_alias to be different than binstar, #2564</li>
+</ul>
+</div>
+<div class="section" id="id13">
+<h2>2016-06-03   4.0.8:<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fix a potential problem with moving files to trash, #2587</li>
+</ul>
+</div>
+<div class="section" id="id14">
+<h2>2016-05-26   4.0.7:<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>workaround for boto bug, #2380</li>
+</ul>
+</div>
+<div class="section" id="id15">
+<h2>2016-05-11   4.0.6:<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>log &#8220;custom&#8221; versions as updates rather than downgrades, #2290</li>
+<li>fixes a TypeError exception that can occur on install/update, #2331</li>
+<li>fixes an error on Windows removing files with long path names, #2452</li>
+</ul>
+</div>
+<div class="section" id="id16">
+<h2>2016-03-16   4.0.5:<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>improved help documentation for install, update, and remove, #2262</li>
+<li>fixes #2229 and #2250 related to conda update errors on Windows, #2251</li>
+<li>fixes #2258 conda list for pip packages on Windows, #2264</li>
+</ul>
+</div>
+<div class="section" id="id17">
+<h2>2016-03-10   4.0.4:<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>revert #2217 closing request sessions, #2233</li>
+</ul>
+</div>
+<div class="section" id="id18">
+<h2>2016-03-10   4.0.3:<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>adds a <cite>conda clean &#8211;all</cite> feature, #2211</li>
+<li>solver performance improvements, #2209</li>
+<li>fixes conda list for pip packages on windows, #2216</li>
+<li>quiets some logging for package downloads under python 3, #2217</li>
+<li>more urls for <cite>conda list &#8211;explicit</cite>, #1855</li>
+<li>prefer more &#8220;latest builds&#8221; for more packages, #2227</li>
+<li>fixes a bug with dependecy resolution and features, #2226</li>
+</ul>
+</div>
+<div class="section" id="id19">
+<h2>2016-03-08   4.0.2:<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fixes track_features in ~/.condarc being a list, see also #2203</li>
+<li>fixes incorrect path in lock file error #2195</li>
+<li>fixes issues with cloning environments, #2193, #2194</li>
+<li>fixes a strange interaction between features and versions, #2206</li>
+<li>fixes a bug in low-level SAT clause generation creating a preference for older versions, #2199</li>
+</ul>
+</div>
+<div class="section" id="id20">
+<h2>2016-03-07   4.0.1:<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fixes an install issue caused by md5 checksum mismatches, #2183</li>
+<li>remove auxlib build dependency, #2188</li>
+</ul>
+</div>
+<div class="section" id="id21">
+<h2>2016-03-04   4.0.0:<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">The solver has been retooled significantly. Performance should be improved in most circumstances, and a number of issues involving feature conflicts should be resolved.</p>
+</li>
+<li><p class="first"><cite>conda update &lt;package&gt;</cite> now handles depedencies properly according to the setting of the &#8220;update_deps&#8221; configuration:</p>
+<blockquote>
+<div><p>&#8211;update-deps: conda will also update any dependencies as needed to install the latest verison of the requrested packages.  The minimal set of changes required to achieve this is sought.</p>
+<p class="attribution">&mdash;no-update-deps: conda will update the packages <em>only</em> to the extent that no updates to the dependencies are required</p>
+</div></blockquote>
+<p>The previous behavior, which would update the packages without regard to their dependencies, could result in a broken configuration, and has been removed.</p>
+</li>
+<li><p class="first">Conda finally has an official logo.</p>
+</li>
+<li><p class="first">Fix <cite>conda clean &#8211;packages</cite> on Windows, #1944</p>
+</li>
+<li><p class="first">Conda sub-commands now support dashes in names, #1840</p>
+</li>
+</ul>
+</div>
+<div class="section" id="id22">
+<h2>2016-02-19   3.19.3:<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fix critical issue, see #2106</li>
+</ul>
+</div>
+<div class="section" id="id23">
+<h2>2016-02-19   3.19.2:<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>add basic activate/deactivate, conda activate/deactivate/ls for fish, see #545</li>
+<li>remove error when CONDA_FORCE_32BIT is set on 32-bit systems, #1985</li>
+<li>suppress help text for &#8211;unknown option, #2051</li>
+<li>fix issue with conda create &#8211;clone post-link scripts, #2007</li>
+<li>fix a permissions issue on windows, #2083</li>
+</ul>
+</div>
+<div class="section" id="id24">
+<h2>2016-02-01   3.19.1:<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>resolve.py: properly escape periods in version numbers, #1926</li>
+<li>support for pinning Lua by default, #1934</li>
+<li>remove hard-coded test URLs, a module cio_test is now expected when CIO_TEST is set</li>
+</ul>
+</div>
+<div class="section" id="id25">
+<h2>2015-12-17   3.19.0:<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>OpenBSD 5.x support, #1891</li>
+<li>improve install CLI to make Miniconda -f work, #1905</li>
+</ul>
+</div>
+<div class="section" id="id26">
+<h2>2015-12-10   3.18.9:<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>allow chaning default_channels (only applies to &#8220;system&#8221; condarc), from from CLI, #1886</li>
+<li>improve default for &#8211;show-channel-urls in conda list, #1900</li>
+</ul>
+</div>
+<div class="section" id="id27">
+<h2>2015-12-03   3.18.8:<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>always attempt to delete files in rm_rf, #1864</li>
+</ul>
+</div>
+<div class="section" id="id28">
+<h2>2015-12-02   3.18.7:<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>simplify call to menuinst.install()</li>
+<li>add menuinst as dependency on Windows</li>
+<li>add ROOT_PREFIX to post-link (and pre_unlink) environment</li>
+</ul>
+</div>
+<div class="section" id="id29">
+<h2>2015-11-19   3.18.6:<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>improve conda clean when user lacks permissions, #1807</li>
+<li>make show_channel_urls default to True, #1771</li>
+<li>cleaner write tests, #1735</li>
+<li>fix documentation, #1709</li>
+<li>improve conda clean when directories don&#8217;t exist, #1808</li>
+</ul>
+</div>
+<div class="section" id="id30">
+<h2>2015-11-11   3.18.5:<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fix bad menuinst exception handling, #1798</li>
+<li>add workaround for unresolved dependencies on Windows</li>
+</ul>
+</div>
+<div class="section" id="id31">
+<h2>2015-11-09   3.18.4:<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>allow explicit file to contain MD5 hashsums</li>
+<li>add &#8211;md5 option to &#8220;conda list &#8211;explicit&#8221;</li>
+<li>stop infinite recursion during certain resolve operations, #1749</li>
+<li>add dependencies even if strictness == 3, #1766</li>
+</ul>
+</div>
+<div class="section" id="id32">
+<h2>2015-10-15   3.18.3:<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>added a pruning step for more efficient solves, #1702</li>
+<li>disallow conda-env to be installed into non-root environment</li>
+<li>improve error output for bad command input, #1706</li>
+<li>pass env name and setup cmd to menuinst, #1699</li>
+</ul>
+</div>
+<div class="section" id="id33">
+<h2>2015-10-12   3.18.2:<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>add &#8220;conda list &#8211;explicit&#8221; which contains the URLs of all conda packages to be installed, and can used with the install/create &#8211;file option, #1688</li>
+<li>fix a potential issue in conda clean</li>
+<li>avoid issues with LookupErrors when updating Python in the root environment on Windows</li>
+<li>don&#8217;t fetch the index from the network with conda remove</li>
+<li>when installing conda packages directly, &#8220;conda install &lt;pkg&gt;.tar.bz2&#8221;, unlink any installed package with that name (not just the installed one)</li>
+<li>allow menu items to be installed in non-root env, #1692</li>
+</ul>
+</div>
+<div class="section" id="id34">
+<h2>2015-09-28   3.18.1:<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fix: removed reference to win_ignore_root in plan module</li>
+</ul>
+</div>
+<div class="section" id="id35">
+<h2>2015-09-28   3.18.0:<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>allow Python to be updated in root environment on Windows, #1657</li>
+<li>add defaults to specs after getting pinned specs (allows to pin a different version of Python than what is installed)</li>
+<li>show what older versions are in the solutions in the resolve debug log</li>
+<li>fix some issues with Python 3.5</li>
+<li>respect &#8211;no-deps when installing from .tar or .tar.bz2</li>
+<li>avoid infinite recursion with NoPackagesFound and conda update &#8211;all &#8211;file</li>
+<li>fix conda update &#8211;file</li>
+<li>toposort: Added special case to remove &#8216;pip&#8217; dependency from &#8216;python&#8217;</li>
+<li>show dotlog messages during hint generation with &#8211;debug</li>
+<li>disable the max_only heuristic during hint generation</li>
+<li>new version comparison algorithm, which consistently compares any version string, and better handles version strings using things like alpha, beta, rc, post, and dev. This should remove any inconsistent version comparison that would lead to conda installing an incorrect version.</li>
+<li>use the trash in rm_rf, meaning more things will get the benefit of the trash system on Windows</li>
+<li>add the ability to pass the &#8211;file argument multiple times</li>
+<li>add conda upgrade alias for conda update</li>
+<li>add update_dependencies condarc option and &#8211;update-deps/&#8211;no-update-deps command line flags</li>
+<li>allow specs with conda update &#8211;all</li>
+<li>add &#8211;show-channel-urls and &#8211;no-show-channel-urls command line options</li>
+<li>add always_copy condarc option</li>
+<li>conda clean properly handles multiple envs directories. This breaks backwards compatibility with some of the &#8211;json output. Some of the old &#8211;json keys are kept for backwards compatibility.</li>
+</ul>
+</div>
+<div class="section" id="id36">
+<h2>2015-09-11   3.17.0:<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>add windows_forward_slashes option to walk_prefix(), see #1513</li>
+<li>add ability to set CONDA_FORCE_32BIT environment variable, it should should only be used when running conda-build, #1555</li>
+<li>add config option to makes the python dependency on pip optional, #1577</li>
+<li>fix an UnboundLocalError</li>
+<li>print note about pinned specs in no packages found error</li>
+<li>allow wildcards in AND-connected version specs</li>
+<li>print pinned specs to the debug log</li>
+<li>fix conda create &#8211;clone with create_default_packages</li>
+<li>give a better error when a proxy isn&#8217;t found for a given scheme</li>
+<li>enable running &#8216;conda run&#8217; in offline mode</li>
+<li>fix issue where hardlinked cache contents were being overwritten</li>
+<li>correctly skip packages whose dependencies can&#8217;t be found with conda update &#8211;all</li>
+<li>use clearer terminology in -m help text.</li>
+<li>use splitlines to break up multiple lines throughout the codebase</li>
+<li>fix AttributeError with SSLError</li>
+</ul>
+</div>
+<div class="section" id="id37">
+<h2>2015-08-10   3.16.0:<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>rename binstar -&gt; anaconda, see #1458</li>
+<li>fix &#8211;use-local when the conda-bld directory doesn&#8217;t exist</li>
+<li>fixed &#8211;offline option when using &#8220;conda create &#8211;clone&#8221;, see #1487</li>
+<li>don&#8217;t mask recursion depth errors</li>
+<li>add conda search &#8211;reverse-dependency</li>
+<li>check whether hardlinking is available before linking when using &#8220;python install.py &#8211;link&#8221; directly, see #1490</li>
+<li>don&#8217;t exit nonzero when installing a package with no dependencies</li>
+<li>check which features are installed in an environment via track_features, not features</li>
+<li>set the verify flag directly on CondaSession (fixes conda skeleton not respecting the ssl_verify option)</li>
+</ul>
+</div>
+<div class="section" id="id38">
+<h2>2015-07-23   3.15.1:<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fix conda with older versions of argcomplete</li>
+<li>restore the &#8211;force-pscheck option as a no-op for backwards compatibility</li>
+</ul>
+</div>
+<div class="section" id="id39">
+<h2>2015-07-22   3.15.0:<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>sort the output of conda info package correctly</li>
+<li>enable tab completion of conda command extensions using argcomplete. Command extensions that import conda should use conda.cli.conda_argparse.ArgumentParser instead of argparse.ArgumentParser. Otherwise, they should enable argcomplete completion manually.</li>
+<li>allow psutil and pycosat to be updated in the root environment on Windows</li>
+<li>remove all mentions of pscheck. The &#8211;force-pscheck flag has been removed.</li>
+<li>added support for S3 channels</li>
+<li>fix color issues from pip in conda list on Windows</li>
+<li>add support for other machine types on Linux, in particular ppc64le</li>
+<li>add non_x86_linux_machines set to config module</li>
+<li>allow ssl_verify to accept strings in addition to boolean values in condarc</li>
+<li>enable &#8211;set to work with both boolean and string values</li>
+</ul>
+</div>
+<div class="section" id="id40">
+<h2>2015-06-29   3.14.1:<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>make use of Crypto.Signature.PKCS1_PSS module, see #1388</li>
+<li>note when features are being used in the unsatisfiable hint</li>
+</ul>
+</div>
+<div class="section" id="id41">
+<h2>2015-06-16   3.14.0:<a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>add ability to verify signed packages, see #1343 (and conda-build #430)</li>
+<li>fix issue when trying to add &#8216;pip&#8217; dependency to old python packages</li>
+<li>provide option &#8220;conda info &#8211;unsafe-channels&#8221; for getting unobscured channel list, #1374</li>
+</ul>
+</div>
+<div class="section" id="id42">
+<h2>2015-06-04   3.13.0:<a class="headerlink" href="#id42" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>avoid the Windows file lock by moving files to a trash directory, #1133</li>
+<li>handle env dirs not existing in the Environments completer</li>
+<li>rename binstar.org -&gt; anaconda.org, see #1348</li>
+<li>speed up &#8216;source activate&#8217; by ~40%</li>
+</ul>
+</div>
+<div class="section" id="id43">
+<h2>2015-05-05   3.12.0:<a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>correctly allow conda to update itself</li>
+<li>print which file leads to the &#8220;unable to remove file&#8221; error on Windows</li>
+<li>add support for the no_proxy environment variable, #1171</li>
+<li>add a much faster hint generation for unsatisfiable packages, which is now always enabled (previously it would not run if there were more than ten specs). The new hint only gives one set of conflicting packages, rather than all sets, so multiple passes may be necessary to fix such issues</li>
+<li>conda extensions that import conda should use conda.cli.conda_argparser.ArgumentParser instead of argparse.ArgumentParser to conform to the conda help guidelines (e.g., all help messages should be capitalized with periods, and the options should be preceded by &#8220;Options:&#8221; for the sake of help2man).</li>
+<li>add confirmation dialog to conda remove. Fixes conda remove &#8211;dry-run.</li>
+</ul>
+</div>
+<div class="section" id="id44">
+<h2>2015-04-22   3.11.0:<a class="headerlink" href="#id44" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fix issue where forced update on Windows could cause a package to break</li>
+<li>remove detection of running processes that might conflict</li>
+<li>deprecate &#8211;force-pscheck (now a no-op argument)</li>
+<li>make conda search &#8211;outdated &#8211;names-only work, fixes #1252</li>
+<li>handle the history file not having read or write permissions better</li>
+<li>make multiple package resolutions warning easier to read</li>
+<li>add &#8211;full-name to conda list</li>
+<li>improvements to command help</li>
+</ul>
+</div>
+<div class="section" id="id45">
+<h2>2015-04-06   3.10.1:<a class="headerlink" href="#id45" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fix logic in &#64;memoized for unhashable args</li>
+<li>restored json cache of repodata, see #1249</li>
+<li>hide binstar tokens in conda info &#8211;json</li>
+<li>handle CIO_TEST=&#8216;2 &#8216;</li>
+<li>always find the solution with minimal number of packages, even if there are many solutions</li>
+<li>allow comments at the end of the line in requirement files</li>
+<li>don&#8217;t update the progressbar until after the item is finished running</li>
+<li>add conda/&lt;version&gt; to HTTP header User-Agent string</li>
+</ul>
+</div>
+<div class="section" id="id46">
+<h2>2015-03-12   3.10.0:<a class="headerlink" href="#id46" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>change default repo urls to be https</li>
+<li>add &#8211;offline to conda search</li>
+<li>add &#8211;names-only and &#8211;full-name to conda search</li>
+<li>add tab completion for packages to conda search</li>
+</ul>
+</div>
+<div class="section" id="id47">
+<h2>2015-02-24   3.9.1:<a class="headerlink" href="#id47" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>pscheck: check for processes in the current environment, see #1157</li>
+<li>don&#8217;t write to the history file if nothing has changed, see #1148</li>
+<li>conda update &#8211;all installs packages without version restrictions (except for Python), see #1138</li>
+<li>conda update &#8211;all ignores the anaconda metapackage, see #1138</li>
+<li>use forward slashes for file urls on Windows</li>
+<li>don&#8217;t symlink conda in the root environment from activate</li>
+<li>use the correct package name in the progress bar info</li>
+<li>use json progress bars for unsatisfiable dependencies hints</li>
+<li>don&#8217;t let requests decode gz files when downloaded</li>
+</ul>
+</div>
+<div class="section" id="id48">
+<h2>2015-02-16   3.9.0:<a class="headerlink" href="#id48" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>remove (de)activation scripts from conda, those are now in conda-env</li>
+<li>pip is now always added as a Python dependency</li>
+<li>allow conda to be installed into environments which start with _</li>
+<li>add argcomplete tab completion for environments with the -n flag, and for package names with install, update, create, and remove</li>
+</ul>
+</div>
+<div class="section" id="id49">
+<h2>2015-02-03   3.8.4:<a class="headerlink" href="#id49" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>copy (de)activate scripts from conda-env</li>
+<li>Add noarch (sub) directory support</li>
+</ul>
+</div>
+<div class="section" id="id50">
+<h2>2015-01-28   3.8.3:<a class="headerlink" href="#id50" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>simplified how ROOT_PREFIX is obtained in (de)activate</li>
+</ul>
+</div>
+<div class="section" id="id51">
+<h2>2015-01-27   3.8.2:<a class="headerlink" href="#id51" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>add conda clean &#8211;source-cache to clean the conda build source caches</li>
+<li>add missing quotes in (de)activate.bat, fixes problem in Windows when conda is installed into a directory with spaces</li>
+<li>fix conda install &#8211;copy</li>
+</ul>
+</div>
+<div class="section" id="id52">
+<h2>2015-01-23   3.8.1:<a class="headerlink" href="#id52" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>add missing utf-8 decoding, fixes Python 3 bug when icondata to json file</li>
+</ul>
+</div>
+<div class="section" id="id53">
+<h2>2015-01-22   3.8.0:<a class="headerlink" href="#id53" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>move active script into conda-env, which is now a new dependency</li>
+<li>load the channel urls in the correct order when using concurrent.futures</li>
+<li>add optional &#8216;icondata&#8217; key to json files in conda-meta directory, which contain the base64 encoded png file or the icon</li>
+<li>remove a debug print statement</li>
+</ul>
+</div>
+<div class="section" id="id54">
+<h2>2014-12-18   3.7.4:<a class="headerlink" href="#id54" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>add &#8211;offline option to install, create, update and remove commands, and also add ability to set &#8220;offline: True&#8221; in condarc file</li>
+<li>add conda uninstall as alias for conda remove</li>
+<li>add conda info &#8211;root</li>
+<li>add conda.pip module</li>
+<li>fix CONDARC pointing to non-existing file, closes issue #961</li>
+<li>make update -f work if the package is already up-to-date</li>
+<li>fix possible TypeError when printing an error message</li>
+<li>link packages in topologically sorted order (so that pre-link scripts can assume that the dependencies are installed)</li>
+<li>add &#8211;copy flag to install</li>
+<li>prevent the progressbar from crashing conda when fetching in some situations</li>
+</ul>
+</div>
+<div class="section" id="id55">
+<h2>2014-11-05   3.7.3:<a class="headerlink" href="#id55" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>conda install from a local conda package (or a tar fill which contains conda packages), will now also install the dependencies listed by the installed packages.</li>
+<li>add SOURCE_DIR environment variable in pre-link subprocess</li>
+<li>record all created environments in ~/.conda/environments.txt</li>
+</ul>
+</div>
+<div class="section" id="id56">
+<h2>2014-10-31   3.7.2:<a class="headerlink" href="#id56" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>only show the binstar install message once</li>
+<li>print the fetching repodata dot after the repodata is fetched</li>
+<li>write the install and remove specs to the history file</li>
+<li>add &#8216;-y&#8217; as an alias to &#8216;&#8211;yes&#8217;</li>
+<li>the <cite>&#8211;file</cite> option to conda config now defaults to os.environ.get(&#8216;CONDARC&#8217;)</li>
+<li>some improvements to documentation (&#8211;help output)</li>
+<li>add user_rc_path and sys_rc_path to conda info &#8211;json</li>
+<li>cache the proxy username and password</li>
+<li>avoid warning about conda in pscheck</li>
+<li>make ~/.conda/envs the first user envs dir</li>
+</ul>
+</div>
+<div class="section" id="id57">
+<h2>2014-10-07   3.7.1:<a class="headerlink" href="#id57" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>improve error message for forgetting to use source with activate and deactivate, see issue #601</li>
+<li>don&#8217;t allow to remove the current environment, see issue #639</li>
+<li>don&#8217;t fail if binstar_client can&#8217;t be imported for other reasons, see issue #925</li>
+<li>allow spaces to be contained in conda run</li>
+<li>only show the conda install binstar hint if binstar is not installed</li>
+<li>conda info package_spec now gives detailed info on packages. conda info path has been removed, as it is duplicated by conda package -w path.</li>
+</ul>
+</div>
+<div class="section" id="id58">
+<h2>2014-09-19   3.7.0:<a class="headerlink" href="#id58" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>faster algorithm for &#8211;alt-hint</li>
+<li>don&#8217;t allow channel_alias with allow_other_channels: false if it is set in the system .condarc</li>
+<li>don&#8217;t show long &#8220;no packages found&#8221; error with update &#8211;all</li>
+<li>automatically add the Binstar token to urls when the binstar client is installed and logged in</li>
+<li>carefully avoid showing the binstar token or writing it to a file</li>
+<li>be more careful in conda config about keys that are the wrong type</li>
+<li>don&#8217;t expect directories starting with conda- to be commands</li>
+<li>no longer recommend to run conda init after pip installing conda. A pip installed conda will now work without being initialized to create and manage other environments</li>
+<li>the rm function on Windows now works around access denied errors</li>
+<li>fix channel urls now showing with conda list with show_channel_urls set to true</li>
+</ul>
+</div>
+<div class="section" id="id59">
+<h2>2014-09-08   3.6.4:<a class="headerlink" href="#id59" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fix removing packages that aren&#8217;t in the channels any more</li>
+<li>Pretties output for &#8211;alt-hint</li>
+</ul>
+</div>
+<div class="section" id="id60">
+<h2>2014-09-04   3.6.3:<a class="headerlink" href="#id60" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>skip packages that can&#8217;t be found with update &#8211;all</li>
+<li>add &#8211;use-local to search and remove</li>
+<li>allow &#8211;use-local to be used along with -c (&#8211;channels) and &#8211;override-channels. &#8211;override-channels now requires either -c or &#8211;use-local</li>
+<li>allow paths in has_prefix to be quoted, to allow for spaces in paths on Windows</li>
+<li>retain Unix style path separators for prefixes in has_prefix on Windows (if the placeholder path uses /, replace it with a path that uses /, not \)</li>
+<li>fix bug in &#8211;use-local due to API changes in conda-build</li>
+<li>include user site directories in conda info -s</li>
+<li>make binary has_prefix replacement work with spaces after the prefix</li>
+<li>make binary has_prefix replacement replace multiple occurrences of the placeholder in the same null-terminated string</li>
+<li>don&#8217;t show packages from other platforms as installed or cached in conda search</li>
+<li>be more careful about not warning about conda itself in pscheck</li>
+<li>Use a progress bar for the unsatisfiable packages hint generation</li>
+<li>Don&#8217;t use TemporaryFile in try_write, as it is too slow when it fails</li>
+<li>Ignore InsecureRequestWarning when ssl_verify is False</li>
+<li>conda remove removes features tracked by removed packages in track_features</li>
+</ul>
+</div>
+<div class="section" id="id61">
+<h2>2014-08-20   3.6.2:<a class="headerlink" href="#id61" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>add &#8211;use-index-cache to conda remove</li>
+<li>fix a bug where features (like mkl) would be selected incorrectly</li>
+<li>use concurrent.future.ThreadPool to fetch package metadata asynchronously in Python 3.</li>
+<li>do the retries in rm_rf on every platform</li>
+<li>use a higher cutoff for package name misspellings</li>
+<li>allow changing default channels in &#8220;system&#8221; .condarc</li>
+</ul>
+</div>
+<div class="section" id="id62">
+<h2>2014-08-13   3.6.1:<a class="headerlink" href="#id62" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>add retries to download in fetch module</li>
+<li>improved error messages for missing packages</li>
+<li>more robust rm_rf on Windows</li>
+<li>print multiline help for subcommands correctly</li>
+</ul>
+</div>
+<div class="section" id="id63">
+<h2>2014-08-11   3.6.0:<a class="headerlink" href="#id63" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>correctly check if a package can be hard-linked if it isn&#8217;t extracted yet</li>
+<li>change how the package plan is printed to better show what is new, updated, and downgraded</li>
+<li>use suggest_normalized_version in the resolve module. Now versions like 1.0alpha that are not directly recognized by verlib&#8217;s NormalizedVersion are supported better</li>
+<li>conda run command, to run apps and commands from packages</li>
+<li>more complete &#8211;json API. Every conda command should fully support &#8211;json output now.</li>
+<li>show the conda_build and requests versions in conda info</li>
+<li>include packages from setup.py develop in conda list (with use_pip)</li>
+<li>raise a warning instead of dying when the history file is invalid</li>
+<li>use urllib.quote on the proxy password</li>
+<li>make conda search &#8211;outdated &#8211;canonical work</li>
+<li>pin the Python version during conda init</li>
+<li>fix some metadata that is written for Python during conda init</li>
+<li>allow comments in a pinned file</li>
+<li>allow installing and updating menuinst on Windows</li>
+<li>allow conda create with both &#8211;file and listed packages</li>
+<li>better handling of some nonexistent packages</li>
+<li>fix command line flags in conda package</li>
+<li>fix a bug in the ftp adapter</li>
+</ul>
+</div>
+<div class="section" id="id64">
+<h2>2014-06-10   3.5.5:<a class="headerlink" href="#id64" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>remove another instance pycosat version detection, which fails on Windows, see issue #761</li>
+</ul>
+</div>
+<div class="section" id="id65">
+<h2>2014-06-10   3.5.4:<a class="headerlink" href="#id65" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>remove pycosat version detection, which fails on Windows, see issue #761</li>
+</ul>
+</div>
+<div class="section" id="id66">
+<h2>2014-06-09   3.5.3:<a class="headerlink" href="#id66" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fix conda update to correctly not install packages that are already up-to-date</li>
+<li>always fail with connection error in download</li>
+<li>the package resolution is now much faster and uses less memory</li>
+<li>add ssl_verify option in condarc to allow ignoring SSL certificate verification, see issue #737</li>
+</ul>
+</div>
+<div class="section" id="id67">
+<h2>2014-05-27   3.5.2:<a class="headerlink" href="#id67" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fix bug in activate.bat and deactivate.bat on Windows</li>
+</ul>
+</div>
+<div class="section" id="id68">
+<h2>2014-05-26   3.5.1:<a class="headerlink" href="#id68" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fix proxy support - conda now prompts for proxy username and password again</li>
+<li>fix activate.bat on Windows with spaces in the path</li>
+<li>update optional psutil dependency was updated to psutil 2.0 or higher</li>
+</ul>
+</div>
+<div class="section" id="id69">
+<h2>2014-05-15   3.5.0:<a class="headerlink" href="#id69" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>replace use of urllib2 with requests. requests is now a hard dependency of conda.</li>
+<li>add ability to only allow system-wise specified channels</li>
+<li>hide binstar from output of conda info</li>
+</ul>
+</div>
+<div class="section" id="id70">
+<h2>2014-05-05   3.4.3:<a class="headerlink" href="#id70" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>allow prefix replacement in binary files, see issue #710</li>
+<li>check if creating hard link is possible and otherwise copy, during install</li>
+<li>allow circular dependencies</li>
+</ul>
+</div>
+<div class="section" id="id71">
+<h2>2014-04-21   3.4.2:<a class="headerlink" href="#id71" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>conda clean &#8211;lock: skip directories that don&#8217;t exist, fixes #648</li>
+<li>fixed empty history file causing crash, issue #644</li>
+<li>remove timezone information from history file, fixes issue #651</li>
+<li>fix PackagesNotFound error for missing recursive dependencies</li>
+<li>change the default for adding cache from the local package cache - known is now the default and the option to use index metadata from the local package cache is &#8211;unknown</li>
+<li>add &#8211;alt-hint as a method to get an alternate form of a hint for unsatisfiable packages</li>
+<li>add conda package &#8211;ls-files to list files in a package</li>
+<li>add ability to pin specs in an environment. To pin a spec, add a file called pinned to the environment&#8217;s conda-meta directory with the specs to pin. Pinned specs are always kept installed, unless the &#8211;no-pin flag is used.</li>
+<li>fix keyboard interrupting of external commands. Now keyboard interrupting conda build correctly removes the lock file</li>
+<li>add no_link ability to conda, see issue #678</li>
+</ul>
+</div>
+<div class="section" id="id72">
+<h2>2014-04-07   3.4.1:<a class="headerlink" href="#id72" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>always use a pkgs cache directory associated with an envs directory, even when using -p option with an arbitrary a prefix which is not inside an envs dir</li>
+<li>add setting of PYTHONHOME to conda info &#8211;system</li>
+<li>skip packages with bad metadata</li>
+</ul>
+</div>
+<div class="section" id="id73">
+<h2>2014-04-02   3.4.0:<a class="headerlink" href="#id73" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>added revision history to each environment:<ul>
+<li>conda list &#8211;revisions</li>
+<li>conda install &#8211;revision</li>
+<li>log is stored in conda-meta/history</li>
+</ul>
+</li>
+<li>allow parsing pip-style requirement files with &#8211;file option and in command line arguments, e.g. conda install &#8216;numpy&gt;=1.7&#8217;, issue #624</li>
+<li>fix error message for &#8211;file option when file does not exist</li>
+<li>allow DEFAULTS in CONDA_ENVS_PATH, which expands to the defaults settings, including the condarc file</li>
+<li>don&#8217;t install a package with a feature (like mkl) unless it is specifically requested (i.e., that feature is already enabled in that environment)</li>
+<li>add ability to show channel URLs when displaying what is going to be downloaded by setting &#8220;show_channel_urls: True&#8221; in condarc</li>
+<li>fix the &#8211;quiet option</li>
+<li>skip packages that have dependencies that can&#8217;t be found</li>
+</ul>
+</div>
+<div class="section" id="id74">
+<h2>2014-03-24   3.3.2:<a class="headerlink" href="#id74" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fix the &#8211;file option</li>
+<li>check install arguments before fetching metadata</li>
+<li>fix a printing glitch with the progress bars</li>
+<li>give a better error message for conda clean with no arguments</li>
+<li>don&#8217;t include unknown packages when searching another platform</li>
+</ul>
+</div>
+<div class="section" id="id75">
+<h2>2014-03-19   3.3.1:<a class="headerlink" href="#id75" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fix setting of PS1 in activate.</li>
+<li>Add conda update &#8211;all.</li>
+<li>Allow setting CONDARC=&#8217; &#8216; to use no condarc.</li>
+<li>Add conda clean &#8211;packages.</li>
+<li>Don&#8217;t include bin/conda, bin/activate, or bin/deactivate in conda package.</li>
+</ul>
+</div>
+<div class="section" id="id76">
+<h2>2014-03-18   3.3.0:<a class="headerlink" href="#id76" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>allow new package specification, i.e. ==, &gt;=, &gt;, &lt;=, &lt;, != separated by &#8216;,&#8217; for example: &gt;=2.3,&lt;3.0</li>
+<li>add ability to disable self update of conda, by setting &#8220;self_update: False&#8221; in .condarc</li>
+<li>Try installing packages using the old way of just installing the maximum versions of things first. This provides a major speedup of solving the package specifications in the cases where this scheme works.</li>
+<li>Don&#8217;t include python=3.3 in the specs automatically for the Python 3 version of conda.  This allows you to do &#8220;conda create -n env package&#8221; for a package that only has a Python 2 version without specifying &#8220;python=2&#8221;. This change has no effect in Python 2.</li>
+<li>Automatically put symlinks to conda, activate, and deactivate in each environment on Unix.</li>
+<li>On Unix, activate and deactivate now remove the root environment from the PATH. This should prevent &#8220;bleed through&#8221; issues with commands not installed in the activated environment but that are installed in the root environment. If you have &#8220;setup.py develop&#8221; installed conda on Unix, you should run this command again, as the activate and deactivate scripts have changed.</li>
+<li>Begin work to support Python 3.4.</li>
+<li>Fix a bug in version comparison</li>
+<li>Fix usage of sys.stdout and sys.stderr in environments like pythonw on Windows where they are nonstandard file descriptors.</li>
+</ul>
+</div>
+<div class="section" id="id77">
+<h2>2014-03-12   3.2.1:<a class="headerlink" href="#id77" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fix installing packages with irrational versions</li>
+<li>fix installation in the api</li>
+<li>use a logging handler to print the dots</li>
+</ul>
+</div>
+<div class="section" id="id78">
+<h2>2014-03-11   3.2.0:<a class="headerlink" href="#id78" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>print dots to the screen for progress</li>
+<li>move logic functions from resolve to logic module</li>
+</ul>
+</div>
+<div class="section" id="a1">
+<h2>2014-03-07   3.2.0a1:<a class="headerlink" href="#a1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>conda now uses pseudo-boolean constraints in the SAT solver. This allows it to search for all versions at once, rather than only the latest (issue #491).</li>
+<li>Conda contains a brand new logic submodule for converting pseudo-boolean constraints into SAT clauses.</li>
+</ul>
+</div>
+<div class="section" id="id79">
+<h2>2014-03-07   3.1.1:<a class="headerlink" href="#id79" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>check if directory exists, fixed issue #591</li>
+</ul>
+</div>
+<div class="section" id="id80">
+<h2>2014-03-07   3.1.0:<a class="headerlink" href="#id80" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>local packages in cache are now added to the index, this may be disabled by using the &#8211;known option, which only makes conda use index metadata from the known remote channels</li>
+<li>add &#8211;use-index-cache option to enable using cache of channel index files</li>
+<li>fix ownership of files when installing as root on Linux</li>
+<li>conda search: add &#8216;.&#8217; symbol for extracted (cached) packages</li>
+</ul>
+</div>
+<div class="section" id="id81">
+<h2>2014-02-20   3.0.6:<a class="headerlink" href="#id81" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fix &#8216;conda update&#8217; taking build number into account</li>
+</ul>
+</div>
+<div class="section" id="id82">
+<h2>2014-02-17   3.0.5:<a class="headerlink" href="#id82" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>allow packages from create_default_packages to be overridden from the command line</li>
+<li>fixed typo install.py, issue #566</li>
+<li>try to prevent accidentally installing into a non-root conda environment</li>
+</ul>
+</div>
+<div class="section" id="id83">
+<h2>2014-02-14   3.0.4:<a class="headerlink" href="#id83" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>conda update: don&#8217;t try to update packages that are already up-to-date</li>
+</ul>
+</div>
+<div class="section" id="id84">
+<h2>2014-02-06   3.0.3:<a class="headerlink" href="#id84" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>improve the speed of clean &#8211;lock</li>
+<li>some fixes to conda config</li>
+<li>more tests added</li>
+<li>choose the first solution rather than the last when there are more than one, since this is more likely to be the one you want.</li>
+</ul>
+</div>
+<div class="section" id="id85">
+<h2>2014-02-03   3.0.2:<a class="headerlink" href="#id85" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fix detection of prefix being writable</li>
+</ul>
+</div>
+<div class="section" id="id86">
+<h2>2014-01-31   3.0.1:<a class="headerlink" href="#id86" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>bug: not having track_features in condarc now uses default again</li>
+<li>improved test suite</li>
+<li>remove numpy version being treated special in plan module</li>
+<li>if the post-link.(bat|sh) fails, don&#8217;t treat it as though it installed, i.e. it is not added to conda-meta</li>
+<li>fix activate if CONDA_DEFAULT_ENV is invalid</li>
+<li>fix conda config &#8211;get to work with list keys again</li>
+<li>print the total download size</li>
+<li>fix a bug that was preventing conda from working in Python 3</li>
+<li>add ability to run pre-link script, issue #548</li>
+</ul>
+</div>
+<div class="section" id="id87">
+<h2>2014-01-24   3.0.0:<a class="headerlink" href="#id87" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>removed build, convert, index, and skeleton commands, which are now part of the conda-build project: <a class="reference external" href="https://github.com/conda/conda-build">https://github.com/conda/conda-build</a></li>
+<li>limited pip integration to <cite>conda list</cite>, that means <cite>conda install</cite> no longer calls <cite>pip install</cite> # !!!</li>
+<li>add ability to call sub-commands named &#8216;conda-x&#8217;</li>
+<li>The -c flag to conda search is now shorthand for &#8211;channel, not &#8211;canonical (this is to be consistent with other conda commands)</li>
+<li>allow changing location of .condarc file using the CONDARC environment variable</li>
+<li>conda search now shows the channel that the package comes from</li>
+<li>conda search has a new &#8211;platform flag for searching for packages in other platforms.</li>
+<li>remove condarc warnings: issue #526#issuecomment-33195012</li>
+</ul>
+</div>
+<div class="section" id="id88">
+<h2>2014-01-17   2.3.1:<a class="headerlink" href="#id88" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>add ability create info/no_softlink</li>
+<li>add conda convert command to convert non-platform-dependent packages from one platform to another (experimental)</li>
+<li>unify create, install, and update code. This adds many features to create and update that were previously only available to install. A backwards incompatible change is that conda create -f now means &#8211;force, not &#8211;file.</li>
+</ul>
+</div>
+<div class="section" id="id89">
+<h2>2014-01-16   2.3.0:<a class="headerlink" href="#id89" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>automatically prepend <a class="reference external" href="http://conda.binstar.org/">http://conda.binstar.org/</a> (or the value of channel_alias in the .condarc file) to channels whenever the channel is not a URL or the word &#8216;defaults or &#8216;system&#8217;</li>
+<li>recipes made with the skeleton pypi command will use setuptools instead of distribute</li>
+<li>re-work the setuptools dependency and entry_point logic so that non console_script entry_points for packages with a dependency on setuptools will get correct build script with conda skeleton pypi</li>
+<li>add -m, &#8211;mkdir option to conda install</li>
+<li>add ability to disable soft-linking</li>
+</ul>
+</div>
+<div class="section" id="id90">
+<h2>2014-01-06   2.2.8:<a class="headerlink" href="#id90" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>add check for chrpath (on Linux) before build is started, see issue #469</li>
+<li>conda build: fixed ELF headers not being recognized on Python 3</li>
+<li>fixed issues: #467, #476</li>
+</ul>
+</div>
+<div class="section" id="id91">
+<h2>2014-01-02   2.2.7:<a class="headerlink" href="#id91" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fixed bug in conda build related to lchmod not being available on all platforms</li>
+</ul>
+</div>
+<div class="section" id="id92">
+<h2>2013-12-31   2.2.6:<a class="headerlink" href="#id92" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fix test section for automatic recipe creation from pypi using &#8211;build-recipe</li>
+<li>minor Py3k fixes for conda build on Linux</li>
+<li>copy symlinks as symlinks, issue #437</li>
+<li>fix explicit install (e.g. from output of <cite>conda list -e</cite>) in root env</li>
+<li>add pyyaml to the list of packages which can not be removed from root environment</li>
+<li>fixed minor issues: #365, #453</li>
+</ul>
+</div>
+<div class="section" id="id93">
+<h2>2013-12-17   2.2.5:<a class="headerlink" href="#id93" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>conda build: move broken packages to conda-bld/broken</li>
+<li>conda config: automatically add the &#8216;defaults&#8217; channel</li>
+<li>conda build: improve error handling for invalid recipe directory</li>
+<li>add ability to set build string, issue #425</li>
+<li>fix LD_RUN_PATH not being set on Linux under Python 3, see issue #427, thanks peter1000</li>
+</ul>
+</div>
+<div class="section" id="id94">
+<h2>2013-12-10   2.2.4:<a class="headerlink" href="#id94" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>add support for execution with the -m switch (issue #398), i.e. you can execute conda also as: python -m conda</li>
+<li>add a deactivate script for windows</li>
+<li>conda build adds .pth-file when it encounters an egg (TODO)</li>
+<li>add ability to preserve egg directory when building using build/preserve_egg_dir: True</li>
+<li>allow track_features in ~/.condarc</li>
+<li>Allow arbitrary source, issue #405</li>
+<li>fixed minor issues: #393, #402, #409, #413</li>
+</ul>
+</div>
+<div class="section" id="id95">
+<h2>2013-12-03   2.2.3:<a class="headerlink" href="#id95" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>add &#8220;foreign mode&#8221;, i.e. disallow install of certain packages when using a &#8220;foreign&#8221; Python, such as the system Python</li>
+<li>remove activate/deactivate from source tarball created by sdist.sh, in order to not overwrite activate script from virtualenvwrapper</li>
+</ul>
+</div>
+<div class="section" id="id96">
+<h2>2013-11-27   2.2.2:<a class="headerlink" href="#id96" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>remove ARCH environment variable for being able to change architecture</li>
+<li>add PKG_NAME, PKG_VERSION to environment when running build.sh, .&lt;name&gt;-post-link.sh and .&lt;name&gt;-pre-unlink.sh</li>
+</ul>
+</div>
+<div class="section" id="id97">
+<h2>2013-11-15   2.2.1:<a class="headerlink" href="#id97" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>minor fixes related to make conda pip installable</li>
+<li>generated conda meta-data missing &#8216;files&#8217; key, fixed issue #357</li>
+</ul>
+</div>
+<div class="section" id="id98">
+<h2>2013-11-14   2.2.0:<a class="headerlink" href="#id98" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>add conda init command, to allow installing conda via pip</li>
+<li>fix prefix being replaced by placeholder after conda build on Unix</li>
+<li>add &#8216;use_pip&#8217; to condarc configuration file</li>
+<li>fixed activate on Windows to set CONDA_DEFAULT_ENV</li>
+<li>allow setting &#8220;always_yes: True&#8221; in condarc file, which implies always using the &#8211;yes option whenever asked to proceed</li>
+</ul>
+</div>
+<div class="section" id="id99">
+<h2>2013-11-07   2.1.0:<a class="headerlink" href="#id99" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fix rm_egg_dirs so that the .egg_info file can be a zip file</li>
+<li>improve integration with pip
+* conda list now shows pip installed packages
+* conda install will try to install via &#8220;pip install&#8221; if no conda package is available (unless &#8211;no-pip is provided)
+* conda build has a new &#8211;build-recipe option which will create a recipe (stored in &lt;root&gt;/conda-recipes) from pypi then build a conda package (and install it)
+* pip list and pip install only happen if pip is installed</li>
+<li>enhance the locking mechanism so that conda can call itself in the same process.</li>
+</ul>
+</div>
+<div class="section" id="id100">
+<h2>2013-11-04   2.0.4:<a class="headerlink" href="#id100" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>ensure lowercase name when generating package info, fixed issue #329</li>
+<li>on Windows, handle the .nonadmin files</li>
+</ul>
+</div>
+<div class="section" id="id101">
+<h2>2013-10-28   2.0.3:<a class="headerlink" href="#id101" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>update bundle format</li>
+<li>fix bug when displaying packages to be downloaded (thanks Crystal)</li>
+</ul>
+</div>
+<div class="section" id="id102">
+<h2>2013-10-27   2.0.2:<a class="headerlink" href="#id102" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>add &#8211;index-cache option to clean command, see issue #321</li>
+<li>use RPATH (instead of RUNPATH) when building packages on Linux</li>
+</ul>
+</div>
+<div class="section" id="id103">
+<h2>2013-10-23   2.0.1:<a class="headerlink" href="#id103" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>add &#8211;no-prompt option to conda skeleton pypi</li>
+<li>add create_default_packages to condarc (and &#8211;no-default-packages option to create command)</li>
+</ul>
+</div>
+<div class="section" id="id104">
+<h2>2013-10-01   2.0.0:<a class="headerlink" href="#id104" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>added user/root mode and ability to soft-link across filesystems</li>
+<li>added create &#8211;clone option for copying local environments</li>
+<li>fixed behavior when installing into an environment which does not exist yet, i.e. an error occurs</li>
+<li>fixed install &#8211;no-deps option</li>
+<li>added &#8211;export option to list command</li>
+<li>allow building of packages in &#8220;user mode&#8221;</li>
+<li>regular environment locations now used for build and test</li>
+<li>add ability to disallow specification names</li>
+<li>add ability to read help messages from a file when install location is RO</li>
+<li>restore backwards compatibility of share/clone for conda-api</li>
+<li>add new conda bundle command and format</li>
+<li>pass ARCH environment variable to build scripts</li>
+<li>added progress bar to source download for conda build, issue #230</li>
+<li>added ability to use url instead of local file to conda install &#8211;file and conda create &#8211;file options</li>
+</ul>
+</div>
+<div class="section" id="id105">
+<h2>2013-09-06   1.9.1:<a class="headerlink" href="#id105" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fix bug in new caching of repodata index</li>
+</ul>
+</div>
+<div class="section" id="id106">
+<h2>2013-09-05   1.9.0:<a class="headerlink" href="#id106" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>add caching of repodata index</li>
+<li>add activate command on Windows</li>
+<li>add conda package &#8211;which option, closes issue 163</li>
+<li>add ability to install file which contains multiple packages, issue 256</li>
+<li>move conda share functionality to conda package &#8211;share</li>
+<li>update documentation</li>
+<li>improve error messages when external dependencies are unavailable</li>
+<li>add implementation for issue 194: post-link or pre-unlink may append to a special file ${PREFIX}/.messages.txt for messages, which is display to the user&#8217;s console after conda completes all actions</li>
+<li>add conda search &#8211;outdated option, which lists only installed packages for which newer versions are available</li>
+<li>fixed numerous Py3k issues, in particular with the build command</li>
+</ul>
+</div>
+<div class="section" id="id107">
+<h2>2013-08-16   1.8.2:<a class="headerlink" href="#id107" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>add conda build &#8211;check option</li>
+<li>add conda clean &#8211;lock option</li>
+<li>fixed error in recipe causing conda traceback, issue 158</li>
+<li>fixes conda build error in Python 3, issue 238</li>
+<li>improve error message when test command fails, as well as issue 229</li>
+<li>disable Python (and other packages which are used by conda itself) to be updated in root environment on Windows</li>
+<li>simplified locking, in particular locking should never crash conda when files cannot be created due to permission problems</li>
+</ul>
+</div>
+<div class="section" id="id108">
+<h2>2013-08-07   1.8.1:<a class="headerlink" href="#id108" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fixed conda update for no arguments, issue 237</li>
+<li>fix setting prefix before calling should_do_win_subprocess() part of issue 235</li>
+<li>add basic subversion support when building</li>
+<li>add &#8211;output option to conda build</li>
+</ul>
+</div>
+<div class="section" id="id109">
+<h2>2013-07-31   1.8.0:<a class="headerlink" href="#id109" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>add Python 3 support (thanks almarklein)</li>
+<li>add Mercurial support when building from source (thanks delicb)</li>
+<li>allow Python (and other packages which are used by conda itself) to be updated in root environment on Windows</li>
+<li>add conda config command</li>
+<li>add conda clean command</li>
+<li>removed the conda pip command</li>
+<li>improve locking to be finer grained</li>
+<li>made activate/deactivate work with zsh (thanks to mika-fischer)</li>
+<li>allow conda build to take tarballs containing a recipe as arguments</li>
+<li>add PKG_CONFIG_PATH to build environment variables</li>
+<li>fix entry point scripts pointing to wrong python when building Python 3 packages</li>
+<li>allow source/sha1 in meta.yaml, issue 196</li>
+<li>more informative message when there are unsatisfiable package specifications</li>
+<li>ability to set the proxy urls in condarc</li>
+<li>conda build asks to upload to binstar. This can also be configured by changing binstar_upload in condarc.</li>
+<li>basic tab completion if the argcomplete package is installed and eval &#8220;$(register-python-argcomplete conda)&#8221; is added to the bash profile.</li>
+</ul>
+</div>
+<div class="section" id="id110">
+<h2>2013-07-02   1.7.2:<a class="headerlink" href="#id110" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fixed conda update when packages include a post-link step which was caused by subprocess being lazily imported, fixed by 0d0b860</li>
+<li>improve error message when &#8216;chrpath&#8217; or &#8216;patch&#8217; is not installed and needed by build framework</li>
+<li>fixed sharing/cloning being broken (issue 179)</li>
+<li>add the string LOCKERROR to the conda lock error message</li>
+</ul>
+</div>
+<div class="section" id="id111">
+<h2>2013-06-21   1.7.1:<a class="headerlink" href="#id111" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fix &#8220;executable&#8221; not being found on Windows when ending with .bat when launching application</li>
+<li>give a better error message from when a repository does not exist</li>
+</ul>
+</div>
+<div class="section" id="id112">
+<h2>2013-06-20   1.7.0:<a class="headerlink" href="#id112" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>allow ${PREFIX} in app_entry</li>
+<li>add binstar upload information after conda build finishes</li>
+</ul>
+</div>
+<div class="section" id="a2">
+<h2>2013-06-20   1.7.0a2:<a class="headerlink" href="#a2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>add global conda lock file for only allowing one instance of conda to run at the same time</li>
+<li>add conda skeleton command to create recipes from PyPI</li>
+<li>add ability to run post-link and pre-unlink script</li>
+</ul>
+</div>
+<div class="section" id="id113">
+<h2>2013-06-13   1.7.0a1:<a class="headerlink" href="#id113" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>add ability to build conda packages from &#8220;recipes&#8221;, using the conda build command, for some examples, see: <a class="reference external" href="https://github.com/ContinuumIO/conda-recipes">https://github.com/ContinuumIO/conda-recipes</a></li>
+<li>fixed bug in conda install &#8211;force</li>
+<li>conda update command no longer uses anaconda as default package name</li>
+<li>add proxy support</li>
+<li>added application API to conda.api module</li>
+<li>add -c/&#8211;channel and &#8211;override-channels flags (issue 121).</li>
+<li>add default and system meta-channels, for use in .condarc and with -c (issue 122).</li>
+<li>fixed ability to install ipython=0.13.0 (issue 130)</li>
+</ul>
+</div>
+<div class="section" id="id114">
+<h2>2013-06-05   1.6.0:<a class="headerlink" href="#id114" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>update package command to reflect changes in repodata</li>
+<li>fixed refactoring bugs in share/clone</li>
+<li>warn when anaconda processes are running on install in Windows (should fix most permissions errors on Windows)</li>
+</ul>
+</div>
+<div class="section" id="rc2">
+<h2>2013-05-31   1.6.0rc2:<a class="headerlink" href="#rc2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>conda with no arguments now prints help text (issue 111)</li>
+<li>don&#8217;t allow removing conda from root environment</li>
+<li>conda update python does no longer update to Python 3, also ensure that conda itself is always installed into the root environment (issue 110)</li>
+</ul>
+</div>
+<div class="section" id="rc1">
+<h2>2013-05-30   1.6.0rc1:<a class="headerlink" href="#rc1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>major internal refactoring</li>
+<li>use new &#8220;depends&#8221; key in repodata</li>
+<li>uses pycosat to solve constraints more efficiently</li>
+<li>add hard-linking on Windows</li>
+<li>fixed linking across filesystems (issue 103)</li>
+<li>add conda remove &#8211;features option</li>
+<li>added more tests, in particular for new dependency resolver</li>
+<li>add internal DSL to perform install actions</li>
+<li>add package size to download preview</li>
+<li>add conda install &#8211;force and &#8211;no-deps options</li>
+<li>fixed conda help command</li>
+<li>add conda remove &#8211;all option for removing entire environment</li>
+<li>fixed source activate on systems where sourcing a gives &#8220;bash&#8221; as $0</li>
+<li>add information about installed versions to conda search command</li>
+<li>removed known &#8220;locations&#8221;</li>
+<li>add output about installed packages when update and install do nothing</li>
+<li>changed default when prompted for y/n in CLI to yes</li>
+</ul>
+</div>
+<div class="section" id="id115">
+<h2>2013-04-29   1.5.2:<a class="headerlink" href="#id115" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fixed issue 59: bad error message when pkgs dir is not writable</li>
+</ul>
+</div>
+<div class="section" id="id116">
+<h2>2013-04-19   1.5.1:<a class="headerlink" href="#id116" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fixed issue 71 and (73 duplicate): not being able to install packages starting with conda (such as &#8216;conda-api&#8217;)</li>
+<li>fixed issue 69 (not being able to update Python / NumPy)</li>
+<li>fixed issue 76 (cannot install mkl on OSX)</li>
+</ul>
+</div>
+<div class="section" id="id117">
+<h2>2013-03-22   1.5.0:<a class="headerlink" href="#id117" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>add conda share and clone commands</li>
+<li>add (hidden) &#8211;output-json option to clone, share and info commands to support the conda-api package</li>
+<li>add repo sub-directory type &#8216;linux-armv6l&#8217;</li>
+</ul>
+</div>
+<div class="section" id="id118">
+<h2>2013-03-12   1.4.6:<a class="headerlink" href="#id118" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fixed channel selection (issue #56)</li>
+</ul>
+</div>
+<div class="section" id="id119">
+<h2>2013-03-11   1.4.5:<a class="headerlink" href="#id119" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fix issue #53 with install for meta packages</li>
+<li>add -q/&#8211;quiet option to update command</li>
+</ul>
+</div>
+<div class="section" id="id120">
+<h2>2013-03-09   1.4.4:<a class="headerlink" href="#id120" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>use numpy 1.7 as default on all platfroms</li>
+</ul>
+</div>
+<div class="section" id="id121">
+<h2>2013-03-09   1.4.3:<a class="headerlink" href="#id121" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fixed bug in conda.builder.share.clone_bundle()</li>
+</ul>
+</div>
+<div class="section" id="id122">
+<h2>2013-03-08   1.4.2:<a class="headerlink" href="#id122" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>feature selection fix for update</li>
+<li>Windows: don&#8217;t allow linking or unlinking python from the root environment because the file lock, see issue #42</li>
+</ul>
+</div>
+<div class="section" id="id123">
+<h2>2013-03-07   1.4.1:<a class="headerlink" href="#id123" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fix some feature selection bugs</li>
+<li>never exit in activate and deactivate</li>
+<li>improve help and error messages</li>
+</ul>
+</div>
+<div class="section" id="id124">
+<h2>2013-03-05   1.4.0:<a class="headerlink" href="#id124" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fixed conda pip NAME==VERSION</li>
+<li>added conda info &#8211;license option</li>
+<li>add source activate and deactivate commands</li>
+<li>rename the old activate and deactivate to link and unlink</li>
+<li>add ability for environments to track &#8220;features&#8221;</li>
+<li>add ability to distinguish conda build packages from Anaconda packages by adding a &#8220;file_hash&#8221; meta-data field in info/index.json</li>
+<li>add conda.builder.share module</li>
+</ul>
+</div>
+<div class="section" id="id125">
+<h2>2013-02-05   1.3.5:<a class="headerlink" href="#id125" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fixed detecting untracked files on Windows</li>
+<li>removed backwards compatibility to conda 1.0 version</li>
+</ul>
+</div>
+<div class="section" id="id126">
+<h2>2013-01-28   1.3.4:<a class="headerlink" href="#id126" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fixed conda installing itself into environments (issue #10)</li>
+<li>fixed non-existing channels being silently ignored (issue #12)</li>
+<li>fixed trailing slash in ~/.condarc file cause crash (issue #13)</li>
+<li>fixed conda list not working when ~/.condarc is missing (issue #14)</li>
+<li>fixed conda install not working for Python 2.6 environment (issue #17)</li>
+<li>added simple first cut implementation of remove command (issue #11)</li>
+<li>pip, build commands: only package up new untracked files</li>
+<li>allow a system-wide &lt;sys.prefix&gt;/.condarc (~/.condarc takes precedence)</li>
+<li>only add pro channel is no condarc file exists (and license is valid)</li>
+</ul>
+</div>
+<div class="section" id="id127">
+<h2>2013-01-23   1.3.3:<a class="headerlink" href="#id127" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fix conda create not filtering channels correctly</li>
+<li>remove (hidden) &#8211;test and &#8211;testgui options</li>
+</ul>
+</div>
+<div class="section" id="id128">
+<h2>2013-01-23   1.3.2:<a class="headerlink" href="#id128" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fix deactivation of packages with same build number note that conda upgrade did not suffer from this problem, as was using separate logic</li>
+</ul>
+</div>
+<div class="section" id="id129">
+<h2>2013-01-22   1.3.1:<a class="headerlink" href="#id129" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fix bug in conda update not installing new dependencies</li>
+</ul>
+</div>
+<div class="section" id="id130">
+<h2>2013-01-22   1.3.0:<a class="headerlink" href="#id130" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>added conda package command</li>
+<li>added conda index command</li>
+<li>added -c, &#8211;canonical option to list and search commands</li>
+<li>fixed conda &#8211;version on Windows</li>
+<li>add this changelog</li>
+</ul>
+</div>
+<div class="section" id="id131">
+<h2>2012-11-21   1.2.1:<a class="headerlink" href="#id131" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>remove ambiguity from conda update command</li>
+</ul>
+</div>
+<div class="section" id="id132">
+<h2>2012-11-20   1.2.0:<a class="headerlink" href="#id132" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>&#8220;conda upgrade&#8221; now updates from AnacondaCE to Anaconda (removed upgrade2pro</li>
+<li>add versioneer</li>
+</ul>
+</div>
+<div class="section" id="id133">
+<h2>2012-11-13   1.1.0:<a class="headerlink" href="#id133" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Many new features implemented by Bryan</li>
+</ul>
+</div>
+<div class="section" id="id134">
+<h2>2012-09-06   1.0.0:<a class="headerlink" href="#id134" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>initial release</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="license.html" class="btn btn-neutral float-right" title="Conda license" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="help/support.html" class="btn btn-neutral" title="Support options" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Continuum Analytics.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:' ',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

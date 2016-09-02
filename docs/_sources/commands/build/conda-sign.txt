@@ -1,0 +1,45 @@
+
+.. _sign_ref:
+
+conda sign
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda sign
+   
+   DESCRIPTION
+          usage: conda-sign [-h] [-k NAME] [--size BITS] [-v] [FILE [FILE ...]]
+   
+          Tool  for signing conda packages.  Signatures will be written alongside
+          the files as FILE.sig.
+   
+   OPTIONS
+      positional arguments:
+          FILE   Files to sign.
+   
+      optional arguments:
+          -h, --help
+                 Show this help message and exit.
+   
+          -k NAME, --keygen NAME
+                 Generate a public-private key pair ~/.conda/keys/&lt;NAME&gt;(.pub).
+   
+          --size BITS
+                 Size of generated RSA public-private key pair in bits  (defaults
+                 to 2048).
+   
+          -v, --verify
+                 Verify FILE(s).
+   
+   
+   
+   Continuum Analytics             September 2016                        <B>CONDA(1)</B>
+   </PRE>
