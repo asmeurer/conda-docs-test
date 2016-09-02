@@ -33,10 +33,10 @@ script:
   - make html-errors
   - cd ..
   - if [[ "${DOCS}" = "true" ]]; then
-      doctr deploy --built-docs docs --gh-pages-docs docs --no-require-master;
+      doctr deploy --built-docs docs/build/html --gh-pages-docs docs --no-require-master;
     fi
   - if [[ "${WEBSITE}" = "true" ]]; then
-      doctr deploy --built-docs web --gh-pages-docs . --no-require-master;
+      doctr deploy --built-docs web/build/html --gh-pages-docs . --no-require-master;
     fi
 notifications:
   flowdock: ef3821a08a791106512ccfc04c92eccb
