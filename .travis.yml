@@ -29,7 +29,7 @@ before_install:
   - source activate build-environment
 
 script:
-  - set -e
+  - set -e # Fail if any of the below errors
   - make html-errors
   - cd ..
   - if [[ "${DOCS}" = "true" ]]; then
