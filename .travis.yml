@@ -31,7 +31,7 @@ before_install:
 script:
   - set -e
   - make html-errors
-  - python -c 'import os;print(list(os.environ.keys()))'
+  - cd ..
   - if [[ "${DOCS}" = "true" ]]; then
       doctr deploy --built-docs docs --gh-pages-docs docs --no-require-master;
     fi
